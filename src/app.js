@@ -1,9 +1,10 @@
-// const express = require('express');
-// const userRouter = require('./resources/users/user.router');
 const fastify = require('fastify')();
 const fastifySwagger = require('fastify-swagger');
 
-// app.use('/users', userRouter);
+const userRoutes = require('./resources/users/user.router');
+const boardRoutes = require('./resources/boards/board.router');
+const taskRoutes = require('./resources/tasks/task.router');
+
 fastify.addContentTypeParser(
   'application/json',
   { parseAs: 'string' },
@@ -18,8 +19,9 @@ fastify.addContentTypeParser(
   }
 );
 
-fastify.get('/', async () => ({ hello: 'world' }));
-// fastify.use('/users', userRouter);
+fastify.register(userRoutes, { prefix: '/users' });
+fastify.register(boardRoutes, { prefix: '/boards' });
+fastify.register(taskRoutes, { prefix: '/boards/:boardId/tasks' });
 
 fastify.register(fastifySwagger, {
   routePrefix: '/doc',

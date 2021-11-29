@@ -1,21 +1,20 @@
-const User = require('./user.model');
-const usersService = require('./user.service');
+const Task = require('./task.model');
+// const tasksService = require('./task.service');
 
 async function routes(fastify, options) {
   fastify.route({
     method: 'GET',
     url: '/',
     async handler(request, reply) {
-      const users = await usersService.getAll();
-      return users.map(User.toResponse);
+      return [];
     },
   });
 
   fastify.route({
     method: 'GET',
-    url: '/:userId',
+    url: '/:taskId',
     async handler(request, reply) {
-      return { id: request.params.userId };
+      return { id: request.params.taskId };
     },
   });
 
@@ -29,7 +28,7 @@ async function routes(fastify, options) {
 
   fastify.route({
     method: 'PUT',
-    url: '/:userId',
+    url: '/:taskId',
     async handler(request, reply) {
       return 'PUT';
     },
@@ -37,7 +36,7 @@ async function routes(fastify, options) {
 
   fastify.route({
     method: 'DELETE',
-    url: '/:userId',
+    url: '/:taskId',
     async handler(request, reply) {
       return 'PUT';
     },
