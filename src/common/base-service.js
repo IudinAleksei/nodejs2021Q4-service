@@ -1,3 +1,5 @@
+const { HTTP_ERRORS_INFO } = require('./constants');
+
 class BaseService {
   constructor(repository) {
     this.repository = repository;
@@ -8,11 +10,20 @@ class BaseService {
   }
 
   async getById(id) {
-    return this.repository.getItem(id);
+    const itemFromDB = await this.repository.getItem(id);
+    if (itemFromDB) {
+      return itemFromDB;
+    }
+    throw HTTP_ERRORS_INFO.notFound;
+  }
+
+  async addItem(item) {
+    this.repository.addItem(item);
+    return this.repository.getItem(item.id);
   }
 
   async removeById(id) {
-    // const itemFromDB = await this.repository.getItem(id);
+    await this.getById(id);
     await this.repository.removeItem(id);
   }
 }

@@ -24,7 +24,9 @@ async function routes(fastify, options) {
     method: 'POST',
     url: '/',
     async handler(request, reply) {
-      return 'POST';
+      const newBoard = new Board(request.body);
+      const createdBoard = await boardService.addItem(newBoard);
+      reply.code(201).send(Board.toResponse(createdBoard));
     },
   });
 
@@ -32,7 +34,10 @@ async function routes(fastify, options) {
     method: 'PUT',
     url: '/:boardId',
     async handler(request, reply) {
-      return 'PUT';
+      const newBoard = new Board(request.body);
+      await boardService.removeById(newBoard.id);
+      const createdBoard = await boardService.addItem(newBoard);
+      reply.send(Board.toResponse(createdBoard));
     },
   });
 
@@ -40,7 +45,7 @@ async function routes(fastify, options) {
     method: 'DELETE',
     url: '/:boardId',
     async handler(request, reply) {
-      await boardService.removeById(request.params.boardId);
+      await boardService.removeByIdWithConnectedTasks(request.params.boardId);
       reply.code(204).send();
     },
   });

@@ -1,13 +1,17 @@
 const BaseService = require('../../common/base-service');
+const taskService = require('../tasks/task.service');
 const userRepository = require('./user.memory.repository');
-const User = require('./user.model');
 
 const userService = new BaseService(userRepository);
 
-userService.createItem = () => {
-  const newUser = new User({ name: 'Ivan', login: 'lion', password: 'qwert' });
-  userRepository.addItem(newUser);
-  return userRepository.getItem(newUser.id);
+userService.removeByIdAndUnassignConnectedTasks = async (userId) => {
+  const allTasks = await taskService.getAll();
+  const connectedTasks = allTasks.filter((task) => task.userId === userId);
+  connectedTasks.forEach((task) => {
+    taskService.removeById(task.id);
+    taskService.addItem({ ...task, userId: null });
+  });
+  userService.removeById(userId);
 };
 
 module.exports = userService;

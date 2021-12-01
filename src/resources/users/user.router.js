@@ -1,3 +1,4 @@
+const { HTTP_ERRORS_INFO } = require('../../common/constants');
 const User = require('./user.model');
 const usersService = require('./user.service');
 
@@ -24,7 +25,8 @@ async function routes(fastify, options) {
     method: 'POST',
     url: '/',
     async handler(request, reply) {
-      const createdUser = await usersService.createUser();
+      const newUser = new User(request.body);
+      const createdUser = await usersService.addItem(newUser);
       reply.code(201).send(User.toResponse(createdUser));
     },
   });
@@ -33,7 +35,13 @@ async function routes(fastify, options) {
     method: 'PUT',
     url: '/:userId',
     async handler(request, reply) {
-      return 'PUT';
+      if (request.body.id !== request.params.userId) {
+        throw HTTP_ERRORS_INFO.invalidId;
+      }
+      const user = new User(request.body);
+      await usersService.removeById(user.id);
+      const updatedUser = await usersService.addItem(user);
+      reply.send(User.toResponse(updatedUser));
     },
   });
 
@@ -41,7 +49,9 @@ async function routes(fastify, options) {
     method: 'DELETE',
     url: '/:userId',
     async handler(request, reply) {
-      await usersService.removeById(request.params.userId);
+      await usersService.removeByIdAndUnassignConnectedTasks(
+        request.params.userId
+      );
       reply.code(204).send();
     },
   });

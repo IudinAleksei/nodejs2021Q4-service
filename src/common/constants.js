@@ -1,10 +1,10 @@
-export const USED_UUID_VERSION = 4;
+const USED_UUID_VERSION = 4;
 
-export const RESPONSE_HEADERS = Object.freeze({
+const RESPONSE_HEADERS = Object.freeze({
   contentTypeJson: { 'Content-Type': 'application/json' },
 });
 
-export const HTTP_ERRORS_INFO = Object.freeze({
+const HTTP_ERRORS_INFO = Object.freeze({
   invalidPersonData: { statusCode: 400, message: 'Incorrect data' },
   invalidId: { statusCode: 400, message: 'ID not valid' },
   notFound: { statusCode: 404, message: 'Item with this id not found' },
@@ -16,3 +16,5 @@ export const HTTP_ERRORS_INFO = Object.freeze({
     message: 'HTTP method not implementes on this route',
   },
 });
+
+module.exports = { HTTP_ERRORS_INFO, USED_UUID_VERSION, RESPONSE_HEADERS };

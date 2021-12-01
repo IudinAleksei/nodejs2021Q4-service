@@ -24,7 +24,12 @@ async function routes(fastify, options) {
     method: 'POST',
     url: '/',
     async handler(request, reply) {
-      return 'POST';
+      const newTask = new Task({
+        ...request.body,
+        boardId: request.params.boardId,
+      });
+      const createdTask = await tasksService.addItem(newTask);
+      reply.code(201).send(Task.toResponse(createdTask));
     },
   });
 
@@ -32,7 +37,13 @@ async function routes(fastify, options) {
     method: 'PUT',
     url: '/:taskId',
     async handler(request, reply) {
-      return 'PUT';
+      const task = new Task({
+        boardId: request.params.boardId,
+        ...request.body,
+      });
+      await tasksService.removeById(task.id);
+      const updatedTask = await tasksService.addItem(task);
+      reply.send(Task.toResponse(updatedTask));
     },
   });
 
