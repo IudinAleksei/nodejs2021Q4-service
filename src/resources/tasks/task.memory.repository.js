@@ -1,7 +1,7 @@
 const Repository = require('../../common/repository');
 const Task = require('./task.model');
 
-const userRepository = new Repository([
+const taskRepository = new Repository([
   new Task({
     title: 'task',
     order: '1',
@@ -12,4 +12,4 @@ const userRepository = new Repository([
   }),
 ]);
 
-module.exports = userRepository;
+module.exports = taskRepository;

@@ -7,7 +7,7 @@ async function routes(fastify, options) {
     url: '/',
     async handler(request, reply) {
       const users = await usersService.getAll();
-      return users.map(User.toResponse);
+      reply.send(users.map(User.toResponse));
     },
   });
 
@@ -16,7 +16,7 @@ async function routes(fastify, options) {
     url: '/:userId',
     async handler(request, reply) {
       const user = await usersService.getById(request.params.userId);
-      return User.toResponse(user);
+      reply.send(User.toResponse(user));
     },
   });
 
@@ -25,7 +25,7 @@ async function routes(fastify, options) {
     url: '/',
     async handler(request, reply) {
       const createdUser = await usersService.createUser();
-      return User.toResponse(createdUser);
+      reply.code(201).send(User.toResponse(createdUser));
     },
   });
 
@@ -41,7 +41,8 @@ async function routes(fastify, options) {
     method: 'DELETE',
     url: '/:userId',
     async handler(request, reply) {
-      return 'PUT';
+      await usersService.removeById(request.params.userId);
+      reply.code(204).send();
     },
   });
 }

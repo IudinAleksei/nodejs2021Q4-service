@@ -1,14 +1,13 @@
+const BaseService = require('../../common/base-service');
 const userRepository = require('./user.memory.repository');
 const User = require('./user.model');
 
-const getAll = () => userRepository.getAllItems();
+const userService = new BaseService(userRepository);
 
-const getById = (userId) => userRepository.getItem(userId);
-
-const createUser = () => {
+userService.createItem = () => {
   const newUser = new User({ name: 'Ivan', login: 'lion', password: 'qwert' });
   userRepository.addItem(newUser);
   return userRepository.getItem(newUser.id);
 };
 
-module.exports = { getAll, getById, createUser };
+module.exports = userService;

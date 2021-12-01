@@ -1,12 +1,13 @@
 const Board = require('./board.model');
-// const boardService = require('./board.service');
+const boardService = require('./board.service');
 
 async function routes(fastify, options) {
   fastify.route({
     method: 'GET',
     url: '/',
     async handler(request, reply) {
-      return [];
+      const boards = await boardService.getAll();
+      reply.send(boards.map(Board.toResponse));
     },
   });
 
@@ -14,8 +15,8 @@ async function routes(fastify, options) {
     method: 'GET',
     url: '/:boardId',
     async handler(request, reply) {
-      console.log(request.params);
-      return { id: request.params.boardId };
+      const board = await boardService.getById(request.params.boardId);
+      reply.send(Board.toResponse(board));
     },
   });
 
@@ -39,7 +40,8 @@ async function routes(fastify, options) {
     method: 'DELETE',
     url: '/:boardId',
     async handler(request, reply) {
-      return 'PUT';
+      await boardService.removeById(request.params.boardId);
+      reply.code(204).send();
     },
   });
 }

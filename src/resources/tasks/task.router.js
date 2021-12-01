@@ -7,7 +7,7 @@ async function routes(fastify, options) {
     url: '/',
     async handler(request, reply) {
       const tasks = await tasksService.getAll();
-      return tasks.map(Task.toResponse);
+      reply.send(tasks.map(Task.toResponse));
     },
   });
 
@@ -16,7 +16,7 @@ async function routes(fastify, options) {
     url: '/:taskId',
     async handler(request, reply) {
       const task = await tasksService.getById(request.params.taskId);
-      return Task.toResponse(task);
+      reply.send(Task.toResponse(task));
     },
   });
 
@@ -40,7 +40,8 @@ async function routes(fastify, options) {
     method: 'DELETE',
     url: '/:taskId',
     async handler(request, reply) {
-      return 'PUT';
+      await tasksService.removeById(request.params.taskId);
+      reply.code(204).send();
     },
   });
 }
