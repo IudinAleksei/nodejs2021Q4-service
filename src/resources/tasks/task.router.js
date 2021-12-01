@@ -1,12 +1,13 @@
 const Task = require('./task.model');
-// const tasksService = require('./task.service');
+const tasksService = require('./task.service');
 
 async function routes(fastify, options) {
   fastify.route({
     method: 'GET',
     url: '/',
     async handler(request, reply) {
-      return [];
+      const tasks = await tasksService.getAll();
+      return tasks.map(Task.toResponse);
     },
   });
 
@@ -14,7 +15,8 @@ async function routes(fastify, options) {
     method: 'GET',
     url: '/:taskId',
     async handler(request, reply) {
-      return { id: request.params.taskId };
+      const task = await tasksService.getById(request.params.taskId);
+      return Task.toResponse(task);
     },
   });
 

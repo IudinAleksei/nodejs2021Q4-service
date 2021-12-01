@@ -15,7 +15,8 @@ async function routes(fastify, options) {
     method: 'GET',
     url: '/:userId',
     async handler(request, reply) {
-      return { id: request.params.userId };
+      const user = await usersService.getById(request.params.userId);
+      return User.toResponse(user);
     },
   });
 
@@ -23,7 +24,8 @@ async function routes(fastify, options) {
     method: 'POST',
     url: '/',
     async handler(request, reply) {
-      return 'POST';
+      const createdUser = await usersService.createUser();
+      return User.toResponse(createdUser);
     },
   });
 
