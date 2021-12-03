@@ -7,8 +7,8 @@ const userService = new BaseService(userRepository);
 userService.removeByIdAndUnassignConnectedTasks = async (userId) => {
   const allTasks = await taskService.getAll();
   const connectedTasks = allTasks.filter((task) => task.userId === userId);
-  connectedTasks.forEach((task) => {
-    taskService.removeById(task.id);
+  connectedTasks.forEach(async (task) => {
+    await taskService.removeById(task.id);
     taskService.addItem({ ...task, userId: null });
   });
   userService.removeById(userId);
