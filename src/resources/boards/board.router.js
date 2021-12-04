@@ -1,7 +1,7 @@
 const Board = require('./board.model');
 const boardService = require('./board.service');
 
-async function routes(fastify, options) {
+async function routes(fastify) {
   fastify.route({
     method: 'GET',
     url: '/',

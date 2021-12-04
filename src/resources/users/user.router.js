@@ -2,7 +2,7 @@ const { HTTP_ERRORS_INFO } = require('../../common/constants');
 const User = require('./user.model');
 const usersService = require('./user.service');
 
-async function routes(fastify, options) {
+async function routes(fastify) {
   fastify.route({
     method: 'GET',
     url: '/',

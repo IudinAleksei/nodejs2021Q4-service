@@ -1,7 +1,7 @@
 const Task = require('./task.model');
 const tasksService = require('./task.service');
 
-async function routes(fastify, options) {
+async function routes(fastify) {
   fastify.route({
     method: 'GET',
     url: '/',
