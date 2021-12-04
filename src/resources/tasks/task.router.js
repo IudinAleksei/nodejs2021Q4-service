@@ -26,7 +26,7 @@ async function routes(fastify) {
     async handler(request, reply) {
       const newTask = new Task({
         ...request.body,
-        boardId: request.params.boardId,
+        boardId: request.body.boardId || request.params.boardId,
       });
       const createdTask = await tasksService.addItem(newTask);
       reply.code(201).send(Task.toResponse(createdTask));
@@ -38,8 +38,8 @@ async function routes(fastify) {
     url: '/:taskId',
     async handler(request, reply) {
       const task = new Task({
-        boardId: request.params.boardId,
         ...request.body,
+        boardId: request.body.boardId || request.params.boardId,
       });
       await tasksService.removeById(task.id);
       const updatedTask = await tasksService.addItem(task);

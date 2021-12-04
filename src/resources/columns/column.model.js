@@ -1,21 +1,15 @@
 const uuid = require('uuid');
 
 class Column {
-  constructor({
-    id = uuid(),
-    title = 'Column',
-    order = '',
-  } = {}) {
+  constructor({ id = uuid.v4(), title = 'column', order = 0 } = {}) {
     this.id = id;
     this.title = title;
     this.order = order;
   }
 
   static toResponse(column) {
-    const { id, title, order }
-    = column;
-    return { id, title, order }
-    ;
+    const { id, title, order } = column;
+    return { id, title, order };
   }
 }
 
