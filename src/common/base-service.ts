@@ -1,6 +1,6 @@
-const { HTTP_ERRORS_INFO } = require('./constants');
+import { HTTP_ERRORS_INFO } from './constants';
 
-class BaseService {
+export class BaseService {
   constructor(repository) {
     this.repository = repository;
   }
@@ -27,5 +27,3 @@ class BaseService {
     await this.repository.removeItem(id);
   }
 }
-
-module.exports = BaseService;

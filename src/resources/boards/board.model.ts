@@ -1,8 +1,8 @@
-const uuid = require('uuid');
+import uuid from 'uuid';
 
-const Column = require('../columns/column.model');
+import { Column } from '../columns/column.model';
 
-class Board {
+export class Board {
   constructor({ id = uuid.v4(), title = 'Board', columns = [] } = {}) {
     this.id = id;
     this.title = title;
@@ -15,5 +15,3 @@ class Board {
     return { id, title, columns: columnsToResponse };
   }
 }
-
-module.exports = Board;

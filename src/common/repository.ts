@@ -1,4 +1,4 @@
-class Repository {
+export class Repository {
   constructor(data = []) {
     this.data = data;
   }
@@ -19,5 +19,3 @@ class Repository {
     this.data = this.data.filter((item) => item.id !== id);
   }
 }
-
-module.exports = Repository;

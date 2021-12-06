@@ -11,15 +11,19 @@
     "ecmaVersion": 2021,
     "ecmaFeatures": {
       "impliedStrict": true
-    }
+    },
+    "project": "./tsconfig.json"
   },
   "settings": {
     "noInlineConfig": true
   },
+  "plugins": ["@typescript-eslint", "prettier", "import"],
   "extends": [
-    "eslint:recommended",
+    "airbnb/base",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
     "plugin:node/recommended",
-    "airbnb-base",
+    "plugin:prettier/recommended",
     "prettier"
   ],
   "rules": {
@@ -27,6 +31,7 @@
     "linebreak-style": "off",
     "node/no-unsupported-features/es-syntax": "off",
     "no-underscore-dangle": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "prettier/prettier": "error"
   }
 }

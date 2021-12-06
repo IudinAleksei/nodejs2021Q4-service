@@ -1,6 +1,6 @@
-const uuid = require('uuid');
+import uuid from 'uuid';
 
-class Task {
+export class Task {
   constructor({
     id = uuid.v4(),
     title,
@@ -24,5 +24,3 @@ class Task {
     return { id, title, order, description, userId, boardId, columnId };
   }
 }
-
-module.exports = Task;

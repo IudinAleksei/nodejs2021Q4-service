@@ -1,12 +1,12 @@
-const Task = require('./task.model');
-const tasksService = require('./task.service');
+import { Task } from './task.model';
+import { taskService } from './task.service';
 
-async function routes(fastify) {
+export async function taskRoutes(fastify) {
   fastify.route({
     method: 'GET',
     url: '/',
     async handler(request, reply) {
-      const tasks = await tasksService.getAll();
+      const tasks = await taskService.getAll();
       reply.send(tasks.map(Task.toResponse));
     },
   });
@@ -15,7 +15,7 @@ async function routes(fastify) {
     method: 'GET',
     url: '/:taskId',
     async handler(request, reply) {
-      const task = await tasksService.getById(request.params.taskId);
+      const task = await taskService.getById(request.params.taskId);
       reply.send(Task.toResponse(task));
     },
   });
@@ -28,7 +28,7 @@ async function routes(fastify) {
         ...request.body,
         boardId: request.body.boardId || request.params.boardId,
       });
-      const createdTask = await tasksService.addItem(newTask);
+      const createdTask = await taskService.addItem(newTask);
       reply.code(201).send(Task.toResponse(createdTask));
     },
   });
@@ -41,8 +41,9 @@ async function routes(fastify) {
         ...request.body,
         boardId: request.body.boardId || request.params.boardId,
       });
-      await tasksService.removeById(task.id);
-      const updatedTask = await tasksService.addItem(task);
+      // @ts-ignore
+      await taskService.removeById(task.id);
+      const updatedTask = await taskService.addItem(task);
       reply.send(Task.toResponse(updatedTask));
     },
   });
@@ -51,10 +52,8 @@ async function routes(fastify) {
     method: 'DELETE',
     url: '/:taskId',
     async handler(request, reply) {
-      await tasksService.removeById(request.params.taskId);
+      await taskService.removeById(request.params.taskId);
       reply.code(204).send();
     },
   });
 }
-
-module.exports = routes;

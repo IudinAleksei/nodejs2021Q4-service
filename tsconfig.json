@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ES6",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "outDir": "./dist",
+    "strict": false,
+    "noImplicitAny": false
+  }
+}
