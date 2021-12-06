@@ -7,7 +7,7 @@
     "moduleResolution": "node",
     "rootDir": "src",
     "outDir": "./dist",
-    "strict": false,
-    "noImplicitAny": false
+    "strict": true,
+    "noImplicitAny": true
   }
 }

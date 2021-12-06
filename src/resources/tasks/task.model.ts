@@ -9,11 +9,11 @@ export class Task {
 
   description: string;
 
-  userId?: string;
+  userId: string | null;
 
   boardId: string;
 
-  columnId?: string;
+  columnId: string | null;
 
   constructor({
     id = uuidv4(),

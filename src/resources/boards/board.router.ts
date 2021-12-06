@@ -1,7 +1,8 @@
+import { FastifyInstance } from 'fastify';
 import { Board } from './board.model';
 import { boardService } from './board.service';
 
-export async function boardRoutes(fastify) {
+export async function boardRoutes(fastify: FastifyInstance) {
   fastify.route({
     method: 'GET',
     url: '/',

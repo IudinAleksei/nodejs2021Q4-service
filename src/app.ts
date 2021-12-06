@@ -4,6 +4,7 @@ import fastify from 'fastify';
 import { userRoutes } from './resources/users/user.router';
 import { boardRoutes } from './resources/boards/board.router';
 import { taskRoutes } from './resources/tasks/task.router';
+import { CustomServerError } from './common/errors';
 
 export const app = fastify();
 
@@ -15,8 +16,11 @@ app.addContentTypeParser(
       const json = JSON.parse(body.toString());
       done(null, json);
     } catch (err) {
-      err.statusCode = 400;
-      done(err, undefined);
+      const catchedError = new CustomServerError({
+        statusCode: 400,
+        message: (err as Error).message,
+      });
+      done(catchedError, undefined);
     }
   }
 );

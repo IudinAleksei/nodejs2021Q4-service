@@ -8,7 +8,7 @@ dotenv.config({
   path: path.join(currentDirname, '../../.env'),
 });
 
-export const { PORT } = process.env;
+export const PORT = process.env.PORT || 3000;
 export const { NODE_ENV } = process.env;
 export const { MONGO_CONNECTION_STRING } = process.env;
 export const { JWT_SECRET_KEY } = process.env;

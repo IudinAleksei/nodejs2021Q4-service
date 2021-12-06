@@ -1,7 +1,8 @@
+import { FastifyInstance } from 'fastify';
 import { Task } from './task.model';
 import { taskService } from './task.service';
 
-export async function taskRoutes(fastify) {
+export async function taskRoutes(fastify: FastifyInstance) {
   fastify.route({
     method: 'GET',
     url: '/',

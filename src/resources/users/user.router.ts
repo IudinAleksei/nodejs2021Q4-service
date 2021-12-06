@@ -1,9 +1,10 @@
+import { FastifyInstance } from 'fastify';
 import { CustomServerError } from '../../common/errors';
 import { HTTP_ERRORS_INFO } from '../../common/constants';
 import { User } from './user.model';
 import { userService } from './user.service';
 
-export async function userRoutes(fastify) {
+export async function userRoutes(fastify: FastifyInstance) {
   fastify.route({
     method: 'GET',
     url: '/',
