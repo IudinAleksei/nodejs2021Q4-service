@@ -41,7 +41,6 @@ export async function taskRoutes(fastify) {
         ...request.body,
         boardId: request.body.boardId || request.params.boardId,
       });
-      // @ts-ignore
       await taskService.removeById(task.id);
       const updatedTask = await taskService.addItem(task);
       reply.send(Task.toResponse(updatedTask));

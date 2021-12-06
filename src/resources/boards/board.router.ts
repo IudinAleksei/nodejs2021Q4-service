@@ -30,23 +30,23 @@ export async function boardRoutes(fastify) {
     },
   });
 
-  // fastify.route({
-  //   method: 'PUT',
-  //   url: '/:boardId',
-  //   async handler(request, reply) {
-  //     const newBoard = new Board(request.body);
-  //     await boardService.removeById(newBoard.id);
-  //     const createdBoard = await boardService.addItem(newBoard);
-  //     reply.send(Board.toResponse(createdBoard));
-  //   },
-  // });
+  fastify.route({
+    method: 'PUT',
+    url: '/:boardId',
+    async handler(request, reply) {
+      const newBoard = new Board(request.body);
+      await boardService.removeById(newBoard.id);
+      const createdBoard = await boardService.addItem(newBoard);
+      reply.send(Board.toResponse(createdBoard));
+    },
+  });
 
-  // fastify.route({
-  //   method: 'DELETE',
-  //   url: '/:boardId',
-  //   async handler(request, reply) {
-  //     await boardService.removeByIdWithConnectedTasks(request.params.boardId);
-  //     reply.code(204).send();
-  //   },
-  // });
+  fastify.route({
+    method: 'DELETE',
+    url: '/:boardId',
+    async handler(request, reply) {
+      await boardService.removeByIdWithConnectedTasks(request.params.boardId);
+      reply.code(204).send();
+    },
+  });
 }

@@ -1,5 +1,6 @@
 import { Repository } from './repository';
 import { HTTP_ERRORS_INFO } from './constants';
+import { CustomServerError } from './errors';
 
 export class BaseService {
   repository: Repository;
@@ -17,7 +18,7 @@ export class BaseService {
     if (itemFromDB) {
       return itemFromDB;
     }
-    throw HTTP_ERRORS_INFO.notFound;
+    throw new CustomServerError(HTTP_ERRORS_INFO.invalidId);
   }
 
   async addItem(item) {
