@@ -5,6 +5,11 @@ import { app } from './app';
 
 import { PORT } from './common/config';
 
+/**
+ * Async function that start application on PORT from config file
+ * and handle errors
+ */
+
 const start = async () => {
   try {
     await app.listen(PORT);
