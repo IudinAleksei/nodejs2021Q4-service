@@ -1,5 +1,6 @@
 import fastify from 'fastify';
-// import fastifySwagger from 'fastify-swagger';
+import fastifySwagger, { FastifyStaticSwaggerOptions } from 'fastify-swagger';
+import { currentDirname } from './common/config';
 
 import { userRoutes } from './resources/users/user.router';
 import { boardRoutes } from './resources/boards/board.router';
@@ -29,11 +30,14 @@ app.register(userRoutes, { prefix: '/users' });
 app.register(boardRoutes, { prefix: '/boards' });
 app.register(taskRoutes, { prefix: '/boards/:boardId/tasks' });
 
-// app.register(fastifySwagger, {
-//   routePrefix: '/doc',
-//   mode: 'static',
-//   specification: {
-//     path: 'doc/api.yaml',
-//   },
-//   exposeRoute: true,
-// });
+const SwaggerOptions: FastifyStaticSwaggerOptions = {
+  routePrefix: '/doc',
+  mode: 'static',
+  specification: {
+    path: 'doc/api.yaml',
+    baseDir: currentDirname,
+  },
+  exposeRoute: true,
+};
+
+app.register(fastifySwagger, SwaggerOptions);

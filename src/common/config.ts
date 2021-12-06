@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-const currentDirname = dirname(fileURLToPath(import.meta.url));
+export const currentDirname = dirname(fileURLToPath(import.meta.url));
 
 dotenv.config({
   path: path.join(currentDirname, '../../.env'),
