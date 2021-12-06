@@ -14,7 +14,7 @@ export class Repository<T extends IDBItem> {
    *
    */
 
-  async getAllItems() {
+  async getAllItems(): Promise<T[]> {
     return this.data;
   }
 
@@ -26,7 +26,7 @@ export class Repository<T extends IDBItem> {
    *
    */
 
-  async getItem(id: string) {
+  async getItem(id: string): Promise<T | undefined> {
     return this.data.find((item) => item.id === id);
   }
 
@@ -37,7 +37,7 @@ export class Repository<T extends IDBItem> {
    *
    */
 
-  async addItem(item: T) {
+  async addItem(item: T): Promise<void> {
     this.data = [...this.data, item];
   }
 
@@ -48,7 +48,7 @@ export class Repository<T extends IDBItem> {
    *
    */
 
-  async removeItem(id: string) {
+  async removeItem(id: string): Promise<void> {
     this.data = this.data.filter((item) => item.id !== id);
   }
 }

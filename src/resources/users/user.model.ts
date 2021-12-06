@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IUser } from './user.types';
 
-export class User {
+export class User implements IUser {
   id: string;
 
   name: string;
@@ -21,7 +22,7 @@ export class User {
     this.password = password;
   }
 
-  static toResponse(user) {
+  static toResponse(user: IUser) {
     const { id, name, login } = user;
     return { id, name, login };
   }

@@ -23,7 +23,7 @@ export class Task {
     userId = null,
     boardId = '',
     columnId = null,
-  } = {}) {
+  }: Task) {
     this.id = id;
     this.title = title;
     this.order = order;
@@ -33,7 +33,7 @@ export class Task {
     this.columnId = columnId;
   }
 
-  static toResponse(task) {
+  static toResponse(task: Task) {
     const { id, title, order, description, userId, boardId, columnId } = task;
     return { id, title, order, description, userId, boardId, columnId };
   }

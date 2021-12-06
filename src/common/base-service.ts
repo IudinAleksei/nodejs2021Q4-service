@@ -14,15 +14,15 @@ export class BaseService<T extends IDBItem> {
     return this.repository.getAllItems();
   }
 
-  async getById(id: string): Promise<T> {
+  async getById(id: string): Promise<T> | never {
     const itemFromDB = await this.repository.getItem(id);
     if (itemFromDB) {
       return itemFromDB;
     }
-    throw new CustomServerError(HTTP_ERRORS_INFO.invalidId);
+    throw new CustomServerError(HTTP_ERRORS_INFO.notFound);
   }
 
-  async addItem(item: T): Promise<T> {
+  async addItem(item: T): Promise<T | undefined> {
     this.repository.addItem(item);
     return this.repository.getItem(item.id);
   }

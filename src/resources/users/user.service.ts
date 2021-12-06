@@ -1,9 +1,10 @@
 import { BaseService } from '../../common/base-service';
 import { taskService } from '../tasks/task.service';
 import { userRepository } from './user.memory.repository';
+import { User } from './user.model';
 
-class UserService extends BaseService {
-  async removeByIdAndUnassignConnectedTasks(userId) {
+class UserService extends BaseService<User> {
+  async removeByIdAndUnassignConnectedTasks(userId: string) {
     const allTasks = await taskService.getAll();
     const connectedTasks = allTasks.filter((task) => task.userId === userId);
     connectedTasks.forEach(async (task) => {

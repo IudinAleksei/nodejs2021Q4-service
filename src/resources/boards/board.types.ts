@@ -7,4 +7,4 @@ export interface IBoardRoute extends RouteGenericInterface {
   Params: { boardId: string };
 }
 
-export type IBoardRequest = FastifyRequest<IBoardRoute>;
+export type BoardRequest = FastifyRequest<IBoardRoute>;
