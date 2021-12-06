@@ -2,7 +2,8 @@
   "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "ES6",
+    "module": "es2020",
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "rootDir": "src",
     "outDir": "./dist",

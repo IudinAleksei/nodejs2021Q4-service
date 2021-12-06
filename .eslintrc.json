@@ -15,7 +15,10 @@
     "project": "./tsconfig.json"
   },
   "settings": {
-    "noInlineConfig": true
+    "noInlineConfig": true,
+    "node": {
+      "tryExtensions": [".js", ".ts"]
+    }
   },
   "plugins": ["@typescript-eslint", "prettier", "import"],
   "extends": [

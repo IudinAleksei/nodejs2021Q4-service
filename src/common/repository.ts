@@ -1,4 +1,8 @@
+import { IDBItem } from './common.types';
+
 export class Repository {
+  data: IDBItem[];
+
   constructor(data = []) {
     this.data = data;
   }

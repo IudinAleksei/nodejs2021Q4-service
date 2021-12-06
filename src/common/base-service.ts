@@ -1,6 +1,9 @@
+import { Repository } from './repository';
 import { HTTP_ERRORS_INFO } from './constants';
 
 export class BaseService {
+  repository: Repository;
+
   constructor(repository) {
     this.repository = repository;
   }

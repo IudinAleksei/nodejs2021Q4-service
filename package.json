@@ -5,6 +5,7 @@
     "type": "git",
     "url": ""
   },
+  "module": "index.js",
   "type": "module",
   "description": "REST service starter for RS School",
   "exports": "./dist/index.js",
@@ -44,6 +45,7 @@
     ]
   },
   "dependencies": {
+    "@types/uuid": "^8.3.3",
     "cross-env": "^7.0.3",
     "dotenv": "10.0.0",
     "fastify": "3.24.0",

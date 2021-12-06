@@ -1,5 +1,5 @@
 import fastify from 'fastify';
-import fastifySwagger from 'fastify-swagger';
+// import fastifySwagger from 'fastify-swagger';
 
 import { userRoutes } from './resources/users/user.router';
 import { boardRoutes } from './resources/boards/board.router';

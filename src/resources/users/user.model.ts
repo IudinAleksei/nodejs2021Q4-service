@@ -1,12 +1,20 @@
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 export class User {
+  id: string;
+
+  name: string;
+
+  login: string;
+
+  password: string;
+
   constructor({
-    id = uuid.v4(),
+    id = uuidv4(),
     name = 'USER',
     login = 'user',
     password = 'P@55w0rd',
-  } = {}) {
+  }) {
     this.id = id;
     this.name = name;
     this.login = login;

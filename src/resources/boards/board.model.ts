@@ -1,9 +1,15 @@
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 import { Column } from '../columns/column.model';
 
 export class Board {
-  constructor({ id = uuid.v4(), title = 'Board', columns = [] } = {}) {
+  id: string;
+
+  title: string;
+
+  columns: Column[];
+
+  constructor({ id = uuidv4(), title = 'Board', columns = [] } = {}) {
     this.id = id;
     this.title = title;
     this.columns = columns.map((input) => new Column(input));

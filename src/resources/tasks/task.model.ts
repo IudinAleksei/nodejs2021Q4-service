@@ -1,14 +1,28 @@
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 export class Task {
+  id: string;
+
+  title: string;
+
+  order: number;
+
+  description: string;
+
+  userId?: string;
+
+  boardId: string;
+
+  columnId?: string;
+
   constructor({
-    id = uuid.v4(),
-    title,
-    order,
-    description,
-    userId,
-    boardId,
-    columnId,
+    id = uuidv4(),
+    title = 'Task',
+    order = 0,
+    description = '',
+    userId = null,
+    boardId = '',
+    columnId = null,
   } = {}) {
     this.id = id;
     this.title = title;
