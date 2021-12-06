@@ -17,7 +17,7 @@
   "settings": {
     "noInlineConfig": true,
     "node": {
-      "tryExtensions": [".js", ".ts"]
+      "tryExtensions": [".js", ".ts", ".d.ts"]
     }
   },
   "plugins": [

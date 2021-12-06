@@ -1,9 +1,9 @@
 import { IDBItem } from './common.types';
 
-export class Repository {
-  data: IDBItem[];
+export class Repository<T extends IDBItem> {
+  data: T[];
 
-  constructor(data = []) {
+  constructor(data: T[] = []) {
     this.data = data;
   }
 
@@ -37,7 +37,7 @@ export class Repository {
    *
    */
 
-  async addItem(item: IDBItem) {
+  async addItem(item: T) {
     this.data = [...this.data, item];
   }
 

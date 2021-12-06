@@ -1,19 +1,20 @@
+import { IDBItem } from './common.types';
 import { Repository } from './repository';
 import { HTTP_ERRORS_INFO } from './constants';
 import { CustomServerError } from './errors';
 
-export class BaseService {
-  repository: Repository;
+export class BaseService<T extends IDBItem> {
+  repository: Repository<T>;
 
-  constructor(repository) {
+  constructor(repository: Repository<T>) {
     this.repository = repository;
   }
 
-  async getAll() {
+  async getAll(): Promise<T[]> {
     return this.repository.getAllItems();
   }
 
-  async getById(id) {
+  async getById(id: string): Promise<T> {
     const itemFromDB = await this.repository.getItem(id);
     if (itemFromDB) {
       return itemFromDB;
@@ -21,12 +22,12 @@ export class BaseService {
     throw new CustomServerError(HTTP_ERRORS_INFO.invalidId);
   }
 
-  async addItem(item) {
+  async addItem(item: T): Promise<T> {
     this.repository.addItem(item);
     return this.repository.getItem(item.id);
   }
 
-  async removeById(id) {
+  async removeById(id: string): Promise<void> {
     await this.getById(id);
     await this.repository.removeItem(id);
   }
