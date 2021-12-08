@@ -1,5 +1,8 @@
 import { IDBItem } from './common.types';
 
+/**
+ * @class create base implementation of repository using for interaction with databases
+ */
 export class Repository<T extends IDBItem> {
   data: T[];
 
