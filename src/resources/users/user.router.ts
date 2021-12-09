@@ -9,7 +9,7 @@ export async function userRoutes(fastify: FastifyInstance) {
   fastify.route({
     method: 'GET',
     url: '/',
-    async handler(request, reply) {
+    async handler(_, reply) {
       const users = await userService.getAll();
       reply.send(users.map(User.toResponse));
     },
@@ -30,10 +30,7 @@ export async function userRoutes(fastify: FastifyInstance) {
     async handler(request: UserRequest, reply) {
       const newUser = new User(request.body);
       const createdUser = await userService.addItem(newUser);
-      if (createdUser) {
-        reply.code(201).send(User.toResponse(createdUser));
-      }
-      throw new CustomServerError(HTTP_ERRORS_INFO.db);
+      reply.code(201).send(User.toResponse(createdUser));
     },
   });
 
@@ -47,10 +44,7 @@ export async function userRoutes(fastify: FastifyInstance) {
       const user = new User(request.body);
       await userService.removeById(user.id);
       const updatedUser = await userService.addItem(user);
-      if (updatedUser) {
-        reply.send(User.toResponse(updatedUser));
-      }
-      throw new CustomServerError(HTTP_ERRORS_INFO.db);
+      reply.send(User.toResponse(updatedUser));
     },
   });
 
