@@ -16,7 +16,7 @@ export async function taskRoutes(fastify: FastifyInstance) {
      *
      * @param reply - is a core Fastify object provides access to the context of the request
      */
-    async handler(request, reply) {
+    async handler(_, reply) {
       const tasks = await taskService.getAll();
       reply.send(tasks.map(Task.toResponse));
     },
@@ -70,8 +70,7 @@ export async function taskRoutes(fastify: FastifyInstance) {
         ...request.body,
         boardId: request.body.boardId || request.params.boardId,
       });
-      await taskService.removeById(task.id);
-      const updatedTask = await taskService.addItem(task);
+      const updatedTask = await taskService.updateItem(task);
       reply.send(Task.toResponse(updatedTask));
     },
   });

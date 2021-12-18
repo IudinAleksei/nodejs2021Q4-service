@@ -69,8 +69,7 @@ export async function userRoutes(fastify: FastifyInstance) {
         throw new CustomServerError(HTTP_ERRORS_INFO.invalidId);
       }
       const user = new User(request.body);
-      await userService.removeById(user.id);
-      const updatedUser = await userService.addItem(user);
+      const updatedUser = await userService.updateItem(user);
       reply.send(User.toResponse(updatedUser));
     },
   });

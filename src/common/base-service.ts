@@ -75,8 +75,8 @@ export class BaseService<T extends IDBItem> {
    *
    * @param item - Item that will be updated in database
    * @returns Passed item from database
-   * @throws custom error {@link CustomServerError} if item with passed id not found via {@link getById} method executing
-   * @throws custom error {@link CustomServerError} if passed item not found in database via {@link addItem} after adding
+   * @throws custom error {@link CustomServerError} {@link HTTP_ERRORS_INFO.notFound} if passed item not found in database via {@link getById} method executing
+   * @throws custom error {@link CustomServerError} {@link HTTP_ERRORS_INFO.db} if passed item not found in database via {@link addItem} after adding
    */
   async updateItem(item: T): Promise<T> | never {
     await this.removeById(item.id);
