@@ -69,4 +69,9 @@ export class BaseService<T extends IDBItem> {
     await this.getById(id);
     await this.repository.removeItem(id);
   }
+
+  async updateItem(item: T): Promise<T> | never {
+    await this.removeById(item.id);
+    return this.addItem(item);
+  }
 }
