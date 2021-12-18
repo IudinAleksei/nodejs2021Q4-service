@@ -1,6 +1,5 @@
-const getAll = async () => {
-  // TODO: mock implementation. should be replaced during task development
-  return [];
-};
+const Repository = require('../../common/repository');
 
-module.exports = { getAll };
+const userRepository = new Repository();
+
+module.exports = userRepository;
