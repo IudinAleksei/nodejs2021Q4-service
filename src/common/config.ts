@@ -9,6 +9,7 @@ dotenv.config({
 });
 
 export const PORT = process.env.PORT || 3000;
+export const LOG_LEVEL = process.env.LOG_LEVEL || 'debug';
 export const { NODE_ENV } = process.env;
 export const { MONGO_CONNECTION_STRING } = process.env;
 export const { JWT_SECRET_KEY } = process.env;

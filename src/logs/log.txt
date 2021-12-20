@@ -1,302 +1,340 @@
-[1640025821914] [32mINFO[39m (3448 on DESKTOP): [36mServer listening at http://127.0.0.1:4000[39m
-[1640025860844] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028314937] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "GET",
       "url": "/users",
       "path": "/users",
       "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-1"
-[1640025860861] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028314945] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at UserService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/users/user.router.ts:13:39)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+        at preValidationCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:101:5)
+[1640028314986] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 200
+      "statusCode": 500
     }
-    responseTime: 13.551300000399351
+    responseTime: 45.407300000078976
     reqId: "req-1"
-[1640025860920] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315089] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
       "url": "/users",
       "path": "/users",
       "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "67",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-2"
-[1640025860928] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
+[1640028315093] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "name": "TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd"
     }
-    responseTime: 6.378100000321865
     reqId: "req-2"
-[1640025860934] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315096] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 6.692900000140071
+    reqId: "req-2"
+[1640028315106] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "GET",
-      "url": "/users/8c861a2c-c8d5-40e5-836f-a94b8b8ec183",
+      "url": "/users/ca4272f4-9589-4b60-b776-81742a493090",
       "path": "/users/:userId",
       "parameters": {
-        "userId": "8c861a2c-c8d5-40e5-836f-a94b8b8ec183"
+        "userId": "ca4272f4-9589-4b60-b776-81742a493090"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-3"
-[1640025860936] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315108] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 200
     }
-    responseTime: 1.3788999998942018
+    responseTime: 1.0046000005677342
     reqId: "req-3"
-[1640025860944] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315112] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "DELETE",
-      "url": "/users/8c861a2c-c8d5-40e5-836f-a94b8b8ec183",
+      "url": "/users/ca4272f4-9589-4b60-b776-81742a493090",
       "path": "/users/:userId",
       "parameters": {
-        "userId": "8c861a2c-c8d5-40e5-836f-a94b8b8ec183"
+        "userId": "ca4272f4-9589-4b60-b776-81742a493090"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-4"
-[1640025860946] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315114] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at UserService.removeByIdAndUnassignConnectedTasks (file:///C:/projects/nodejs2021Q4-service/src/resources/users/user.service.ts:8:40)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/users/user.router.ts:55:25)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+[1640028315117] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 204
+      "statusCode": 500
     }
-    responseTime: 1.2823000000789762
+    responseTime: 4.040000000037253
     reqId: "req-4"
-[1640025860959] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315127] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
       "url": "/users",
       "path": "/users",
       "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "67",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-5"
-[1640025860963] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
+[1640028315129] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "name": "TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd"
     }
-    responseTime: 3.339800000190735
     reqId: "req-5"
-[1640025861003] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315131] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 3.2373999999836087
+    reqId: "req-5"
+[1640028315144] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "DELETE",
-      "url": "/users/34f88dc7-366f-453f-ada6-61c6850dbd68",
+      "url": "/users/93a9d524-1c34-40dc-8f79-99bb1a425527",
       "path": "/users/:userId",
       "parameters": {
-        "userId": "34f88dc7-366f-453f-ada6-61c6850dbd68"
+        "userId": "93a9d524-1c34-40dc-8f79-99bb1a425527"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-6"
-[1640025861006] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315145] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at UserService.removeByIdAndUnassignConnectedTasks (file:///C:/projects/nodejs2021Q4-service/src/resources/users/user.service.ts:8:40)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/users/user.router.ts:55:25)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+[1640028315147] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 204
+      "statusCode": 500
     }
-    responseTime: 1.9533000001683831
+    responseTime: 2.6052000001072884
     reqId: "req-6"
-[1640025861063] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315155] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
       "url": "/users",
       "path": "/users",
       "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "67",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-7"
-[1640025861069] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
+[1640028315156] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "name": "TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd"
     }
-    responseTime: 4.124299999792129
     reqId: "req-7"
-[1640025861116] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315157] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.216099999845028
+    reqId: "req-7"
+[1640028315162] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "PUT",
-      "url": "/users/b85bd0b5-337d-4c75-bf59-3ffff2d9314b",
+      "url": "/users/70367ba2-ee28-4d04-af2a-56d7eb676db0",
       "path": "/users/:userId",
       "parameters": {
-        "userId": "b85bd0b5-337d-4c75-bf59-3ffff2d9314b"
+        "userId": "70367ba2-ee28-4d04-af2a-56d7eb676db0"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "128",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-8"
-[1640025861121] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315163] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "name": "Autotest updated TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd",
+      "id": "70367ba2-ee28-4d04-af2a-56d7eb676db0"
+    }
+    reqId: "req-8"
+[1640028315164] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 200
     }
-    responseTime: 2.3592999996617436
+    responseTime: 1.5531999999657273
     reqId: "req-8"
-[1640025861133] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315171] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "GET",
-      "url": "/users/b85bd0b5-337d-4c75-bf59-3ffff2d9314b",
+      "url": "/users/70367ba2-ee28-4d04-af2a-56d7eb676db0",
       "path": "/users/:userId",
       "parameters": {
-        "userId": "b85bd0b5-337d-4c75-bf59-3ffff2d9314b"
+        "userId": "70367ba2-ee28-4d04-af2a-56d7eb676db0"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-9"
-[1640025861137] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315173] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 200
     }
-    responseTime: 2.837300000246614
+    responseTime: 2.029299999587238
     reqId: "req-9"
-[1640025861145] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315180] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "DELETE",
-      "url": "/users/b85bd0b5-337d-4c75-bf59-3ffff2d9314b",
+      "url": "/users/70367ba2-ee28-4d04-af2a-56d7eb676db0",
       "path": "/users/:userId",
       "parameters": {
-        "userId": "b85bd0b5-337d-4c75-bf59-3ffff2d9314b"
+        "userId": "70367ba2-ee28-4d04-af2a-56d7eb676db0"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-a"
-[1640025861147] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315181] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at UserService.removeByIdAndUnassignConnectedTasks (file:///C:/projects/nodejs2021Q4-service/src/resources/users/user.service.ts:8:40)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/users/user.router.ts:55:25)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+[1640028315183] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 204
+      "statusCode": 500
     }
-    responseTime: 2.0525000002235174
+    responseTime: 2.508099999278784
     reqId: "req-a"
-[1640025861161] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315192] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
       "url": "/users",
       "path": "/users",
       "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "content-type": "application/json",
-        "content-length": "67",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-b"
-[1640025861167] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315193] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "name": "TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd"
+    }
+    reqId: "req-b"
+[1640028315195] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 201
     }
-    responseTime: 5.132400000002235
+    responseTime: 1.708700000308454
     reqId: "req-b"
-[1640025861173] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315198] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "DELETE",
-      "url": "/users/bdd6c759-0939-4cac-83b3-542c27c123aa",
+      "url": "/users/6826e18a-9b50-4eb6-9bc8-6ba75f7df54a",
       "path": "/users/:userId",
       "parameters": {
-        "userId": "bdd6c759-0939-4cac-83b3-542c27c123aa"
+        "userId": "6826e18a-9b50-4eb6-9bc8-6ba75f7df54a"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-c"
-[1640025861175] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315198] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at UserService.removeByIdAndUnassignConnectedTasks (file:///C:/projects/nodejs2021Q4-service/src/resources/users/user.service.ts:8:40)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/users/user.router.ts:55:25)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+[1640028315200] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 204
+      "statusCode": 500
     }
-    responseTime: 0.8804000001400709
+    responseTime: 1.4054999994114041
     reqId: "req-c"
-[1640025861193] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315221] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
       "url": "/users",
       "path": "/users",
       "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "content-type": "application/json",
-        "accept": "application/json",
-        "content-length": "67",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-d"
-[1640025861200] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315222] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "name": "TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd"
+    }
+    reqId: "req-d"
+[1640028315224] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 201
     }
-    responseTime: 6.723499999847263
+    responseTime: 1.6260000001639128
     reqId: "req-d"
-[1640025861213] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315229] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
       "url": "/boards",
       "path": "/boards",
       "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "content-type": "application/json",
-        "accept": "application/json",
-        "content-length": "97",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-e"
-[1640025861220] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+[1640028315229] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+    reqId: "req-e"
+[1640028315231] [31mERROR[39m (6316 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
     reqId: "req-e"
     err: {
       "type": "CustomServerError",
@@ -307,209 +345,283 @@
               at processTicksAndRejections (node:internal/process/task_queues:96:5)
       "statusCode": 500
     }
-[1640025861261] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315235] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 201
     }
-    responseTime: 46.04710000008345
+    responseTime: 5.796500000171363
     reqId: "req-e"
-[1640025861270] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315242] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
-      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks",
+      "url": "/boards/82495b03-2538-4c67-a2d5-ada2f6829560/tasks",
       "path": "/boards/:boardId/tasks",
       "parameters": {
-        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd"
+        "boardId": "82495b03-2538-4c67-a2d5-ada2f6829560"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "content-type": "application/json",
-        "accept": "application/json",
-        "content-length": "154",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-f"
-[1640025861276] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315244] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Task #1",
+      "order": 1,
+      "description": "Lorem ipsum",
+      "userId": "13660007-e2ff-4f7e-ac3a-39efdf0805fb",
+      "boardId": "82495b03-2538-4c67-a2d5-ada2f6829560"
+    }
+    reqId: "req-f"
+[1640028315247] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 201
     }
-    responseTime: 4.611800000071526
+    responseTime: 3.85080000013113
     reqId: "req-f"
-[1640025861277] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315248] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
-      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks",
+      "url": "/boards/82495b03-2538-4c67-a2d5-ada2f6829560/tasks",
       "path": "/boards/:boardId/tasks",
       "parameters": {
-        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd"
+        "boardId": "82495b03-2538-4c67-a2d5-ada2f6829560"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "content-type": "application/json",
-        "accept": "application/json",
-        "content-length": "154",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-g"
-[1640025861283] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315248] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Task #2",
+      "order": 2,
+      "description": "Lorem ipsum",
+      "userId": "13660007-e2ff-4f7e-ac3a-39efdf0805fb",
+      "boardId": "82495b03-2538-4c67-a2d5-ada2f6829560"
+    }
+    reqId: "req-g"
+[1640028315251] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 201
     }
-    responseTime: 3.122599999886006
+    responseTime: 2.751500000245869
     reqId: "req-g"
-[1640025861313] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028315255] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "DELETE",
-      "url": "/users/45f7a996-3ac1-4e99-8aab-b7799686b2d0",
+      "url": "/users/13660007-e2ff-4f7e-ac3a-39efdf0805fb",
       "path": "/users/:userId",
       "parameters": {
-        "userId": "45f7a996-3ac1-4e99-8aab-b7799686b2d0"
+        "userId": "13660007-e2ff-4f7e-ac3a-39efdf0805fb"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-h"
-[1640025861317] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028315256] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at UserService.removeByIdAndUnassignConnectedTasks (file:///C:/projects/nodejs2021Q4-service/src/resources/users/user.service.ts:8:40)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/users/user.router.ts:55:25)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+[1640028315257] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 204
+      "statusCode": 500
     }
-    responseTime: 3.1682000001892447
+    responseTime: 1.6309000002220273
     reqId: "req-h"
-[1640025861329] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028316094] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
-      "method": "GET",
-      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks/8ba4bee5-3440-4afe-8c0c-93052b9fdc51",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd",
-        "taskId": "8ba4bee5-3440-4afe-8c0c-93052b9fdc51"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
     }
     reqId: "req-i"
-[1640025861332] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
+[1640028316095] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
     }
-    responseTime: 2.6620999998413026
     reqId: "req-i"
-[1640025861343] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028316097] [31mERROR[39m (6316 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-i"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640028316099] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 4.496299999766052
+    reqId: "req-i"
+[1640028316147] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "GET",
-      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks/abd4d21c-d1c1-493e-9293-2b965176e5b8",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd",
-        "taskId": "abd4d21c-d1c1-493e-9293-2b965176e5b8"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
     }
     reqId: "req-j"
-[1640025861345] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028316148] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BoardService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:13:41)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+        at preValidationCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:101:5)
+[1640028316150] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 200
+      "statusCode": 500
     }
-    responseTime: 0.8704000003635883
+    responseTime: 3.0078999996185303
     reqId: "req-j"
-[1640025861363] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028316236] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
-      "method": "DELETE",
-      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks/abd4d21c-d1c1-493e-9293-2b965176e5b8",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd",
-        "taskId": "abd4d21c-d1c1-493e-9293-2b965176e5b8"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "method": "GET",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
     }
     reqId: "req-k"
-[1640025861366] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028316236] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BoardService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:13:41)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+        at preValidationCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:101:5)
+[1640028316237] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 204
+      "statusCode": 500
     }
-    responseTime: 2.060999999754131
+    responseTime: 1.4004000006243587
     reqId: "req-k"
-[1640025861369] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028316246] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
-      "method": "DELETE",
-      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks/8ba4bee5-3440-4afe-8c0c-93052b9fdc51",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd",
-        "taskId": "8ba4bee5-3440-4afe-8c0c-93052b9fdc51"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
     }
     reqId: "req-l"
-[1640025861371] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 204
+[1640028316247] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
     }
-    responseTime: 1.3096999996341765
     reqId: "req-l"
-[1640025861385] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028316249] [31mERROR[39m (6316 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-l"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640028316250] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 3.666899999603629
+    reqId: "req-l"
+[1640028316262] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "DELETE",
-      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd",
+      "url": "/boards/1824dc34-0e9c-4d43-b0f1-961b5fa779dc",
       "path": "/boards/:boardId",
       "parameters": {
-        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd"
+        "boardId": "1824dc34-0e9c-4d43-b0f1-961b5fa779dc"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-m"
-[1640025861390] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028316264] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at BoardService.removeByIdWithConnectedTasks (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.service.ts:8:40)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:58:26)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+[1640028316266] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 204
+      "statusCode": 500
     }
-    responseTime: 3.979200000409037
+    responseTime: 2.892099999822676
     reqId: "req-m"
-[1640025862754] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028316274] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
       "url": "/boards",
       "path": "/boards",
       "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "97",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-n"
-[1640025862757] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+[1640028316275] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+    reqId: "req-n"
+[1640028316276] [31mERROR[39m (6316 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
     reqId: "req-n"
     err: {
       "type": "CustomServerError",
@@ -520,180 +632,43 @@
               at processTicksAndRejections (node:internal/process/task_queues:96:5)
       "statusCode": 500
     }
-[1640025862759] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028316277] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 201
     }
-    responseTime: 3.418599999975413
+    responseTime: 2.6394999995827675
     reqId: "req-n"
-[1640025862811] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards",
-      "path": "/boards",
-      "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
-    }
-    reqId: "req-o"
-[1640025862812] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
-    }
-    responseTime: 0.8649999997578561
-    reqId: "req-o"
-[1640025862829] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards",
-      "path": "/boards",
-      "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
-    }
-    reqId: "req-p"
-[1640025862830] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
-    }
-    responseTime: 0.8156000003218651
-    reqId: "req-p"
-[1640025862837] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/5388a261-a10b-4ec7-bf50-8e0d3d357561",
-      "path": "/boards/:boardId",
-      "parameters": {
-        "boardId": "5388a261-a10b-4ec7-bf50-8e0d3d357561"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
-    }
-    reqId: "req-q"
-[1640025862839] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
-    }
-    responseTime: 1.4804000002332032
-    reqId: "req-q"
-[1640025862852] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "POST",
-      "url": "/boards",
-      "path": "/boards",
-      "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "97",
-        "connection": "close"
-      }
-    }
-    reqId: "req-r"
-[1640025862854] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
-    reqId: "req-r"
-    err: {
-      "type": "CustomServerError",
-      "message": "Database error, please try later",
-      "stack":
-          Error: Database error, please try later
-              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
-              at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      "statusCode": 500
-    }
-[1640025862855] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
-    }
-    responseTime: 3.067799999844283
-    reqId: "req-r"
-[1640025862863] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "DELETE",
-      "url": "/boards/87a9aa45-98b4-4ff1-b9fb-618a988913ce",
-      "path": "/boards/:boardId",
-      "parameters": {
-        "boardId": "87a9aa45-98b4-4ff1-b9fb-618a988913ce"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
-    }
-    reqId: "req-s"
-[1640025862866] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 204
-    }
-    responseTime: 1.4288999997079372
-    reqId: "req-s"
-[1640025862899] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "POST",
-      "url": "/boards",
-      "path": "/boards",
-      "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "97",
-        "connection": "close"
-      }
-    }
-    reqId: "req-t"
-[1640025862901] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
-    reqId: "req-t"
-    err: {
-      "type": "CustomServerError",
-      "message": "Database error, please try later",
-      "stack":
-          Error: Database error, please try later
-              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
-              at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      "statusCode": 500
-    }
-[1640025862904] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
-    }
-    responseTime: 4.564800000283867
-    reqId: "req-t"
-[1640025862917] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028316281] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "PUT",
-      "url": "/boards/9cc482a7-d9d4-47c6-b036-0c7d573862f6",
+      "url": "/boards/8342490b-acd6-431f-82bf-765edf7921cc",
       "path": "/boards/:boardId",
       "parameters": {
-        "boardId": "9cc482a7-d9d4-47c6-b036-0c7d573862f6"
+        "boardId": "8342490b-acd6-431f-82bf-765edf7921cc"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "237",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-u"
-[1640025862919] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
-    reqId: "req-u"
+    reqId: "req-o"
+[1640028316282] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "id": "8342490b-acd6-431f-82bf-765edf7921cc",
+      "title": "Autotest updated board",
+      "columns": [
+        {
+          "id": "e123f7ac-66d8-4448-b2bb-6f5cfbc4fb4f",
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "id": "77cf9f78-65e9-4902-97bc-f4b31131f7a3",
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+    reqId: "req-o"
+[1640028316284] [31mERROR[39m (6316 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-o"
     err: {
       "type": "CustomServerError",
       "message": "Database error, please try later",
@@ -703,163 +678,478 @@
               at processTicksAndRejections (node:internal/process/task_queues:96:5)
       "statusCode": 500
     }
-[1640025862925] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028316285] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 200
     }
-    responseTime: 7.0441000000573695
+    responseTime: 3.412800000049174
+    reqId: "req-o"
+[1640028316289] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/8342490b-acd6-431f-82bf-765edf7921cc",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "8342490b-acd6-431f-82bf-765edf7921cc"
+      },
+      "queryParams": {}
+    }
+    reqId: "req-p"
+[1640028316291] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.2936000004410744
+    reqId: "req-p"
+[1640028316297] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/8342490b-acd6-431f-82bf-765edf7921cc",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "8342490b-acd6-431f-82bf-765edf7921cc"
+      },
+      "queryParams": {}
+    }
+    reqId: "req-q"
+[1640028316297] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at BoardService.removeByIdWithConnectedTasks (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.service.ts:8:40)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:58:26)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+[1640028316299] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 500
+    }
+    responseTime: 1.939699999988079
+    reqId: "req-q"
+[1640028316310] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
+    }
+    reqId: "req-r"
+[1640028316312] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+    reqId: "req-r"
+[1640028316313] [31mERROR[39m (6316 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-r"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640028316314] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 2.8507999991998076
+    reqId: "req-r"
+[1640028316318] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/4627b197-8caf-453c-ae14-b04fb4e8ff36",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "4627b197-8caf-453c-ae14-b04fb4e8ff36"
+      },
+      "queryParams": {}
+    }
+    reqId: "req-s"
+[1640028316319] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at BoardService.removeByIdWithConnectedTasks (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.service.ts:8:40)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:58:26)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+[1640028316320] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 500
+    }
+    responseTime: 1.9473999999463558
+    reqId: "req-s"
+[1640028316336] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
+    }
+    reqId: "req-t"
+[1640028316337] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+    reqId: "req-t"
+[1640028316338] [31mERROR[39m (6316 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-t"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640028316340] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 3.6016999995335937
+    reqId: "req-t"
+[1640028316354] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/48e7ad32-5c36-4a94-ae11-230e4b468480/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480"
+      },
+      "queryParams": {}
+    }
     reqId: "req-u"
-[1640025862942] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028316357] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Task #1",
+      "order": 1,
+      "description": "Lorem ipsum",
+      "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480",
+      "userId": null,
+      "columnId": null
+    }
+    reqId: "req-u"
+[1640028316358] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 3.13260000012815
+    reqId: "req-u"
+[1640028316360] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
-      "method": "GET",
-      "url": "/boards/9cc482a7-d9d4-47c6-b036-0c7d573862f6",
-      "path": "/boards/:boardId",
+      "method": "POST",
+      "url": "/boards/48e7ad32-5c36-4a94-ae11-230e4b468480/tasks",
+      "path": "/boards/:boardId/tasks",
       "parameters": {
-        "boardId": "9cc482a7-d9d4-47c6-b036-0c7d573862f6"
+        "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-v"
-[1640025862944] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
+[1640028316362] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Task #5",
+      "order": 5,
+      "description": "Lorem ipsum",
+      "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480",
+      "userId": null,
+      "columnId": null
     }
-    responseTime: 1.5685999998822808
     reqId: "req-v"
-[1640025862952] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028316363] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 2.4493000004440546
+    reqId: "req-v"
+[1640028316364] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
-      "method": "DELETE",
-      "url": "/boards/9cc482a7-d9d4-47c6-b036-0c7d573862f6",
-      "path": "/boards/:boardId",
+      "method": "POST",
+      "url": "/boards/48e7ad32-5c36-4a94-ae11-230e4b468480/tasks",
+      "path": "/boards/:boardId/tasks",
       "parameters": {
-        "boardId": "9cc482a7-d9d4-47c6-b036-0c7d573862f6"
+        "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-w"
-[1640025862953] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 204
+[1640028316365] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Task #2",
+      "order": 2,
+      "description": "Lorem ipsum",
+      "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480",
+      "userId": null,
+      "columnId": null
     }
-    responseTime: 0.771900000050664
     reqId: "req-w"
-[1640025863056] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "POST",
-      "url": "/boards",
-      "path": "/boards",
-      "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "97",
-        "connection": "close"
-      }
-    }
-    reqId: "req-x"
-[1640025863059] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
-    reqId: "req-x"
-    err: {
-      "type": "CustomServerError",
-      "message": "Database error, please try later",
-      "stack":
-          Error: Database error, please try later
-              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
-              at processTicksAndRejections (node:internal/process/task_queues:96:5)
-      "statusCode": 500
-    }
-[1640025863062] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028316366] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 201
     }
-    responseTime: 4.905199999921024
-    reqId: "req-x"
-[1640025863068] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    responseTime: 1.543499999679625
+    reqId: "req-w"
+[1640028316367] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
-      "method": "DELETE",
-      "url": "/boards/7ae30360-5f87-459b-9e04-fd1c51279c2e",
-      "path": "/boards/:boardId",
+      "method": "POST",
+      "url": "/boards/48e7ad32-5c36-4a94-ae11-230e4b468480/tasks",
+      "path": "/boards/:boardId/tasks",
       "parameters": {
-        "boardId": "7ae30360-5f87-459b-9e04-fd1c51279c2e"
+        "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
+    }
+    reqId: "req-x"
+[1640028316370] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Task #3",
+      "order": 3,
+      "description": "Lorem ipsum",
+      "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480",
+      "userId": null,
+      "columnId": null
+    }
+    reqId: "req-x"
+[1640028316371] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 2.5979999992996454
+    reqId: "req-x"
+[1640028316372] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/48e7ad32-5c36-4a94-ae11-230e4b468480/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480"
+      },
+      "queryParams": {}
     }
     reqId: "req-y"
-[1640025863070] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 204
+[1640028316373] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Task #4",
+      "order": 4,
+      "description": "Lorem ipsum",
+      "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480",
+      "userId": null,
+      "columnId": null
     }
-    responseTime: 1.8614999996498227
     reqId: "req-y"
-[1640025863079] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028316374] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.9420000007376075
+    reqId: "req-y"
+[1640028316388] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "GET",
-      "url": "/boards/7ae30360-5f87-459b-9e04-fd1c51279c2e",
+      "url": "/boards/48e7ad32-5c36-4a94-ae11-230e4b468480/tasks/1468014e-d593-404b-aea2-71a1199f8c87",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480",
+        "taskId": "1468014e-d593-404b-aea2-71a1199f8c87"
+      },
+      "queryParams": {}
+    }
+    reqId: "req-z"
+[1640028316389] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.8587000006809831
+    reqId: "req-z"
+[1640028316390] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/48e7ad32-5c36-4a94-ae11-230e4b468480/tasks/65fa06cf-ae64-49ee-af84-a3c9b4b3ff8c",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480",
+        "taskId": "65fa06cf-ae64-49ee-af84-a3c9b4b3ff8c"
+      },
+      "queryParams": {}
+    }
+    reqId: "req-10"
+[1640028316390] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.4118999997153878
+    reqId: "req-10"
+[1640028316391] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/48e7ad32-5c36-4a94-ae11-230e4b468480/tasks/4be5d204-cda1-4da4-9247-826d7dbf64e1",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480",
+        "taskId": "4be5d204-cda1-4da4-9247-826d7dbf64e1"
+      },
+      "queryParams": {}
+    }
+    reqId: "req-11"
+[1640028316392] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.43429999984800816
+    reqId: "req-11"
+[1640028316392] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/48e7ad32-5c36-4a94-ae11-230e4b468480/tasks/2ad2ac61-fb7d-4f25-b95d-650209bd9ff3",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480",
+        "taskId": "2ad2ac61-fb7d-4f25-b95d-650209bd9ff3"
+      },
+      "queryParams": {}
+    }
+    reqId: "req-12"
+[1640028316393] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.399100000038743
+    reqId: "req-12"
+[1640028316394] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/48e7ad32-5c36-4a94-ae11-230e4b468480/tasks/5f905847-d7d6-40f1-9841-4a6f9be94f39",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480",
+        "taskId": "5f905847-d7d6-40f1-9841-4a6f9be94f39"
+      },
+      "queryParams": {}
+    }
+    reqId: "req-13"
+[1640028316394] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.3759999992325902
+    reqId: "req-13"
+[1640028316404] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/48e7ad32-5c36-4a94-ae11-230e4b468480",
       "path": "/boards/:boardId",
       "parameters": {
-        "boardId": "7ae30360-5f87-459b-9e04-fd1c51279c2e"
+        "boardId": "48e7ad32-5c36-4a94-ae11-230e4b468480"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-z"
-[1640025863082] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
+    reqId: "req-14"
+[1640028316404] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at BoardService.removeByIdWithConnectedTasks (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.service.ts:8:40)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:58:26)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+[1640028316406] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 404
+      "statusCode": 500
     }
-    reqId: "req-z"
-    err: {
-      "type": "CustomServerError",
-      "message": "Item with this id not found",
-      "stack":
-          Error: Item with this id not found
-              at BoardService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
-              at processTicksAndRejections (node:internal/process/task_queues:96:5)
-              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:22:21)
-      "statusCode": 404
+    responseTime: 1.6586000006645918
+    reqId: "req-14"
+[1640028316412] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/bfed48ca-bf83-4869-adbb-6027b19a3dc2",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "bfed48ca-bf83-4869-adbb-6027b19a3dc2"
+      },
+      "queryParams": {}
     }
-[1640025863089] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    reqId: "req-15"
+[1640028316412] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at BoardService.removeByIdWithConnectedTasks (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.service.ts:8:40)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:58:26)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+[1640028316413] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 404
+      "statusCode": 500
     }
-    responseTime: 9.534300000406802
-    reqId: "req-z"
-[1640025863177] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    responseTime: 1.405100000090897
+    reqId: "req-15"
+[1640028317097] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
       "url": "/boards",
       "path": "/boards",
       "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "97",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-10"
-[1640025863179] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
-    reqId: "req-10"
+    reqId: "req-16"
+[1640028317098] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+    reqId: "req-16"
+[1640028317099] [31mERROR[39m (6316 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-16"
     err: {
       "type": "CustomServerError",
       "message": "Database error, please try later",
@@ -869,814 +1159,301 @@
               at processTicksAndRejections (node:internal/process/task_queues:96:5)
       "statusCode": 500
     }
-[1640025863182] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028317101] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 201
     }
-    responseTime: 4.1817999999038875
-    reqId: "req-10"
-[1640025863206] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "POST",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks",
-      "path": "/boards/:boardId/tasks",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "content-type": "application/json",
-        "accept": "application/json",
-        "content-length": "136",
-        "connection": "close"
-      }
-    }
-    reqId: "req-11"
-[1640025863209] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
-    }
-    responseTime: 1.9687000000849366
-    reqId: "req-11"
-[1640025863209] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "POST",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks",
-      "path": "/boards/:boardId/tasks",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "content-type": "application/json",
-        "accept": "application/json",
-        "content-length": "136",
-        "connection": "close"
-      }
-    }
-    reqId: "req-12"
-[1640025863211] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
-    }
-    responseTime: 0.979700000025332
-    reqId: "req-12"
-[1640025863212] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "POST",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks",
-      "path": "/boards/:boardId/tasks",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "content-type": "application/json",
-        "accept": "application/json",
-        "content-length": "136",
-        "connection": "close"
-      }
-    }
-    reqId: "req-13"
-[1640025863214] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
-    }
-    responseTime: 1.7722000000067055
-    reqId: "req-13"
-[1640025863217] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "POST",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks",
-      "path": "/boards/:boardId/tasks",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "content-type": "application/json",
-        "accept": "application/json",
-        "content-length": "136",
-        "connection": "close"
-      }
-    }
-    reqId: "req-14"
-[1640025863219] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
-    }
-    responseTime: 1.181499999947846
-    reqId: "req-14"
-[1640025863220] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "POST",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks",
-      "path": "/boards/:boardId/tasks",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "content-type": "application/json",
-        "accept": "application/json",
-        "content-length": "136",
-        "connection": "close"
-      }
-    }
-    reqId: "req-15"
-[1640025863223] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
-    }
-    responseTime: 1.645299999974668
-    reqId: "req-15"
-[1640025863309] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/6ddd2ad8-72f3-411a-9cd5-e0d2bae08027",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
-        "taskId": "6ddd2ad8-72f3-411a-9cd5-e0d2bae08027"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
-    }
+    responseTime: 2.998099999502301
     reqId: "req-16"
-[1640025863310] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
-    }
-    responseTime: 0.8755000000819564
-    reqId: "req-16"
-[1640025863312] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028317106] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
-      "method": "GET",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/5c16b820-7852-4bac-b72e-b21b638921aa",
-      "path": "/boards/:boardId/tasks/:taskId",
+      "method": "POST",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872/tasks",
+      "path": "/boards/:boardId/tasks",
       "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
-        "taskId": "5c16b820-7852-4bac-b72e-b21b638921aa"
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-17"
-[1640025863314] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
+[1640028317107] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Autotest task",
+      "order": 0,
+      "description": "Lorem ipsum",
+      "userId": null,
+      "boardId": null,
+      "columnId": null
     }
-    responseTime: 1.151500000152737
     reqId: "req-17"
-[1640025863318] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+[1640028317108] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.8958000000566244
+    reqId: "req-17"
+[1640028317139] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "GET",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/5e324058-98cf-4beb-a04b-49be80f1d2f8",
-      "path": "/boards/:boardId/tasks/:taskId",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872/tasks",
+      "path": "/boards/:boardId/tasks",
       "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
-        "taskId": "5e324058-98cf-4beb-a04b-49be80f1d2f8"
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
     reqId: "req-18"
-[1640025863320] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+[1640028317140] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:11:39)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+        at preValidationCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:101:5)
+[1640028317143] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 200
-    }
-    responseTime: 1.0561000001616776
-    reqId: "req-18"
-[1640025863321] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/700edbc9-aa6c-4841-bfdf-2b5eaa31af5c",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
-        "taskId": "700edbc9-aa6c-4841-bfdf-2b5eaa31af5c"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
-    }
-    reqId: "req-19"
-[1640025863322] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
-    }
-    responseTime: 0.7272000000812113
-    reqId: "req-19"
-[1640025863323] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/14cafae3-ca30-4b6b-848b-ce2b29e225c9",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
-        "taskId": "14cafae3-ca30-4b6b-848b-ce2b29e225c9"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1a"
-[1640025863324] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
-    }
-    responseTime: 0.6502999998629093
-    reqId: "req-1a"
-[1640025863348] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "DELETE",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359",
-      "path": "/boards/:boardId",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1b"
-[1640025863351] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 204
-    }
-    responseTime: 1.1389000001363456
-    reqId: "req-1b"
-[1640025863371] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/6ddd2ad8-72f3-411a-9cd5-e0d2bae08027",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
-        "taskId": "6ddd2ad8-72f3-411a-9cd5-e0d2bae08027"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1c"
-[1640025863373] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
-    res: {
-      "statusCode": 404
-    }
-    reqId: "req-1c"
-    err: {
-      "type": "CustomServerError",
-      "message": "Item with this id not found",
-      "stack":
-          Error: Item with this id not found
-              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
-              at processTicksAndRejections (node:internal/process/task_queues:96:5)
-              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
-      "statusCode": 404
-    }
-[1640025863377] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 404
-    }
-    responseTime: 5.203099999576807
-    reqId: "req-1c"
-[1640025863379] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/5c16b820-7852-4bac-b72e-b21b638921aa",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
-        "taskId": "5c16b820-7852-4bac-b72e-b21b638921aa"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1d"
-[1640025863379] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
-    res: {
-      "statusCode": 404
-    }
-    reqId: "req-1d"
-    err: {
-      "type": "CustomServerError",
-      "message": "Item with this id not found",
-      "stack":
-          Error: Item with this id not found
-              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
-              at processTicksAndRejections (node:internal/process/task_queues:96:5)
-              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
-      "statusCode": 404
-    }
-[1640025863384] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 404
-    }
-    responseTime: 4.466699999757111
-    reqId: "req-1d"
-[1640025863385] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/5e324058-98cf-4beb-a04b-49be80f1d2f8",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
-        "taskId": "5e324058-98cf-4beb-a04b-49be80f1d2f8"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1e"
-[1640025863386] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
-    res: {
-      "statusCode": 404
-    }
-    reqId: "req-1e"
-    err: {
-      "type": "CustomServerError",
-      "message": "Item with this id not found",
-      "stack":
-          Error: Item with this id not found
-              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
-              at processTicksAndRejections (node:internal/process/task_queues:96:5)
-              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
-      "statusCode": 404
-    }
-[1640025863389] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 404
-    }
-    responseTime: 3.180900000035763
-    reqId: "req-1e"
-[1640025863390] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/700edbc9-aa6c-4841-bfdf-2b5eaa31af5c",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
-        "taskId": "700edbc9-aa6c-4841-bfdf-2b5eaa31af5c"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1f"
-[1640025863391] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
-    res: {
-      "statusCode": 404
-    }
-    reqId: "req-1f"
-    err: {
-      "type": "CustomServerError",
-      "message": "Item with this id not found",
-      "stack":
-          Error: Item with this id not found
-              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
-              at processTicksAndRejections (node:internal/process/task_queues:96:5)
-              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
-      "statusCode": 404
-    }
-[1640025863393] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 404
-    }
-    responseTime: 1.9874999998137355
-    reqId: "req-1f"
-[1640025863394] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/14cafae3-ca30-4b6b-848b-ce2b29e225c9",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
-        "taskId": "14cafae3-ca30-4b6b-848b-ce2b29e225c9"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1g"
-[1640025863395] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
-    res: {
-      "statusCode": 404
-    }
-    reqId: "req-1g"
-    err: {
-      "type": "CustomServerError",
-      "message": "Item with this id not found",
-      "stack":
-          Error: Item with this id not found
-              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
-              at processTicksAndRejections (node:internal/process/task_queues:96:5)
-              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
-      "statusCode": 404
-    }
-[1640025863400] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 404
-    }
-    responseTime: 6.1222999999299645
-    reqId: "req-1g"
-[1640025863500] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "DELETE",
-      "url": "/boards/5388a261-a10b-4ec7-bf50-8e0d3d357561",
-      "path": "/boards/:boardId",
-      "parameters": {
-        "boardId": "5388a261-a10b-4ec7-bf50-8e0d3d357561"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1h"
-[1640025863501] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 204
-    }
-    responseTime: 0.7814000002108514
-    reqId: "req-1h"
-[1640025865659] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "POST",
-      "url": "/boards",
-      "path": "/boards",
-      "parameters": {},
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "97",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1i"
-[1640025865660] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
-    reqId: "req-1i"
-    err: {
-      "type": "CustomServerError",
-      "message": "Database error, please try later",
-      "stack":
-          Error: Database error, please try later
-              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
-              at processTicksAndRejections (node:internal/process/task_queues:96:5)
       "statusCode": 500
     }
-[1640025865662] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
+    responseTime: 2.93059999961406
+    reqId: "req-18"
+[1640028317214] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872"
+      },
+      "queryParams": {}
     }
-    responseTime: 2.5794000001624227
-    reqId: "req-1i"
-[1640025865671] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    reqId: "req-19"
+[1640028317214] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:11:39)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+        at preValidationCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:101:5)
+[1640028317216] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 500
+    }
+    responseTime: 1.7362000001594424
+    reqId: "req-19"
+[1640028317224] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872/tasks",
       "path": "/boards/:boardId/tasks",
       "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "108",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-1j"
-[1640025865673] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    reqId: "req-1a"
+[1640028317224] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Autotest task",
+      "order": 0,
+      "description": "Lorem ipsum",
+      "userId": null,
+      "boardId": null,
+      "columnId": null
+    }
+    reqId: "req-1a"
+[1640028317225] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 201
     }
-    responseTime: 0.860599999781698
-    reqId: "req-1j"
-[1640025865945] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks",
-      "path": "/boards/:boardId/tasks",
-      "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1k"
-[1640025865947] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
-    }
-    responseTime: 1.8034000000916421
-    reqId: "req-1k"
-[1640025866113] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks",
-      "path": "/boards/:boardId/tasks",
-      "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1l"
-[1640025866115] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
-    }
-    responseTime: 1.2138999998569489
-    reqId: "req-1l"
-[1640025866123] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "GET",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/4de76b79-6c1e-4048-a20c-677b4bd45579",
-      "path": "/boards/:boardId/tasks/:taskId",
-      "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
-        "taskId": "4de76b79-6c1e-4048-a20c-677b4bd45579"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1m"
-[1640025866125] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 200
-    }
-    responseTime: 0.8695999998599291
-    reqId: "req-1m"
-[1640025866142] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
-    req: {
-      "method": "POST",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks",
-      "path": "/boards/:boardId/tasks",
-      "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
-      },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "108",
-        "connection": "close"
-      }
-    }
-    reqId: "req-1n"
-[1640025866143] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 201
-    }
-    responseTime: 1.1225999998860061
-    reqId: "req-1n"
-[1640025866152] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    responseTime: 0.9113999996334314
+    reqId: "req-1a"
+[1640028317258] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "DELETE",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/7e0ff791-5af0-4741-9bd5-ad9335b453de",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872/tasks/35e7b453-fb36-4066-bbec-4e3a7ba1609c",
       "path": "/boards/:boardId/tasks/:taskId",
       "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
-        "taskId": "7e0ff791-5af0-4741-9bd5-ad9335b453de"
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872",
+        "taskId": "35e7b453-fb36-4066-bbec-4e3a7ba1609c"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-1o"
-[1640025866153] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    reqId: "req-1b"
+[1640028317259] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 204
     }
-    responseTime: 0.8009999999776483
-    reqId: "req-1o"
-[1640025866170] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    responseTime: 0.6554999994114041
+    reqId: "req-1b"
+[1640028317265] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "POST",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872/tasks",
       "path": "/boards/:boardId/tasks",
       "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "108",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-1p"
-[1640025866172] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    reqId: "req-1c"
+[1640028317265] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "title": "Autotest task",
+      "order": 0,
+      "description": "Lorem ipsum",
+      "userId": null,
+      "boardId": null,
+      "columnId": null
+    }
+    reqId: "req-1c"
+[1640028317265] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 201
     }
-    responseTime: 1.4537999997846782
-    reqId: "req-1p"
-[1640025866180] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    responseTime: 1.329300000332296
+    reqId: "req-1c"
+[1640028317275] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "PUT",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/d21757a4-7f4e-40b0-b14b-06bee748b235",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872/tasks/713b1613-e69e-4a6c-bb50-62cfc0f12e64",
       "path": "/boards/:boardId/tasks/:taskId",
       "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
-        "taskId": "d21757a4-7f4e-40b0-b14b-06bee748b235"
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872",
+        "taskId": "713b1613-e69e-4a6c-bb50-62cfc0f12e64"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "content-type": "application/json",
-        "content-length": "194",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-1q"
-[1640025866181] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    reqId: "req-1d"
+[1640028317276] [32mINFO[39m (6316 on DESKTOP): [36mparsed body[39m
+    body: {
+      "id": "713b1613-e69e-4a6c-bb50-62cfc0f12e64",
+      "title": "Autotest updated task",
+      "order": 0,
+      "description": "Lorem ipsum",
+      "userId": null,
+      "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872",
+      "columnId": null
+    }
+    reqId: "req-1d"
+[1640028317278] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 200
     }
-    responseTime: 1.2568999999202788
-    reqId: "req-1q"
-[1640025866195] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    responseTime: 2.6987999994307756
+    reqId: "req-1d"
+[1640028317288] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "GET",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/d21757a4-7f4e-40b0-b14b-06bee748b235",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872/tasks/713b1613-e69e-4a6c-bb50-62cfc0f12e64",
       "path": "/boards/:boardId/tasks/:taskId",
       "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
-        "taskId": "d21757a4-7f4e-40b0-b14b-06bee748b235"
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872",
+        "taskId": "713b1613-e69e-4a6c-bb50-62cfc0f12e64"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "accept": "application/json",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-1r"
-[1640025866196] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    reqId: "req-1e"
+[1640028317290] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 200
     }
-    responseTime: 0.6243000002577901
-    reqId: "req-1r"
-[1640025866300] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    responseTime: 1.2167999995872378
+    reqId: "req-1e"
+[1640028317305] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "GET",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/4de76b79-6c1e-4048-a20c-677b4bd45579",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872/tasks/b39fa581-24d2-4843-9b03-6aeb30bc5794",
       "path": "/boards/:boardId/tasks/:taskId",
       "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
-        "taskId": "4de76b79-6c1e-4048-a20c-677b4bd45579"
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872",
+        "taskId": "b39fa581-24d2-4843-9b03-6aeb30bc5794"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-1s"
-[1640025866302] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    reqId: "req-1f"
+[1640028317306] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 200
     }
-    responseTime: 1.3739999998360872
-    reqId: "req-1s"
-[1640025866321] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    responseTime: 0.6400999994948506
+    reqId: "req-1f"
+[1640028317311] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "DELETE",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/4de76b79-6c1e-4048-a20c-677b4bd45579",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872/tasks/b39fa581-24d2-4843-9b03-6aeb30bc5794",
       "path": "/boards/:boardId/tasks/:taskId",
       "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
-        "taskId": "4de76b79-6c1e-4048-a20c-677b4bd45579"
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872",
+        "taskId": "b39fa581-24d2-4843-9b03-6aeb30bc5794"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-1t"
-[1640025866321] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    reqId: "req-1g"
+[1640028317311] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
       "statusCode": 204
     }
-    responseTime: 0.49750000005587935
-    reqId: "req-1t"
-[1640025866328] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    responseTime: 0.38700000010430813
+    reqId: "req-1g"
+[1640028317320] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "GET",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/4de76b79-6c1e-4048-a20c-677b4bd45579",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872/tasks/b39fa581-24d2-4843-9b03-6aeb30bc5794",
       "path": "/boards/:boardId/tasks/:taskId",
       "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
-        "taskId": "4de76b79-6c1e-4048-a20c-677b4bd45579"
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872",
+        "taskId": "b39fa581-24d2-4843-9b03-6aeb30bc5794"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-1u"
-[1640025866329] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
+    reqId: "req-1h"
+[1640028317321] [31mERROR[39m (6316 on DESKTOP): [36mItem with this id not found[39m
+    Error: Item with this id not found
+        at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
+        at processTicksAndRejections (node:internal/process/task_queues:96:5)
+        at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
+[1640028317323] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 404
+      "statusCode": 500
     }
-    reqId: "req-1u"
-    err: {
-      "type": "CustomServerError",
-      "message": "Item with this id not found",
-      "stack":
-          Error: Item with this id not found
-              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
-              at processTicksAndRejections (node:internal/process/task_queues:96:5)
-              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
-      "statusCode": 404
-    }
-[1640025866330] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
-    res: {
-      "statusCode": 404
-    }
-    responseTime: 1.9980000001378357
-    reqId: "req-1u"
-[1640025866381] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    responseTime: 2.3711000001057982
+    reqId: "req-1h"
+[1640028317341] [32mINFO[39m (6316 on DESKTOP): [36mincoming request[39m
     req: {
       "method": "DELETE",
-      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698",
+      "url": "/boards/dcfb768f-e890-48e9-851e-ade97a1da872",
       "path": "/boards/:boardId",
       "parameters": {
-        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
+        "boardId": "dcfb768f-e890-48e9-851e-ade97a1da872"
       },
-      "headers": {
-        "host": "localhost:4000",
-        "accept-encoding": "gzip, deflate",
-        "connection": "close"
-      }
+      "queryParams": {}
     }
-    reqId: "req-1v"
-[1640025866382] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    reqId: "req-1i"
+[1640028317342] [31mERROR[39m (6316 on DESKTOP): [36mOops![39m
+    Error: Oops!
+        at Repository.getAllItems (file:///C:/projects/nodejs2021Q4-service/src/common/repository.ts:26:11)
+        at BaseService.getAll (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:28:28)
+        at BoardService.removeByIdWithConnectedTasks (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.service.ts:8:40)
+        at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:58:26)
+        at preHandlerCallback (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\handleRequest.js:126:28)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:158:7)
+        at Object.<anonymous> (file:///C:/projects/nodejs2021Q4-service/src/app.ts:40:3)
+        at hookIterator (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:237:10)
+        at next (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:164:16)
+        at hookRunner (C:\projects\nodejs2021Q4-service\node_modules\fastify\lib\hooks.js:187:3)
+[1640028317344] [32mINFO[39m (6316 on DESKTOP): [36mrequest completed[39m
     res: {
-      "statusCode": 204
+      "statusCode": 500
     }
-    responseTime: 0.614500000141561
-    reqId: "req-1v"
+    responseTime: 2.397599999792874
+    reqId: "req-1i"

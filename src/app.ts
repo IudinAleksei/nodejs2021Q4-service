@@ -1,6 +1,6 @@
 import fastify, { FastifyInstance } from 'fastify';
 import fastifySwagger, { FastifyStaticSwaggerOptions } from 'fastify-swagger';
-import { currentDirname } from './common/config';
+import { currentDirname, LOG_LEVEL } from './common/config';
 
 import { userRoutes } from './resources/users/user.router';
 import { boardRoutes } from './resources/boards/board.router';
@@ -12,11 +12,10 @@ import { taskRoutes } from './resources/tasks/task.router';
 export const app: FastifyInstance = fastify({
   logger: {
     prettyPrint: true,
-    level: 'info',
+    level: LOG_LEVEL,
     file: 'src/logs/log.txt',
     serializers: {
       res(reply) {
-        // The default
         return {
           statusCode: reply.statusCode,
         };
@@ -27,17 +26,26 @@ export const app: FastifyInstance = fastify({
           url: request.url,
           path: request.routerPath,
           parameters: request.params,
-          // Including the headers in the log could be in violation
-          // of privacy laws, e.g. GDPR. You should use the "redact" option to
-          // remove sensitive fields. It could also leak authentication data in
-          // the logs.
-          headers: request.headers,
+          queryParams: request.query,
         };
       },
     },
   },
 });
 
+app.addHook('preHandler', function (req, _, done) {
+  if (req.body) {
+    req.log.info({ body: req.body }, 'parsed body');
+  }
+  done();
+});
+
+app.setErrorHandler(function (error, request, reply) {
+  // Log error
+  this.log.error(error);
+  // Send error response
+  reply.status(500).send({ ok: false });
+});
 /**
  * @remarks This method register user routes
  */
