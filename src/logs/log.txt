@@ -1,0 +1,1682 @@
+[1640025821914] [32mINFO[39m (3448 on DESKTOP): [36mServer listening at http://127.0.0.1:4000[39m
+[1640025860844] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1"
+[1640025860861] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 13.551300000399351
+    reqId: "req-1"
+[1640025860920] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "67",
+        "connection": "close"
+      }
+    }
+    reqId: "req-2"
+[1640025860928] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 6.378100000321865
+    reqId: "req-2"
+[1640025860934] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/users/8c861a2c-c8d5-40e5-836f-a94b8b8ec183",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "8c861a2c-c8d5-40e5-836f-a94b8b8ec183"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-3"
+[1640025860936] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.3788999998942018
+    reqId: "req-3"
+[1640025860944] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/users/8c861a2c-c8d5-40e5-836f-a94b8b8ec183",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "8c861a2c-c8d5-40e5-836f-a94b8b8ec183"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-4"
+[1640025860946] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 1.2823000000789762
+    reqId: "req-4"
+[1640025860959] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "67",
+        "connection": "close"
+      }
+    }
+    reqId: "req-5"
+[1640025860963] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 3.339800000190735
+    reqId: "req-5"
+[1640025861003] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/users/34f88dc7-366f-453f-ada6-61c6850dbd68",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "34f88dc7-366f-453f-ada6-61c6850dbd68"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-6"
+[1640025861006] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 1.9533000001683831
+    reqId: "req-6"
+[1640025861063] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "67",
+        "connection": "close"
+      }
+    }
+    reqId: "req-7"
+[1640025861069] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 4.124299999792129
+    reqId: "req-7"
+[1640025861116] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "PUT",
+      "url": "/users/b85bd0b5-337d-4c75-bf59-3ffff2d9314b",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "b85bd0b5-337d-4c75-bf59-3ffff2d9314b"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "128",
+        "connection": "close"
+      }
+    }
+    reqId: "req-8"
+[1640025861121] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 2.3592999996617436
+    reqId: "req-8"
+[1640025861133] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/users/b85bd0b5-337d-4c75-bf59-3ffff2d9314b",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "b85bd0b5-337d-4c75-bf59-3ffff2d9314b"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-9"
+[1640025861137] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 2.837300000246614
+    reqId: "req-9"
+[1640025861145] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/users/b85bd0b5-337d-4c75-bf59-3ffff2d9314b",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "b85bd0b5-337d-4c75-bf59-3ffff2d9314b"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-a"
+[1640025861147] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 2.0525000002235174
+    reqId: "req-a"
+[1640025861161] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "content-length": "67",
+        "connection": "close"
+      }
+    }
+    reqId: "req-b"
+[1640025861167] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 5.132400000002235
+    reqId: "req-b"
+[1640025861173] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/users/bdd6c759-0939-4cac-83b3-542c27c123aa",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "bdd6c759-0939-4cac-83b3-542c27c123aa"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-c"
+[1640025861175] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.8804000001400709
+    reqId: "req-c"
+[1640025861193] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "accept": "application/json",
+        "content-length": "67",
+        "connection": "close"
+      }
+    }
+    reqId: "req-d"
+[1640025861200] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 6.723499999847263
+    reqId: "req-d"
+[1640025861213] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "accept": "application/json",
+        "content-length": "97",
+        "connection": "close"
+      }
+    }
+    reqId: "req-e"
+[1640025861220] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-e"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640025861261] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 46.04710000008345
+    reqId: "req-e"
+[1640025861270] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "accept": "application/json",
+        "content-length": "154",
+        "connection": "close"
+      }
+    }
+    reqId: "req-f"
+[1640025861276] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 4.611800000071526
+    reqId: "req-f"
+[1640025861277] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "accept": "application/json",
+        "content-length": "154",
+        "connection": "close"
+      }
+    }
+    reqId: "req-g"
+[1640025861283] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 3.122599999886006
+    reqId: "req-g"
+[1640025861313] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/users/45f7a996-3ac1-4e99-8aab-b7799686b2d0",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "45f7a996-3ac1-4e99-8aab-b7799686b2d0"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-h"
+[1640025861317] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 3.1682000001892447
+    reqId: "req-h"
+[1640025861329] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks/8ba4bee5-3440-4afe-8c0c-93052b9fdc51",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd",
+        "taskId": "8ba4bee5-3440-4afe-8c0c-93052b9fdc51"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-i"
+[1640025861332] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 2.6620999998413026
+    reqId: "req-i"
+[1640025861343] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks/abd4d21c-d1c1-493e-9293-2b965176e5b8",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd",
+        "taskId": "abd4d21c-d1c1-493e-9293-2b965176e5b8"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-j"
+[1640025861345] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.8704000003635883
+    reqId: "req-j"
+[1640025861363] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks/abd4d21c-d1c1-493e-9293-2b965176e5b8",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd",
+        "taskId": "abd4d21c-d1c1-493e-9293-2b965176e5b8"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-k"
+[1640025861366] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 2.060999999754131
+    reqId: "req-k"
+[1640025861369] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd/tasks/8ba4bee5-3440-4afe-8c0c-93052b9fdc51",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd",
+        "taskId": "8ba4bee5-3440-4afe-8c0c-93052b9fdc51"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-l"
+[1640025861371] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 1.3096999996341765
+    reqId: "req-l"
+[1640025861385] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/ee7d4446-abc7-48c9-9621-e3bf635229bd",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "ee7d4446-abc7-48c9-9621-e3bf635229bd"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-m"
+[1640025861390] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 3.979200000409037
+    reqId: "req-m"
+[1640025862754] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "97",
+        "connection": "close"
+      }
+    }
+    reqId: "req-n"
+[1640025862757] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-n"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640025862759] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 3.418599999975413
+    reqId: "req-n"
+[1640025862811] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-o"
+[1640025862812] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.8649999997578561
+    reqId: "req-o"
+[1640025862829] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-p"
+[1640025862830] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.8156000003218651
+    reqId: "req-p"
+[1640025862837] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/5388a261-a10b-4ec7-bf50-8e0d3d357561",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "5388a261-a10b-4ec7-bf50-8e0d3d357561"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-q"
+[1640025862839] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.4804000002332032
+    reqId: "req-q"
+[1640025862852] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "97",
+        "connection": "close"
+      }
+    }
+    reqId: "req-r"
+[1640025862854] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-r"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640025862855] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 3.067799999844283
+    reqId: "req-r"
+[1640025862863] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/87a9aa45-98b4-4ff1-b9fb-618a988913ce",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "87a9aa45-98b4-4ff1-b9fb-618a988913ce"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-s"
+[1640025862866] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 1.4288999997079372
+    reqId: "req-s"
+[1640025862899] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "97",
+        "connection": "close"
+      }
+    }
+    reqId: "req-t"
+[1640025862901] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-t"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640025862904] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 4.564800000283867
+    reqId: "req-t"
+[1640025862917] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "PUT",
+      "url": "/boards/9cc482a7-d9d4-47c6-b036-0c7d573862f6",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "9cc482a7-d9d4-47c6-b036-0c7d573862f6"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "237",
+        "connection": "close"
+      }
+    }
+    reqId: "req-u"
+[1640025862919] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-u"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:50:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640025862925] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 7.0441000000573695
+    reqId: "req-u"
+[1640025862942] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/9cc482a7-d9d4-47c6-b036-0c7d573862f6",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "9cc482a7-d9d4-47c6-b036-0c7d573862f6"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-v"
+[1640025862944] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.5685999998822808
+    reqId: "req-v"
+[1640025862952] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/9cc482a7-d9d4-47c6-b036-0c7d573862f6",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "9cc482a7-d9d4-47c6-b036-0c7d573862f6"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-w"
+[1640025862953] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.771900000050664
+    reqId: "req-w"
+[1640025863056] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "97",
+        "connection": "close"
+      }
+    }
+    reqId: "req-x"
+[1640025863059] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-x"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640025863062] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 4.905199999921024
+    reqId: "req-x"
+[1640025863068] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/7ae30360-5f87-459b-9e04-fd1c51279c2e",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "7ae30360-5f87-459b-9e04-fd1c51279c2e"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-y"
+[1640025863070] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 1.8614999996498227
+    reqId: "req-y"
+[1640025863079] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/7ae30360-5f87-459b-9e04-fd1c51279c2e",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "7ae30360-5f87-459b-9e04-fd1c51279c2e"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-z"
+[1640025863082] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
+    res: {
+      "statusCode": 404
+    }
+    reqId: "req-z"
+    err: {
+      "type": "CustomServerError",
+      "message": "Item with this id not found",
+      "stack":
+          Error: Item with this id not found
+              at BoardService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:22:21)
+      "statusCode": 404
+    }
+[1640025863089] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 9.534300000406802
+    reqId: "req-z"
+[1640025863177] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "97",
+        "connection": "close"
+      }
+    }
+    reqId: "req-10"
+[1640025863179] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-10"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640025863182] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 4.1817999999038875
+    reqId: "req-10"
+[1640025863206] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "accept": "application/json",
+        "content-length": "136",
+        "connection": "close"
+      }
+    }
+    reqId: "req-11"
+[1640025863209] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.9687000000849366
+    reqId: "req-11"
+[1640025863209] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "accept": "application/json",
+        "content-length": "136",
+        "connection": "close"
+      }
+    }
+    reqId: "req-12"
+[1640025863211] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.979700000025332
+    reqId: "req-12"
+[1640025863212] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "accept": "application/json",
+        "content-length": "136",
+        "connection": "close"
+      }
+    }
+    reqId: "req-13"
+[1640025863214] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.7722000000067055
+    reqId: "req-13"
+[1640025863217] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "accept": "application/json",
+        "content-length": "136",
+        "connection": "close"
+      }
+    }
+    reqId: "req-14"
+[1640025863219] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.181499999947846
+    reqId: "req-14"
+[1640025863220] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "content-type": "application/json",
+        "accept": "application/json",
+        "content-length": "136",
+        "connection": "close"
+      }
+    }
+    reqId: "req-15"
+[1640025863223] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.645299999974668
+    reqId: "req-15"
+[1640025863309] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/6ddd2ad8-72f3-411a-9cd5-e0d2bae08027",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
+        "taskId": "6ddd2ad8-72f3-411a-9cd5-e0d2bae08027"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-16"
+[1640025863310] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.8755000000819564
+    reqId: "req-16"
+[1640025863312] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/5c16b820-7852-4bac-b72e-b21b638921aa",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
+        "taskId": "5c16b820-7852-4bac-b72e-b21b638921aa"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-17"
+[1640025863314] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.151500000152737
+    reqId: "req-17"
+[1640025863318] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/5e324058-98cf-4beb-a04b-49be80f1d2f8",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
+        "taskId": "5e324058-98cf-4beb-a04b-49be80f1d2f8"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-18"
+[1640025863320] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.0561000001616776
+    reqId: "req-18"
+[1640025863321] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/700edbc9-aa6c-4841-bfdf-2b5eaa31af5c",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
+        "taskId": "700edbc9-aa6c-4841-bfdf-2b5eaa31af5c"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-19"
+[1640025863322] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.7272000000812113
+    reqId: "req-19"
+[1640025863323] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/14cafae3-ca30-4b6b-848b-ce2b29e225c9",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
+        "taskId": "14cafae3-ca30-4b6b-848b-ce2b29e225c9"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1a"
+[1640025863324] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.6502999998629093
+    reqId: "req-1a"
+[1640025863348] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1b"
+[1640025863351] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 1.1389000001363456
+    reqId: "req-1b"
+[1640025863371] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/6ddd2ad8-72f3-411a-9cd5-e0d2bae08027",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
+        "taskId": "6ddd2ad8-72f3-411a-9cd5-e0d2bae08027"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1c"
+[1640025863373] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
+    res: {
+      "statusCode": 404
+    }
+    reqId: "req-1c"
+    err: {
+      "type": "CustomServerError",
+      "message": "Item with this id not found",
+      "stack":
+          Error: Item with this id not found
+              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
+      "statusCode": 404
+    }
+[1640025863377] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 5.203099999576807
+    reqId: "req-1c"
+[1640025863379] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/5c16b820-7852-4bac-b72e-b21b638921aa",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
+        "taskId": "5c16b820-7852-4bac-b72e-b21b638921aa"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1d"
+[1640025863379] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
+    res: {
+      "statusCode": 404
+    }
+    reqId: "req-1d"
+    err: {
+      "type": "CustomServerError",
+      "message": "Item with this id not found",
+      "stack":
+          Error: Item with this id not found
+              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
+      "statusCode": 404
+    }
+[1640025863384] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 4.466699999757111
+    reqId: "req-1d"
+[1640025863385] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/5e324058-98cf-4beb-a04b-49be80f1d2f8",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
+        "taskId": "5e324058-98cf-4beb-a04b-49be80f1d2f8"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1e"
+[1640025863386] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
+    res: {
+      "statusCode": 404
+    }
+    reqId: "req-1e"
+    err: {
+      "type": "CustomServerError",
+      "message": "Item with this id not found",
+      "stack":
+          Error: Item with this id not found
+              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
+      "statusCode": 404
+    }
+[1640025863389] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 3.180900000035763
+    reqId: "req-1e"
+[1640025863390] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/700edbc9-aa6c-4841-bfdf-2b5eaa31af5c",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
+        "taskId": "700edbc9-aa6c-4841-bfdf-2b5eaa31af5c"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1f"
+[1640025863391] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
+    res: {
+      "statusCode": 404
+    }
+    reqId: "req-1f"
+    err: {
+      "type": "CustomServerError",
+      "message": "Item with this id not found",
+      "stack":
+          Error: Item with this id not found
+              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
+      "statusCode": 404
+    }
+[1640025863393] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 1.9874999998137355
+    reqId: "req-1f"
+[1640025863394] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/ffe0bc78-1451-4138-965b-8506bba1b359/tasks/14cafae3-ca30-4b6b-848b-ce2b29e225c9",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "ffe0bc78-1451-4138-965b-8506bba1b359",
+        "taskId": "14cafae3-ca30-4b6b-848b-ce2b29e225c9"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1g"
+[1640025863395] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
+    res: {
+      "statusCode": 404
+    }
+    reqId: "req-1g"
+    err: {
+      "type": "CustomServerError",
+      "message": "Item with this id not found",
+      "stack":
+          Error: Item with this id not found
+              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
+      "statusCode": 404
+    }
+[1640025863400] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 6.1222999999299645
+    reqId: "req-1g"
+[1640025863500] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/5388a261-a10b-4ec7-bf50-8e0d3d357561",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "5388a261-a10b-4ec7-bf50-8e0d3d357561"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1h"
+[1640025863501] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.7814000002108514
+    reqId: "req-1h"
+[1640025865659] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "97",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1i"
+[1640025865660] [31mERROR[39m (3448 on DESKTOP): [36mPromise errored, but reply.sent = true was set[39m
+    reqId: "req-1i"
+    err: {
+      "type": "CustomServerError",
+      "message": "Database error, please try later",
+      "stack":
+          Error: Database error, please try later
+              at Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/boards/board.router.ts:36:13)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "statusCode": 500
+    }
+[1640025865662] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 2.5794000001624227
+    reqId: "req-1i"
+[1640025865671] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "108",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1j"
+[1640025865673] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.860599999781698
+    reqId: "req-1j"
+[1640025865945] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1k"
+[1640025865947] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.8034000000916421
+    reqId: "req-1k"
+[1640025866113] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1l"
+[1640025866115] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.2138999998569489
+    reqId: "req-1l"
+[1640025866123] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/4de76b79-6c1e-4048-a20c-677b4bd45579",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
+        "taskId": "4de76b79-6c1e-4048-a20c-677b4bd45579"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1m"
+[1640025866125] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.8695999998599291
+    reqId: "req-1m"
+[1640025866142] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "108",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1n"
+[1640025866143] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.1225999998860061
+    reqId: "req-1n"
+[1640025866152] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/7e0ff791-5af0-4741-9bd5-ad9335b453de",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
+        "taskId": "7e0ff791-5af0-4741-9bd5-ad9335b453de"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1o"
+[1640025866153] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.8009999999776483
+    reqId: "req-1o"
+[1640025866170] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "POST",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "108",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1p"
+[1640025866172] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.4537999997846782
+    reqId: "req-1p"
+[1640025866180] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "PUT",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/d21757a4-7f4e-40b0-b14b-06bee748b235",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
+        "taskId": "d21757a4-7f4e-40b0-b14b-06bee748b235"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "content-type": "application/json",
+        "content-length": "194",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1q"
+[1640025866181] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.2568999999202788
+    reqId: "req-1q"
+[1640025866195] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/d21757a4-7f4e-40b0-b14b-06bee748b235",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
+        "taskId": "d21757a4-7f4e-40b0-b14b-06bee748b235"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "accept": "application/json",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1r"
+[1640025866196] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.6243000002577901
+    reqId: "req-1r"
+[1640025866300] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/4de76b79-6c1e-4048-a20c-677b4bd45579",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
+        "taskId": "4de76b79-6c1e-4048-a20c-677b4bd45579"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1s"
+[1640025866302] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.3739999998360872
+    reqId: "req-1s"
+[1640025866321] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/4de76b79-6c1e-4048-a20c-677b4bd45579",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
+        "taskId": "4de76b79-6c1e-4048-a20c-677b4bd45579"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1t"
+[1640025866321] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.49750000005587935
+    reqId: "req-1t"
+[1640025866328] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "GET",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698/tasks/4de76b79-6c1e-4048-a20c-677b4bd45579",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698",
+        "taskId": "4de76b79-6c1e-4048-a20c-677b4bd45579"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1u"
+[1640025866329] [32mINFO[39m (3448 on DESKTOP): [36mItem with this id not found[39m
+    res: {
+      "statusCode": 404
+    }
+    reqId: "req-1u"
+    err: {
+      "type": "CustomServerError",
+      "message": "Item with this id not found",
+      "stack":
+          Error: Item with this id not found
+              at BaseService.getById (file:///C:/projects/nodejs2021Q4-service/src/common/base-service.ts:43:11)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+              at async Object.handler (file:///C:/projects/nodejs2021Q4-service/src/resources/tasks/task.router.ts:20:20)
+      "statusCode": 404
+    }
+[1640025866330] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 1.9980000001378357
+    reqId: "req-1u"
+[1640025866381] [32mINFO[39m (3448 on DESKTOP): [36mincoming request[39m
+    req: {
+      "method": "DELETE",
+      "url": "/boards/a2484a08-290d-4218-95bf-61bb7cf5a698",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "a2484a08-290d-4218-95bf-61bb7cf5a698"
+      },
+      "headers": {
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate",
+        "connection": "close"
+      }
+    }
+    reqId: "req-1v"
+[1640025866382] [32mINFO[39m (3448 on DESKTOP): [36mrequest completed[39m
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.614500000141561
+    reqId: "req-1v"
