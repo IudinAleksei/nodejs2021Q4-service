@@ -69,4 +69,17 @@ export class BaseService<T extends IDBItem> {
     await this.getById(id);
     await this.repository.removeItem(id);
   }
+
+  /**
+   * Async func try to delete item from database via this service method {@link removeById} and add new data after this.
+   *
+   * @param item - Item that will be updated in database
+   * @returns Passed item from database
+   * @throws custom error {@link CustomServerError} {@link HTTP_ERRORS_INFO.notFound} if passed item not found in database via {@link getById} method executing
+   * @throws custom error {@link CustomServerError} {@link HTTP_ERRORS_INFO.db} if passed item not found in database via {@link addItem} after adding
+   */
+  async updateItem(item: T): Promise<T> | never {
+    await this.removeById(item.id);
+    return this.addItem(item);
+  }
 }
