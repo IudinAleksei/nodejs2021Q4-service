@@ -7,18 +7,27 @@ const TRANSPORT_CONFIG: TransportMultiOptions = {
     {
       level: LOG_LEVEL,
       target: 'pino-pretty',
-      options: { destination: 'src/logs/info.log' },
+      options: {
+        destination: 'src/logs/info.log',
+        colorize: false,
+        translateTime: true,
+      },
     },
     {
       level: 'error',
       target: 'pino-pretty',
-      options: { destination: 'src/logs/errors.log' },
+      options: {
+        destination: 'src/logs/errors.log',
+        colorize: false,
+        translateTime: true,
+      },
     },
   ],
 };
 
 const LOGGER_CONFIG: LoggerOptions = {
   transport: TRANSPORT_CONFIG,
+  level: LOG_LEVEL,
   serializers: {
     res(reply) {
       return {
@@ -41,7 +50,7 @@ export const logger = pino(LOGGER_CONFIG);
 
 export const requestBodyLogger: preHandlerHookHandler = (req, _, done) => {
   if (req.body) {
-    req.log.info({ body: req.body }, 'parsed body');
+    req.log.debug({ body: req.body }, 'parsed body');
   }
   done();
 };
