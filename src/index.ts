@@ -24,11 +24,12 @@ const start = async () => {
 };
 
 process.on('unhandledRejection', (reason) => {
-  logger.error(reason);
+  logger.fatal(reason);
+  exit(1);
 });
 
-process.on('uncaughtException', (err) => {
-  logger.fatal(err.message);
+process.on('uncaughtException', (error) => {
+  logger.fatal(error);
   exit(1);
 });
 

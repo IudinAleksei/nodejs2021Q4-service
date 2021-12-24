@@ -22,6 +22,13 @@ const TRANSPORT_CONFIG: TransportMultiOptions = {
         translateTime: true,
       },
     },
+    {
+      level: 'silent',
+      target: 'pino/file',
+      options: {
+        destination: 'src/logs/errors.log',
+      },
+    },
   ],
 };
 
@@ -50,7 +57,7 @@ export const logger = pino(LOGGER_CONFIG);
 
 export const requestBodyLogger: preHandlerHookHandler = (req, _, done) => {
   if (req.body) {
-    req.log.debug({ body: req.body }, 'parsed body');
+    req.log.info({ body: req.body }, 'parsed body');
   }
   done();
 };
