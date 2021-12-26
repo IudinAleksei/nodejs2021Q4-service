@@ -8,7 +8,7 @@ const TRANSPORT_CONFIG: TransportMultiOptions = {
       level: LOG_LEVEL,
       target: 'pino-pretty',
       options: {
-        destination: 'src/logs/info.log',
+        destination: 'logs/info.log',
         colorize: false,
         translateTime: true,
       },
@@ -17,7 +17,7 @@ const TRANSPORT_CONFIG: TransportMultiOptions = {
       level: 'error',
       target: 'pino-pretty',
       options: {
-        destination: 'src/logs/errors.log',
+        destination: 'logs/errors.log',
         colorize: false,
         translateTime: true,
       },
@@ -26,7 +26,7 @@ const TRANSPORT_CONFIG: TransportMultiOptions = {
       level: 'silent',
       target: 'pino/file',
       options: {
-        destination: 'src/logs/errors.log',
+        destination: 'logs/errors.log',
       },
     },
   ],

@@ -1,0 +1,1407 @@
+[2021-12-26 08:11:57.911 +0000] INFO (5412 on DESKTOP): Server listening at http://127.0.0.1:4000
+[2021-12-26 08:11:57.912 +0000] INFO (5412 on DESKTOP): server listening on 4000
+[2021-12-26 08:12:44.464 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1"
+    req: {
+      "method": "GET",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.475 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 9.580399999860674
+[2021-12-26 08:12:44.504 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-2"
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.507 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-2"
+    body: {
+      "name": "TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd"
+    }
+[2021-12-26 08:12:44.509 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-2"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 5.955099999904633
+[2021-12-26 08:12:44.518 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-3"
+    req: {
+      "method": "GET",
+      "url": "/users/227a9aba-abb5-4a2e-ab72-38976f71e685",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "227a9aba-abb5-4a2e-ab72-38976f71e685"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.518 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-3"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.815399999730289
+[2021-12-26 08:12:44.526 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-4"
+    req: {
+      "method": "DELETE",
+      "url": "/users/227a9aba-abb5-4a2e-ab72-38976f71e685",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "227a9aba-abb5-4a2e-ab72-38976f71e685"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.527 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-4"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 1.5222999998368323
+[2021-12-26 08:12:44.535 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-5"
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.538 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-5"
+    body: {
+      "name": "TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd"
+    }
+[2021-12-26 08:12:44.539 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-5"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 2.8471000003628433
+[2021-12-26 08:12:44.549 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-6"
+    req: {
+      "method": "DELETE",
+      "url": "/users/a1998ce0-f549-4c86-81e6-2645dbb8333d",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "a1998ce0-f549-4c86-81e6-2645dbb8333d"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.550 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-6"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.7759999996051192
+[2021-12-26 08:12:44.555 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-7"
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.555 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-7"
+    body: {
+      "name": "TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd"
+    }
+[2021-12-26 08:12:44.556 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-7"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.3236000002361834
+[2021-12-26 08:12:44.567 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-8"
+    req: {
+      "method": "PUT",
+      "url": "/users/91cb8404-2b62-4d62-89d6-215e0a439dd4",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "91cb8404-2b62-4d62-89d6-215e0a439dd4"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.567 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-8"
+    body: {
+      "name": "Autotest updated TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd",
+      "id": "91cb8404-2b62-4d62-89d6-215e0a439dd4"
+    }
+[2021-12-26 08:12:44.569 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-8"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.6565000000409782
+[2021-12-26 08:12:44.576 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-9"
+    req: {
+      "method": "GET",
+      "url": "/users/91cb8404-2b62-4d62-89d6-215e0a439dd4",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "91cb8404-2b62-4d62-89d6-215e0a439dd4"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.578 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-9"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.1654000002890825
+[2021-12-26 08:12:44.583 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-a"
+    req: {
+      "method": "DELETE",
+      "url": "/users/91cb8404-2b62-4d62-89d6-215e0a439dd4",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "91cb8404-2b62-4d62-89d6-215e0a439dd4"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.585 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-a"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 1.0292999995872378
+[2021-12-26 08:12:44.591 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-b"
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.591 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-b"
+    body: {
+      "name": "TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd"
+    }
+[2021-12-26 08:12:44.593 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-b"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.6080999998375773
+[2021-12-26 08:12:44.598 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-c"
+    req: {
+      "method": "DELETE",
+      "url": "/users/51b172ee-a61a-45c8-8ece-2ecee7dac191",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "51b172ee-a61a-45c8-8ece-2ecee7dac191"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.599 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-c"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.9053000002168119
+[2021-12-26 08:12:44.606 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-d"
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "path": "/users",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.606 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-d"
+    body: {
+      "name": "TEST_USER",
+      "login": "test_user",
+      "password": "T35t_P@55w0rd"
+    }
+[2021-12-26 08:12:44.609 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-d"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.9161000000312924
+[2021-12-26 08:12:44.619 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-e"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.619 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-e"
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+[2021-12-26 08:12:44.622 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-e"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 2.118100000079721
+[2021-12-26 08:12:44.632 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-f"
+    req: {
+      "method": "POST",
+      "url": "/boards/0d8d35ab-2fbc-41cd-a278-ea6bcada2a74/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "0d8d35ab-2fbc-41cd-a278-ea6bcada2a74"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.632 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-f"
+    body: {
+      "title": "Task #1",
+      "order": 1,
+      "description": "Lorem ipsum",
+      "userId": "ae4e70a0-c483-4488-8624-071238f379b5",
+      "boardId": "0d8d35ab-2fbc-41cd-a278-ea6bcada2a74"
+    }
+[2021-12-26 08:12:44.634 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-f"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.9372999998740852
+[2021-12-26 08:12:44.634 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-g"
+    req: {
+      "method": "POST",
+      "url": "/boards/0d8d35ab-2fbc-41cd-a278-ea6bcada2a74/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "0d8d35ab-2fbc-41cd-a278-ea6bcada2a74"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.635 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-g"
+    body: {
+      "title": "Task #2",
+      "order": 2,
+      "description": "Lorem ipsum",
+      "userId": "ae4e70a0-c483-4488-8624-071238f379b5",
+      "boardId": "0d8d35ab-2fbc-41cd-a278-ea6bcada2a74"
+    }
+[2021-12-26 08:12:44.636 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-g"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.2716999999247491
+[2021-12-26 08:12:44.640 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-h"
+    req: {
+      "method": "DELETE",
+      "url": "/users/ae4e70a0-c483-4488-8624-071238f379b5",
+      "path": "/users/:userId",
+      "parameters": {
+        "userId": "ae4e70a0-c483-4488-8624-071238f379b5"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.642 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-h"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 1.0759000000543892
+[2021-12-26 08:12:44.647 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-i"
+    req: {
+      "method": "GET",
+      "url": "/boards/0d8d35ab-2fbc-41cd-a278-ea6bcada2a74/tasks/50a41f1c-a8ad-4fc8-b427-7ace06ccd64b",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "0d8d35ab-2fbc-41cd-a278-ea6bcada2a74",
+        "taskId": "50a41f1c-a8ad-4fc8-b427-7ace06ccd64b"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.648 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-i"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.5652999999001622
+[2021-12-26 08:12:44.652 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-j"
+    req: {
+      "method": "GET",
+      "url": "/boards/0d8d35ab-2fbc-41cd-a278-ea6bcada2a74/tasks/98fd7cb5-f377-47d7-a832-31258de748c7",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "0d8d35ab-2fbc-41cd-a278-ea6bcada2a74",
+        "taskId": "98fd7cb5-f377-47d7-a832-31258de748c7"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.652 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-j"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.47720000008121133
+[2021-12-26 08:12:44.657 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-k"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/0d8d35ab-2fbc-41cd-a278-ea6bcada2a74/tasks/50a41f1c-a8ad-4fc8-b427-7ace06ccd64b",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "0d8d35ab-2fbc-41cd-a278-ea6bcada2a74",
+        "taskId": "50a41f1c-a8ad-4fc8-b427-7ace06ccd64b"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.658 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-k"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.8136999998241663
+[2021-12-26 08:12:44.659 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-l"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/0d8d35ab-2fbc-41cd-a278-ea6bcada2a74/tasks/98fd7cb5-f377-47d7-a832-31258de748c7",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "0d8d35ab-2fbc-41cd-a278-ea6bcada2a74",
+        "taskId": "98fd7cb5-f377-47d7-a832-31258de748c7"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.659 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-l"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.5942999999970198
+[2021-12-26 08:12:44.663 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-m"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/0d8d35ab-2fbc-41cd-a278-ea6bcada2a74",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "0d8d35ab-2fbc-41cd-a278-ea6bcada2a74"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:44.663 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-m"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.7867999998852611
+[2021-12-26 08:12:45.267 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-n"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.268 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-n"
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+[2021-12-26 08:12:45.269 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-n"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.7730000000447035
+[2021-12-26 08:12:45.308 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-o"
+    req: {
+      "method": "GET",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.308 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-o"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.7140999999828637
+[2021-12-26 08:12:45.325 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-p"
+    req: {
+      "method": "GET",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.326 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-p"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.7880000001750886
+[2021-12-26 08:12:45.332 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-q"
+    req: {
+      "method": "GET",
+      "url": "/boards/90575507-eac8-4c4e-b85d-c31488a4fd73",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "90575507-eac8-4c4e-b85d-c31488a4fd73"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.333 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-q"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.1151000000536442
+[2021-12-26 08:12:45.343 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-r"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.343 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-r"
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+[2021-12-26 08:12:45.344 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-r"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.1568999998271465
+[2021-12-26 08:12:45.351 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-s"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/9d1172a2-0215-40e1-b53c-20301df6eb5a",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "9d1172a2-0215-40e1-b53c-20301df6eb5a"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.351 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-s"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.5194999999366701
+[2021-12-26 08:12:45.359 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-t"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.361 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-t"
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+[2021-12-26 08:12:45.361 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-t"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.4037999999709427
+[2021-12-26 08:12:45.366 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-u"
+    req: {
+      "method": "PUT",
+      "url": "/boards/25c1e905-a275-460b-9742-c04bffa48f8a",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "25c1e905-a275-460b-9742-c04bffa48f8a"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.366 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-u"
+    body: {
+      "id": "25c1e905-a275-460b-9742-c04bffa48f8a",
+      "title": "Autotest updated board",
+      "columns": [
+        {
+          "id": "0bb87baa-e343-4d31-9d91-f05cb5a6a838",
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "id": "90fb6564-11ff-4a32-bc76-b3209da3db4e",
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+[2021-12-26 08:12:45.366 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-u"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.0320999999530613
+[2021-12-26 08:12:45.373 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-v"
+    req: {
+      "method": "GET",
+      "url": "/boards/25c1e905-a275-460b-9742-c04bffa48f8a",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "25c1e905-a275-460b-9742-c04bffa48f8a"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.374 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-v"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.1043000002391636
+[2021-12-26 08:12:45.379 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-w"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/25c1e905-a275-460b-9742-c04bffa48f8a",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "25c1e905-a275-460b-9742-c04bffa48f8a"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.381 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-w"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.6510999999009073
+[2021-12-26 08:12:45.389 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-x"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.389 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-x"
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+[2021-12-26 08:12:45.391 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-x"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.717499999795109
+[2021-12-26 08:12:45.397 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-y"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/c1648591-d448-46fa-b642-4c9fc90ca9c3",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "c1648591-d448-46fa-b642-4c9fc90ca9c3"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.397 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-y"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.6041000001132488
+[2021-12-26 08:12:45.416 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-z"
+    req: {
+      "method": "GET",
+      "url": "/boards/c1648591-d448-46fa-b642-4c9fc90ca9c3",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "c1648591-d448-46fa-b642-4c9fc90ca9c3"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.416 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-z"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 1.5027999999001622
+[2021-12-26 08:12:45.426 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-10"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.426 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-10"
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+[2021-12-26 08:12:45.426 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-10"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.2576999999582767
+[2021-12-26 08:12:45.450 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-11"
+    req: {
+      "method": "POST",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.451 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-11"
+    body: {
+      "title": "Task #1",
+      "order": 1,
+      "description": "Lorem ipsum",
+      "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+      "userId": null,
+      "columnId": null
+    }
+[2021-12-26 08:12:45.452 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-11"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.375499999616295
+[2021-12-26 08:12:45.452 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-12"
+    req: {
+      "method": "POST",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.453 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-12"
+    body: {
+      "title": "Task #2",
+      "order": 2,
+      "description": "Lorem ipsum",
+      "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+      "userId": null,
+      "columnId": null
+    }
+[2021-12-26 08:12:45.453 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-12"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.338699999731034
+[2021-12-26 08:12:45.454 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-13"
+    req: {
+      "method": "POST",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.455 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-13"
+    body: {
+      "title": "Task #3",
+      "order": 3,
+      "description": "Lorem ipsum",
+      "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+      "userId": null,
+      "columnId": null
+    }
+[2021-12-26 08:12:45.455 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-13"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.9525999999605119
+[2021-12-26 08:12:45.456 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-14"
+    req: {
+      "method": "POST",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.456 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-14"
+    body: {
+      "title": "Task #4",
+      "order": 4,
+      "description": "Lorem ipsum",
+      "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+      "userId": null,
+      "columnId": null
+    }
+[2021-12-26 08:12:45.457 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-14"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.008400000166148
+[2021-12-26 08:12:45.457 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-15"
+    req: {
+      "method": "POST",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.458 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-15"
+    body: {
+      "title": "Task #5",
+      "order": 5,
+      "description": "Lorem ipsum",
+      "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+      "userId": null,
+      "columnId": null
+    }
+[2021-12-26 08:12:45.459 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-15"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.495399999897927
+[2021-12-26 08:12:45.475 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-16"
+    req: {
+      "method": "GET",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks/c82903f0-e983-42eb-830d-bbc3b74f3885",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+        "taskId": "c82903f0-e983-42eb-830d-bbc3b74f3885"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.476 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-16"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.7954000001773238
+[2021-12-26 08:12:45.476 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-17"
+    req: {
+      "method": "GET",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks/99a96818-9f34-41c2-873e-ac358273909f",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+        "taskId": "99a96818-9f34-41c2-873e-ac358273909f"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.477 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-17"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.6705999998375773
+[2021-12-26 08:12:45.477 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-18"
+    req: {
+      "method": "GET",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks/b104197f-c6d7-4890-bc51-3d6ddb614604",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+        "taskId": "b104197f-c6d7-4890-bc51-3d6ddb614604"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.478 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-18"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.5247999997809529
+[2021-12-26 08:12:45.479 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-19"
+    req: {
+      "method": "GET",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks/497c7460-a4fb-4e83-8de5-02f15afa5e57",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+        "taskId": "497c7460-a4fb-4e83-8de5-02f15afa5e57"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.479 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-19"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.6466999999247491
+[2021-12-26 08:12:45.480 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1a"
+    req: {
+      "method": "GET",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks/2a35094e-9170-4fba-b0d3-cc9366c3b873",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+        "taskId": "2a35094e-9170-4fba-b0d3-cc9366c3b873"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.481 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1a"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.8618999999016523
+[2021-12-26 08:12:45.487 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1b"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.489 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1b"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.7569999997504056
+[2021-12-26 08:12:45.500 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1c"
+    req: {
+      "method": "GET",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks/c82903f0-e983-42eb-830d-bbc3b74f3885",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+        "taskId": "c82903f0-e983-42eb-830d-bbc3b74f3885"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.501 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1c"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.7557999999262393
+[2021-12-26 08:12:45.502 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1d"
+    req: {
+      "method": "GET",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks/99a96818-9f34-41c2-873e-ac358273909f",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+        "taskId": "99a96818-9f34-41c2-873e-ac358273909f"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.503 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1d"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.7263000002130866
+[2021-12-26 08:12:45.504 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1e"
+    req: {
+      "method": "GET",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks/b104197f-c6d7-4890-bc51-3d6ddb614604",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+        "taskId": "b104197f-c6d7-4890-bc51-3d6ddb614604"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.504 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1e"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.5979000004008412
+[2021-12-26 08:12:45.506 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1f"
+    req: {
+      "method": "GET",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks/497c7460-a4fb-4e83-8de5-02f15afa5e57",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+        "taskId": "497c7460-a4fb-4e83-8de5-02f15afa5e57"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.506 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1f"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.5058000003919005
+[2021-12-26 08:12:45.506 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1g"
+    req: {
+      "method": "GET",
+      "url": "/boards/32143bfd-6f59-4946-97bb-baa992b91ed8/tasks/2a35094e-9170-4fba-b0d3-cc9366c3b873",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "32143bfd-6f59-4946-97bb-baa992b91ed8",
+        "taskId": "2a35094e-9170-4fba-b0d3-cc9366c3b873"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.507 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1g"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.36590000009164214
+[2021-12-26 08:12:45.512 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1h"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/90575507-eac8-4c4e-b85d-c31488a4fd73",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "90575507-eac8-4c4e-b85d-c31488a4fd73"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:45.512 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1h"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.41159999975934625
+[2021-12-26 08:12:46.281 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1i"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "path": "/boards",
+      "parameters": {},
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.283 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-1i"
+    body: {
+      "title": "Autotest board",
+      "columns": [
+        {
+          "title": "Backlog",
+          "order": 1
+        },
+        {
+          "title": "Sprint",
+          "order": 2
+        }
+      ]
+    }
+[2021-12-26 08:12:46.283 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1i"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.2549999998882413
+[2021-12-26 08:12:46.289 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1j"
+    req: {
+      "method": "POST",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.290 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-1j"
+    body: {
+      "title": "Autotest task",
+      "order": 0,
+      "description": "Lorem ipsum",
+      "userId": null,
+      "boardId": null,
+      "columnId": null
+    }
+[2021-12-26 08:12:46.290 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1j"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.8900000001303852
+[2021-12-26 08:12:46.324 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1k"
+    req: {
+      "method": "GET",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.325 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1k"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.7977999998256564
+[2021-12-26 08:12:46.346 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1l"
+    req: {
+      "method": "GET",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.346 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1l"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.619100000243634
+[2021-12-26 08:12:46.354 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1m"
+    req: {
+      "method": "GET",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks/a9db0e89-9a8e-4f5a-bb86-65e277c718ed",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29",
+        "taskId": "a9db0e89-9a8e-4f5a-bb86-65e277c718ed"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.355 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1m"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.6146999998018146
+[2021-12-26 08:12:46.366 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1n"
+    req: {
+      "method": "POST",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.366 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-1n"
+    body: {
+      "title": "Autotest task",
+      "order": 0,
+      "description": "Lorem ipsum",
+      "userId": null,
+      "boardId": null,
+      "columnId": null
+    }
+[2021-12-26 08:12:46.367 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1n"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.1176999998278916
+[2021-12-26 08:12:46.373 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1o"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks/abd022e6-2237-44fc-8816-5c1f7b20bfed",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29",
+        "taskId": "abd022e6-2237-44fc-8816-5c1f7b20bfed"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.373 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1o"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.3762000002898276
+[2021-12-26 08:12:46.379 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1p"
+    req: {
+      "method": "POST",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks",
+      "path": "/boards/:boardId/tasks",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.379 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-1p"
+    body: {
+      "title": "Autotest task",
+      "order": 0,
+      "description": "Lorem ipsum",
+      "userId": null,
+      "boardId": null,
+      "columnId": null
+    }
+[2021-12-26 08:12:46.381 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1p"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.1006000000052154
+[2021-12-26 08:12:46.387 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1q"
+    req: {
+      "method": "PUT",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks/a4855b56-6be1-4f54-aea4-983b2d131647",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29",
+        "taskId": "a4855b56-6be1-4f54-aea4-983b2d131647"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.387 +0000] INFO (5412 on DESKTOP): parsed body
+    reqId: "req-1q"
+    body: {
+      "id": "a4855b56-6be1-4f54-aea4-983b2d131647",
+      "title": "Autotest updated task",
+      "order": 0,
+      "description": "Lorem ipsum",
+      "userId": null,
+      "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29",
+      "columnId": null
+    }
+[2021-12-26 08:12:46.388 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1q"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.4255999997258186
+[2021-12-26 08:12:46.392 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1r"
+    req: {
+      "method": "GET",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks/a4855b56-6be1-4f54-aea4-983b2d131647",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29",
+        "taskId": "a4855b56-6be1-4f54-aea4-983b2d131647"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.394 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1r"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.44469999987632036
+[2021-12-26 08:12:46.403 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1s"
+    req: {
+      "method": "GET",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks/a9db0e89-9a8e-4f5a-bb86-65e277c718ed",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29",
+        "taskId": "a9db0e89-9a8e-4f5a-bb86-65e277c718ed"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.404 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1s"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.0196000002324581
+[2021-12-26 08:12:46.407 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1t"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks/a9db0e89-9a8e-4f5a-bb86-65e277c718ed",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29",
+        "taskId": "a9db0e89-9a8e-4f5a-bb86-65e277c718ed"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.407 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1t"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.37960000010207295
+[2021-12-26 08:12:46.415 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1u"
+    req: {
+      "method": "GET",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29/tasks/a9db0e89-9a8e-4f5a-bb86-65e277c718ed",
+      "path": "/boards/:boardId/tasks/:taskId",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29",
+        "taskId": "a9db0e89-9a8e-4f5a-bb86-65e277c718ed"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.415 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1u"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.448100000154227
+[2021-12-26 08:12:46.421 +0000] INFO (5412 on DESKTOP): incoming request
+    reqId: "req-1v"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/81c3eb03-254b-4430-b7b6-16fd503ebe29",
+      "path": "/boards/:boardId",
+      "parameters": {
+        "boardId": "81c3eb03-254b-4430-b7b6-16fd503ebe29"
+      },
+      "queryParams": {}
+    }
+[2021-12-26 08:12:46.423 +0000] INFO (5412 on DESKTOP): request completed
+    reqId: "req-1v"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.47999999998137355
