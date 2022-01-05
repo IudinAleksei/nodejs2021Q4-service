@@ -13,7 +13,7 @@ import { logger } from './common/logger';
 
 const start = async () => {
   try {
-    await app.listen(PORT);
+    await app.listen(PORT, '0.0.0.0');
     const runningPort = (app.server.address() as AddressInfo).port;
 
     logger.info(`server listening on ${runningPort}`);

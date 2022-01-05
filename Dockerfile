@@ -4,10 +4,10 @@ WORKDIR /src
 
 COPY package*.json .
 
-RUN npm install
+RUN npm install --production --silent
 
 COPY . .
 
 EXPOSE ${PORT}
 
-CMD ["npm", "start"]
+CMD ["npm", "run" ,"build"]

@@ -1,6 +1,7 @@
 version: '3'
 services:
   node:
+    image: my-app
     build: .
     ports:
       - ${PORT}:${PORT}
@@ -9,6 +10,7 @@ services:
     environment:
       - PORT=${PORT}
   postgres:
+    image: my-db
     build: ./database/
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
