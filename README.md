@@ -4,6 +4,7 @@
 
 - Git - [Download & Install Git](https://git-scm.com/downloads).
 - Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
+- Docker Engine and Docker Compose - [Download & Install Docker Desktop](https://www.docker.com/get-started)
 
 ## Downloading
 
@@ -26,6 +27,15 @@ npm start
 After starting the app on port (4000 as default) you can open
 in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
 For more information about OpenAPI/Swagger please visit https://swagger.io/.
+
+## Running application in docker container
+
+```
+docker-compose up
+```
+
+Make sure that you have Docker Engine and Docker Compose installed and running
+After that run the command above - two docker images will be created and REST service will be started in docker container
 
 ## Testing
 
