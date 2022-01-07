@@ -1,7 +1,7 @@
 version: '3'
 services:
   node:
-    image: my-app
+    image: nodejs2021Q4-service-app
     build: .
     networks:
       - backend
@@ -17,7 +17,7 @@ services:
       - LOG_LEVEL=${LOG_LEVEL}
     restart: 'on-failure'
   postgres:
-    image: my-db
+    image: nodejs2021Q4-service-db
     build: ./database/
     networks:
       - backend
