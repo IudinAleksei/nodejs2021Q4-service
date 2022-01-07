@@ -10,10 +10,11 @@ services:
     depends_on:
       - postgres
     volumes:
-      - ./logs:/logs
-      - ./src:/src
+      - ./logs:/app/logs
+      - ./src:/app/src
     environment:
       - PORT=${PORT}
+      - LOG_LEVEL=${LOG_LEVEL}
     restart: 'on-failure'
   postgres:
     image: my-db
@@ -23,7 +24,7 @@ services:
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
     volumes:
-      - ./database/initdb:/initdb
+      - ./database/initdb:/database/initdb
     environment:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_USER=${POSTGRES_USER}

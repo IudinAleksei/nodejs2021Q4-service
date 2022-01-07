@@ -11,7 +11,7 @@
   "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc && node --experimental-specifier-resolution=node dist/index.js",
-    "start": "nodemon --watch src --ext ts --exec npm run build",
+    "start": "nodemon --legacy-watch --watch src --ext ts --exec npm run build",
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace"
