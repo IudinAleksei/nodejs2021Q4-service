@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { AddressInfo } from 'net';
 import { exit } from 'process';
 

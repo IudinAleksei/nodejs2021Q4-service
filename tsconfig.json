@@ -8,6 +8,8 @@
     "rootDir": "src",
     "outDir": "./dist",
     "strict": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   }
 }
