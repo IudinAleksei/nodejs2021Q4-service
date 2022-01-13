@@ -15,20 +15,28 @@ services:
     environment:
       - PORT=${PORT}
       - LOG_LEVEL=${LOG_LEVEL}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - PGDATA=${PGDATA}
     restart: always
   postgres:
     image: nodejs2021q4-service-db
     build: ./database/
     networks:
       - backend
+    expose:
+      - ${POSTGRES_PORT}
     ports:
-      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+      - ${POSTGRES_PORT}:5432
     volumes:
       - ./database/data:${PGDATA}
     environment:
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_PORT=${POSTGRES_PORT}
       - PGDATA=${PGDATA}
     restart: always
 networks:
