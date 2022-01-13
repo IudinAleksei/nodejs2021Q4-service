@@ -16,12 +16,12 @@ export const LOG_LEVEL: pino.LevelWithSilent =
 export const { NODE_ENV } = process.env;
 export const { JWT_SECRET_KEY } = process.env;
 export const AUTH_MODE = process.env.AUTH_MODE === 'true';
-const POSTGRES_PORT = parseInt(process.env.POSTGRES_PORT || '3001', 10);
+const PGPORT = parseInt(process.env.PGPORT || '3001', 10);
 
 export const TYPEORM_CONNECTION_OPTIONS: ConnectionOptions = {
   type: 'postgres',
-  host: 'localhost',
-  port: POSTGRES_PORT,
+  host: 'postgres',
+  port: PGPORT,
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
