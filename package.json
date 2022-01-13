@@ -11,7 +11,7 @@
   "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc && node --experimental-specifier-resolution=node dist/index.js",
-    "start": "nodemon --legacy-watch --exitcrash --watch src --ext ts --exec npm run build",
+    "start": "nodemon --legacy-watch --watch src --ext ts --exec npm run build",
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace"
@@ -62,7 +62,6 @@
     "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@tsconfig/node16": "1.0.2",
     "@types/node": "16.11.11",
     "nodemon": "2.0.15",
     "typescript": "4.5.2"

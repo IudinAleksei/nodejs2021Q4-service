@@ -1,10 +1,11 @@
 import 'reflect-metadata';
+import typeorm from 'typeorm';
 import { AddressInfo } from 'net';
 import { exit } from 'process';
 
 import { app } from './app';
 
-import { PORT } from './common/config';
+import { PORT, TYPEORM_CONNECTION_OPTIONS } from './common/config';
 import { logger } from './common/logger';
 
 /**
@@ -34,4 +35,9 @@ process.on('uncaughtException', (error) => {
   exit(1);
 });
 
-start();
+typeorm
+  .createConnection(TYPEORM_CONNECTION_OPTIONS)
+  .then((connection) => {
+    start();
+  })
+  .catch((error) => logger.error(error));
