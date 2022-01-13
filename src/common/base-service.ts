@@ -1,14 +1,15 @@
-import { IDBItem } from './common.types';
-import { Repository } from './repository';
+import typeorm, { Connection, EntityTarget, Repository } from 'typeorm';
 import { HTTP_ERRORS_INFO } from './constants';
 import { CustomServerError } from './errors';
+
+const { getRepository, EntityRepository } = typeorm;
 
 /**
  * @remarks create base implementation of API service using for all entities of this application
  * @typeParam T - Type of databade entities that extend {@link IDBItem}
  */
-export class BaseService<T extends IDBItem> {
-  repository: Repository<T>;
+export class BaseService<T> {
+  private repository: Repository<T>;
 
   /**
    * @remarks Constructor function that assign repository to internal variable
@@ -25,7 +26,7 @@ export class BaseService<T extends IDBItem> {
    * @returns The array of database items
    */
   async getAll(): Promise<T[]> {
-    return this.repository.getAllItems();
+    return this.repository.find();
   }
 
   /**
@@ -36,7 +37,7 @@ export class BaseService<T extends IDBItem> {
    * @throws custom error {@link CustomServerError} if item with passed id not found
    */
   async getById(id: string): Promise<T> | never {
-    const itemFromDB = await this.repository.getItem(id);
+    const itemFromDB = await this.repository.findOne(id);
     if (itemFromDB) {
       return itemFromDB;
     }
@@ -50,13 +51,13 @@ export class BaseService<T extends IDBItem> {
    * @returns Passed item from database
    * @throws custom error {@link CustomServerError} if passed item not found in database after adding
    */
-  async addItem(item: T): Promise<T> | never {
-    this.repository.addItem(item);
-    const itemFromDB = await this.repository.getItem(item.id);
-    if (itemFromDB) {
-      return itemFromDB;
-    }
-    throw new CustomServerError(HTTP_ERRORS_INFO.db);
+  async addItem(item: T): Promise<T> {
+    return this.repository.save(item);
+    // const itemFromDB = await this.repository.getItem(item.id);
+    // if (itemFromDB) {
+    //   return itemFromDB;
+    // }
+    // throw new CustomServerError(HTTP_ERRORS_INFO.db);
   }
 
   /**
@@ -66,8 +67,8 @@ export class BaseService<T extends IDBItem> {
    * @throws custom error {@link CustomServerError} if item with passed id not found via {@link getById} method executing
    */
   async removeById(id: string): Promise<void> {
-    await this.getById(id);
-    await this.repository.removeItem(id);
+    // await this.getById(id);
+    await this.repository.delete(id);
   }
 
   /**
@@ -79,7 +80,8 @@ export class BaseService<T extends IDBItem> {
    * @throws custom error {@link CustomServerError} {@link HTTP_ERRORS_INFO.db} if passed item not found in database via {@link addItem} after adding
    */
   async updateItem(item: T): Promise<T> | never {
-    await this.removeById(item.id);
-    return this.addItem(item);
+    // await this.removeById(item.id);
+    // return this.addItem(item);
+    return this.repository.save(item);
   }
 }

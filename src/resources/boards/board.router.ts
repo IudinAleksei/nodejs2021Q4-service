@@ -69,18 +69,18 @@ export async function boardRoutes(fastify: FastifyInstance) {
     },
   });
 
-  fastify.route({
-    method: 'DELETE',
-    url: '/:boardId',
-    /**
-     * This handler delete board with passed id from database and respond with code 204
-     *
-     * @param request -  is a core Fastify object
-     * @param reply - is a core Fastify object provides access to the context of the request
-     */
-    async handler(request: BoardRequest, reply) {
-      await boardService.removeByIdWithConnectedTasks(request.params.boardId);
-      reply.code(204).send();
-    },
-  });
+  // fastify.route({
+  //   method: 'DELETE',
+  //   url: '/:boardId',
+  //   /**
+  //    * This handler delete board with passed id from database and respond with code 204
+  //    *
+  //    * @param request -  is a core Fastify object
+  //    * @param reply - is a core Fastify object provides access to the context of the request
+  //    */
+  //   async handler(request: BoardRequest, reply) {
+  //     await boardService.removeByIdWithConnectedTasks(request.params.boardId);
+  //     reply.code(204).send();
+  //   },
+  // });
 }
