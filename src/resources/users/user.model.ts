@@ -1,8 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
-import typeorm from 'typeorm';
+import { Entity, Column, PrimaryColumn } from 'typeorm';
 import { IUser } from './user.types';
-
-const { Entity, Column, PrimaryColumn } = typeorm;
 
 /**
  * @remarks this class describe User model

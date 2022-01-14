@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import typeorm from 'typeorm';
+import { createConnection } from 'typeorm';
 import { AddressInfo } from 'net';
 import { exit } from 'process';
 
@@ -35,8 +35,9 @@ process.on('uncaughtException', (error) => {
   exit(1);
 });
 
-typeorm
-  .createConnection(TYPEORM_CONNECTION_OPTIONS)
+start();
+
+createConnection(TYPEORM_CONNECTION_OPTIONS)
   .then((connection) => {
     start();
   })

@@ -31,7 +31,8 @@ services:
     ports:
       - ${PGPORT}:${PGPORT}
     volumes:
-      - ./database/data:${PGDATA}
+      - db-data:${PGDATA}
+      - db-logs:/var/log/postgresql
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -43,3 +44,6 @@ networks:
   backend:
     name: backend
     driver: bridge
+volumes:
+  db-logs:
+  db-data:
