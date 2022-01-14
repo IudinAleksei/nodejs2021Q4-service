@@ -11,6 +11,8 @@
   "description": "REST service starter for RS School",
   "exports": "./dist/index.js",
   "scripts": {
+    "docker:start": "docker compose up",
+    "docker:stop": "docker compose down --volumes",
     "start": "webpack && node dist/index.cjs",
     "start:watch": "nodemon --legacy-watch --watch src --ext ts --exec npm run start",
     "lint": "eslint --ext .js,.ts --fix src/",

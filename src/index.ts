@@ -35,8 +35,6 @@ process.on('uncaughtException', (error) => {
   exit(1);
 });
 
-start();
-
 createConnection(TYPEORM_CONNECTION_OPTIONS)
   .then((connection) => {
     start();
