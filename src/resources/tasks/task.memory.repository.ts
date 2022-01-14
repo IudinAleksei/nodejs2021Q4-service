@@ -1,9 +1,7 @@
-import typeorm, { Repository } from 'typeorm';
 import { Task } from './task.model';
-
-const { getRepository } = typeorm;
+import { Repository } from '../../common/repository';
 
 /**
  * @remarks This method create repository instance for tasks {@link Repository}
  */
-export const taskRepository: Repository<Task> = getRepository(Task);
+export const taskRepository: Repository<Task> = new Repository();

@@ -74,20 +74,20 @@ export async function userRoutes(fastify: FastifyInstance) {
     },
   });
 
-  // fastify.route({
-  //   method: 'DELETE',
-  //   url: '/:userId',
-  //   /**
-  //    * This handler delete user with passed id from database and respond with code 204
-  //    *
-  //    * @param request -  is a core Fastify object
-  //    * @param reply - is a core Fastify object provides access to the context of the request
-  //    */
-  //   async handler(request: UserRequest, reply) {
-  //     await userService.removeByIdAndUnassignConnectedTasks(
-  //       request.params.userId
-  //     );
-  //     reply.code(204).send();
-  //   },
-  // });
+  fastify.route({
+    method: 'DELETE',
+    url: '/:userId',
+    /**
+     * This handler delete user with passed id from database and respond with code 204
+     *
+     * @param request -  is a core Fastify object
+     * @param reply - is a core Fastify object provides access to the context of the request
+     */
+    async handler(request: UserRequest, reply) {
+      await userService.removeByIdAndUnassignConnectedTasks(
+        request.params.userId
+      );
+      reply.code(204).send();
+    },
+  });
 }
