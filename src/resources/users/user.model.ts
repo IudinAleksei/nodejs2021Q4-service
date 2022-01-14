@@ -27,10 +27,10 @@ export class User implements IUser {
    * @defaultValue generated with v4 method of uuid
    *
    * @param name - name of the user
-   * @defaultValue string 'USER'
+   * @defaultValue string 'user'
    *
    * @param login - user login
-   * @defaultValue string 'user'
+   * @defaultValue string 'login'
    *
    * @param password - user password
    * @defaultValue string 'P@55w0rd'
@@ -38,10 +38,10 @@ export class User implements IUser {
 
   constructor({
     id = uuidv4(),
-    name = 'USER',
-    login = 'user',
+    name = 'user',
+    login = 'login',
     password = 'P@55w0rd',
-  }) {
+  } = {}) {
     this.id = id;
     this.name = name;
     this.login = login;

@@ -1,22 +1,40 @@
 import { v4 as uuidv4 } from 'uuid';
+import { Entity, Column, PrimaryColumn } from 'typeorm';
 
 /**
  * @remarks this class describe Task model
  */
 
+@Entity()
 export class Task {
+  @PrimaryColumn()
   id: string;
 
+  @Column()
   title: string;
 
+  @Column()
   order: number;
 
+  @Column()
   description: string;
 
+  @Column({
+    type: String,
+    nullable: true,
+  })
   userId: string | null;
 
+  @Column({
+    type: String,
+    nullable: true,
+  })
   boardId: string | null;
 
+  @Column({
+    type: String,
+    nullable: true,
+  })
   columnId: string | null;
 
   /**
@@ -44,15 +62,25 @@ export class Task {
    * @defaultValue null
    */
 
-  constructor({
-    id = uuidv4(),
-    title = 'Task',
-    order = 0,
-    description = '',
-    userId = null,
-    boardId = null,
-    columnId = null,
-  }: Task) {
+  constructor(
+    {
+      id = uuidv4(),
+      title = 'Task',
+      order = 0,
+      description = '',
+      userId = null,
+      boardId = null,
+      columnId = null,
+    }: Task = {
+      id: uuidv4(),
+      title: 'Task',
+      order: 0,
+      description: '',
+      userId: null,
+      boardId: null,
+      columnId: null,
+    }
+  ) {
     this.id = id;
     this.title = title;
     this.order = order;

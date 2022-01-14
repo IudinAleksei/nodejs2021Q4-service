@@ -1,16 +1,26 @@
 import { v4 as uuidv4 } from 'uuid';
+import { Entity, Column, PrimaryColumn } from 'typeorm';
 
-import { Column } from '../columns/column.model';
+import { BoardColumn } from '../columns/column.model';
 
 /**
  * @remarks this class describe Board model
  */
+@Entity()
 export class Board {
+  @PrimaryColumn()
   id: string;
 
+  @Column()
   title: string;
 
-  columns: Column[];
+  @Column({
+    type: 'jsonb',
+    array: false,
+    default: () => "'[]'",
+    nullable: false,
+  })
+  columns: BoardColumn[];
 
   /**
    * Create Board instance with passed id, title and columns
@@ -24,10 +34,16 @@ export class Board {
    * @param columns - array of board columns
    * @defaultValue empty array
    */
-  constructor({ id = uuidv4(), title = 'Board', columns = [] }: Board) {
+  constructor(
+    { id = uuidv4(), title = 'Board', columns = [] }: Board = {
+      id: uuidv4(),
+      title: 'Board',
+      columns: [],
+    }
+  ) {
     this.id = id;
     this.title = title;
-    this.columns = columns.map((input) => new Column(input));
+    this.columns = columns.map((input) => new BoardColumn(input));
   }
 
   /**
@@ -38,7 +54,7 @@ export class Board {
    */
   static toResponse(board: Board) {
     const { id, title, columns } = board;
-    const columnsToResponse = columns.map(Column.toResponse);
+    const columnsToResponse = columns.map(BoardColumn.toResponse);
     return { id, title, columns: columnsToResponse };
   }
 }

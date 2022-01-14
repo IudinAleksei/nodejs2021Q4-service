@@ -25,7 +25,7 @@ export const TYPEORM_CONNECTION_OPTIONS: ConnectionOptions = {
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
-  entities: [],
-  synchronize: false,
+  entities: ['../resources/**/*.model.ts'],
+  synchronize: true,
   logging: false,
 };
