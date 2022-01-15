@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, BaseEntity } from 'typeorm';
 import { IUser } from './user.types';
 
 /**
@@ -7,7 +7,7 @@ import { IUser } from './user.types';
  */
 
 @Entity()
-export class User implements IUser {
+export class User extends BaseEntity implements IUser {
   @PrimaryColumn()
   id: string;
 
@@ -42,6 +42,7 @@ export class User implements IUser {
     login = 'login',
     password = 'P@55w0rd',
   } = {}) {
+    super();
     this.id = id;
     this.name = name;
     this.login = login;

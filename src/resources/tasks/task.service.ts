@@ -1,4 +1,4 @@
 import { BaseService } from '../../common/base-service';
-import { taskRepository } from './task.memory.repository';
+import { Task } from './task.model';
 
-export const taskService = new BaseService(taskRepository);
+export const taskService = new BaseService<Task>(Task);

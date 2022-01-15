@@ -37,50 +37,50 @@ export async function boardRoutes(fastify: FastifyInstance) {
     },
   });
 
-  fastify.route({
-    method: 'POST',
-    url: '/',
-    /**
-     * This handler add passed board data to database, respond with code 201 and added board transformed {@link Board.toResponse} method
-     *
-     * @param request -  is a core Fastify object
-     * @param reply - is a core Fastify object provides access to the context of the request
-     */
-    async handler(request: BoardRequest, reply) {
-      const newBoard = new Board(request.body);
-      const createdBoard = await boardService.addItem(newBoard);
-      reply.code(201).send(Board.toResponse(createdBoard));
-    },
-  });
+  // fastify.route({
+  //   method: 'POST',
+  //   url: '/',
+  //   /**
+  //    * This handler add passed board data to database, respond with code 201 and added board transformed {@link Board.toResponse} method
+  //    *
+  //    * @param request -  is a core Fastify object
+  //    * @param reply - is a core Fastify object provides access to the context of the request
+  //    */
+  //   async handler(request: BoardRequest, reply) {
+  //     const newBoard = new Board(request.body);
+  //     const createdBoard = await boardService.addItem(newBoard);
+  //     reply.code(201).send(Board.toResponse(createdBoard));
+  //   },
+  // });
 
-  fastify.route({
-    method: 'PUT',
-    url: '/:boardId',
-    /**
-     * This handler update passed board in database, respond with code 200 and updated board transformed {@link Board.toResponse} method
-     *
-     * @param request -  is a core Fastify object
-     * @param reply - is a core Fastify object provides access to the context of the request
-     */
-    async handler(request: BoardRequest, reply) {
-      const newBoard = new Board(request.body);
-      const updatedBoard = await boardService.updateItem(newBoard);
-      reply.send(Board.toResponse(updatedBoard));
-    },
-  });
+  // fastify.route({
+  //   method: 'PUT',
+  //   url: '/:boardId',
+  //   /**
+  //    * This handler update passed board in database, respond with code 200 and updated board transformed {@link Board.toResponse} method
+  //    *
+  //    * @param request -  is a core Fastify object
+  //    * @param reply - is a core Fastify object provides access to the context of the request
+  //    */
+  //   async handler(request: BoardRequest, reply) {
+  //     const newBoard = new Board(request.body);
+  //     const updatedBoard = await boardService.updateItem(newBoard);
+  //     reply.send(Board.toResponse(updatedBoard));
+  //   },
+  // });
 
-  fastify.route({
-    method: 'DELETE',
-    url: '/:boardId',
-    /**
-     * This handler delete board with passed id from database and respond with code 204
-     *
-     * @param request -  is a core Fastify object
-     * @param reply - is a core Fastify object provides access to the context of the request
-     */
-    async handler(request: BoardRequest, reply) {
-      await boardService.removeByIdWithConnectedTasks(request.params.boardId);
-      reply.code(204).send();
-    },
-  });
+  // fastify.route({
+  //   method: 'DELETE',
+  //   url: '/:boardId',
+  //   /**
+  //    * This handler delete board with passed id from database and respond with code 204
+  //    *
+  //    * @param request -  is a core Fastify object
+  //    * @param reply - is a core Fastify object provides access to the context of the request
+  //    */
+  //   async handler(request: BoardRequest, reply) {
+  //     await boardService.removeByIdWithConnectedTasks(request.params.boardId);
+  //     reply.code(204).send();
+  //   },
+  // });
 }

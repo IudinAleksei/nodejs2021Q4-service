@@ -36,7 +36,5 @@ process.on('uncaughtException', (error) => {
 });
 
 createConnection(TYPEORM_CONNECTION_OPTIONS)
-  .then((connection) => {
-    start();
-  })
+  .then(() => start())
   .catch((error) => logger.error(error));
