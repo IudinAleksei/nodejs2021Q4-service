@@ -5,7 +5,7 @@ import { Entity, Column, PrimaryColumn } from 'typeorm';
  * @remarks this class describe Task model
  */
 
-@Entity()
+@Entity({ name: 'Task' })
 export class Task {
   @PrimaryColumn()
   id: string;

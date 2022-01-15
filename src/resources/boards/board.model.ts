@@ -6,7 +6,7 @@ import { BoardColumn } from '../columns/column.model';
 /**
  * @remarks this class describe Board model
  */
-@Entity()
+@Entity({ name: 'Board' })
 export class Board {
   @PrimaryColumn()
   id: string;

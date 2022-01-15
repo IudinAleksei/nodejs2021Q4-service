@@ -53,43 +53,44 @@ export class BaseService<T> {
     throw new CustomServerError(HTTP_ERRORS_INFO.notFound);
   }
 
-  // /**
-  //  * Async func add item to database via connected repository method and try to get this item from database.
-  //  *
-  //  * @param item - Item that will be added to database
-  //  * @returns Passed item from database
-  //  * @throws custom error {@link CustomServerError} if passed item not found in database after adding
-  //  */
-  // async addItem(item: T): Promise<T> | never {
-  //   this.repository.addItem(item);
-  //   const itemFromDB = await this.repository.getItem(item.id);
-  //   if (itemFromDB) {
-  //     return itemFromDB;
-  //   }
-  //   throw new CustomServerError(HTTP_ERRORS_INFO.db);
-  // }
+  /**
+   * Async func add item to database via connected repository method and try to get this item from database.
+   *
+   * @param item - Item that will be added to database
+   * @returns Passed item from database
+   * @throws custom error {@link CustomServerError} if passed item not found in database after adding
+   */
+  async addItem(item: T): Promise<T> | never {
+    const repo = await this.getRepo();
 
-  // /**
-  //  * Async func try to get item from database via method of repository and delete it after this.
-  //  *
-  //  * @param id - Id of item that will be deleted
-  //  * @throws custom error {@link CustomServerError} if item with passed id not found via {@link getById} method executing
-  //  */
-  // async removeById(id: string): Promise<void> {
-  //   await this.getById(id);
-  //   await this.repository.removeItem(id);
-  // }
+    const itemFromDB = await repo.save(repo.create(item));
+    if (itemFromDB) {
+      return itemFromDB;
+    }
+    throw new CustomServerError(HTTP_ERRORS_INFO.db);
+  }
 
-  // /**
-  //  * Async func try to delete item from database via this service method {@link removeById} and add new data after this.
-  //  *
-  //  * @param item - Item that will be updated in database
-  //  * @returns Passed item from database
-  //  * @throws custom error {@link CustomServerError} {@link HTTP_ERRORS_INFO.notFound} if passed item not found in database via {@link getById} method executing
-  //  * @throws custom error {@link CustomServerError} {@link HTTP_ERRORS_INFO.db} if passed item not found in database via {@link addItem} after adding
-  //  */
-  // async updateItem(item: T): Promise<T> | never {
-  //   await this.removeById(item.id);
-  //   return this.addItem(item);
-  // }
+  /**
+   * Async func try to get item from database via method of repository and delete it after this.
+   *
+   * @param id - Id of item that will be deleted
+   * @throws custom error {@link CustomServerError} if item with passed id not found via {@link getById} method executing
+   */
+  async removeById(id: string): Promise<void> {
+    const repo = await this.getRepo();
+    await repo.delete(id);
+  }
+
+  /**
+   * Async func try to delete item from database via this service method {@link removeById} and add new data after this.
+   *
+   * @param item - Item that will be updated in database
+   * @returns Passed item from database
+   * @throws custom error {@link CustomServerError} {@link HTTP_ERRORS_INFO.notFound} if passed item not found in database via {@link getById} method executing
+   * @throws custom error {@link CustomServerError} {@link HTTP_ERRORS_INFO.db} if passed item not found in database via {@link addItem} after adding
+   */
+  async updateItem(item: T): Promise<T> | never {
+    const repo = await this.getRepo();
+    return repo.save(repo.create(item));
+  }
 }

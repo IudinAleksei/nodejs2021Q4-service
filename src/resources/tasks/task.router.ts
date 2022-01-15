@@ -37,56 +37,56 @@ export async function taskRoutes(fastify: FastifyInstance) {
     },
   });
 
-  // fastify.route({
-  //   method: 'POST',
-  //   url: '/',
-  //   /**
-  //    * This handler add passed task data to database, respond with code 201 and added task transformed {@link Task.toResponse} method
-  //    *
-  //    * @param request -  is a core Fastify object
-  //    * @param reply - is a core Fastify object provides access to the context of the request
-  //    */
-  //   async handler(request: TaskRequest, reply) {
-  //     const newTask = new Task({
-  //       ...request.body,
-  //       boardId: request.body.boardId || request.params.boardId,
-  //     });
-  //     const createdTask = await taskService.addItem(newTask);
-  //     reply.code(201).send(Task.toResponse(createdTask));
-  //   },
-  // });
+  fastify.route({
+    method: 'POST',
+    url: '/',
+    /**
+     * This handler add passed task data to database, respond with code 201 and added task transformed {@link Task.toResponse} method
+     *
+     * @param request -  is a core Fastify object
+     * @param reply - is a core Fastify object provides access to the context of the request
+     */
+    async handler(request: TaskRequest, reply) {
+      const newTask = {
+        ...request.body,
+        boardId: request.body.boardId || request.params.boardId,
+      };
+      const createdTask = await taskService.addItem(newTask);
+      reply.code(201).send(Task.toResponse(createdTask));
+    },
+  });
 
-  // fastify.route({
-  //   method: 'PUT',
-  //   url: '/:taskId',
-  //   /**
-  //    * This handler update passed task in database, respond with code 200 and updated task transformed {@link Task.toResponse} method
-  //    *
-  //    * @param request -  is a core Fastify object
-  //    * @param reply - is a core Fastify object provides access to the context of the request
-  //    */
-  //   async handler(request: TaskRequest, reply) {
-  //     const task = new Task({
-  //       ...request.body,
-  //       boardId: request.body.boardId || request.params.boardId,
-  //     });
-  //     const updatedTask = await taskService.updateItem(task);
-  //     reply.send(Task.toResponse(updatedTask));
-  //   },
-  // });
+  fastify.route({
+    method: 'PUT',
+    url: '/:taskId',
+    /**
+     * This handler update passed task in database, respond with code 200 and updated task transformed {@link Task.toResponse} method
+     *
+     * @param request -  is a core Fastify object
+     * @param reply - is a core Fastify object provides access to the context of the request
+     */
+    async handler(request: TaskRequest, reply) {
+      const task = {
+        ...request.body,
+        boardId: request.body.boardId || request.params.boardId,
+      };
+      const updatedTask = await taskService.updateItem(task);
+      reply.send(Task.toResponse(updatedTask));
+    },
+  });
 
-  // fastify.route({
-  //   method: 'DELETE',
-  //   url: '/:taskId',
-  //   /**
-  //    * This handler delete task with passed id from database and respond with code 204
-  //    *
-  //    * @param request -  is a core Fastify object
-  //    * @param reply - is a core Fastify object provides access to the context of the request
-  //    */
-  //   async handler(request: TaskRequest, reply) {
-  //     await taskService.removeById(request.params.taskId);
-  //     reply.code(204).send();
-  //   },
-  // });
+  fastify.route({
+    method: 'DELETE',
+    url: '/:taskId',
+    /**
+     * This handler delete task with passed id from database and respond with code 204
+     *
+     * @param request -  is a core Fastify object
+     * @param reply - is a core Fastify object provides access to the context of the request
+     */
+    async handler(request: TaskRequest, reply) {
+      await taskService.removeById(request.params.taskId);
+      reply.code(204).send();
+    },
+  });
 }

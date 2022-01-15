@@ -6,8 +6,8 @@ import { IUser } from './user.types';
  * @remarks this class describe User model
  */
 
-@Entity()
-export class User extends BaseEntity implements IUser {
+@Entity({ name: 'User' })
+export class User implements IUser {
   @PrimaryColumn()
   id: string;
 
@@ -36,13 +36,14 @@ export class User extends BaseEntity implements IUser {
    * @defaultValue string 'P@55w0rd'
    */
 
-  constructor({
-    id = uuidv4(),
-    name = 'user',
-    login = 'login',
-    password = 'P@55w0rd',
-  } = {}) {
-    super();
+  constructor(
+    { id = uuidv4(), name = 'user', login = 'login', password = 'P@55w0rd' } = {
+      id: uuidv4(),
+      name: 'user',
+      login: 'login',
+      password: 'P@55w0rd',
+    }
+  ) {
     this.id = id;
     this.name = name;
     this.login = login;

@@ -39,55 +39,56 @@ export async function userRoutes(fastify: FastifyInstance) {
     },
   });
 
-  // fastify.route({
-  //   method: 'POST',
-  //   url: '/',
-  //   /**
-  //    * This handler add passed user data to database, respond with code 201 and added user transformed {@link User.toResponse} method
-  //    *
-  //    * @param request -  is a core Fastify object
-  //    * @param reply - is a core Fastify object provides access to the context of the request
-  //    */
-  //   async handler(request: UserRequest, reply) {
-  //     const newUser = new User(request.body);
-  //     const createdUser = await userService.addItem(newUser);
-  //     reply.code(201).send(User.toResponse(createdUser));
-  //   },
-  // });
+  fastify.route({
+    method: 'POST',
+    url: '/',
+    /**
+     * This handler add passed user data to database, respond with code 201 and added user transformed {@link User.toResponse} method
+     *
+     * @param request -  is a core Fastify object
+     * @param reply - is a core Fastify object provides access to the context of the request
+     */
+    async handler(request: UserRequest, reply) {
+      const newUser = request.body;
+      const createdUser = await userService.addItem(newUser);
+      reply.code(201).send(User.toResponse(createdUser));
+    },
+  });
 
-  // fastify.route({
-  //   method: 'PUT',
-  //   url: '/:userId',
-  //   /**
-  //    * This handler update passed user in database, respond with code 200 and updated user transformed {@link User.toResponse} method
-  //    *
-  //    * @param request -  is a core Fastify object
-  //    * @param reply - is a core Fastify object provides access to the context of the request
-  //    */
-  //   async handler(request: UserRequest, reply) {
-  //     if (request.body.id !== request.params.userId) {
-  //       throw new CustomServerError(HTTP_ERRORS_INFO.invalidId);
-  //     }
-  //     const user = new User(request.body);
-  //     const updatedUser = await userService.updateItem(user);
-  //     reply.send(User.toResponse(updatedUser));
-  //   },
-  // });
+  fastify.route({
+    method: 'PUT',
+    url: '/:userId',
+    /**
+     * This handler update passed user in database, respond with code 200 and updated user transformed {@link User.toResponse} method
+     *
+     * @param request -  is a core Fastify object
+     * @param reply - is a core Fastify object provides access to the context of the request
+     */
+    async handler(request: UserRequest, reply) {
+      if (request.body.id !== request.params.userId) {
+        throw new CustomServerError(HTTP_ERRORS_INFO.invalidId);
+      }
+      const user = request.body;
+      const updatedUser = await userService.updateItem(user);
+      reply.send(User.toResponse(updatedUser));
+    },
+  });
 
-  // fastify.route({
-  //   method: 'DELETE',
-  //   url: '/:userId',
-  //   /**
-  //    * This handler delete user with passed id from database and respond with code 204
-  //    *
-  //    * @param request -  is a core Fastify object
-  //    * @param reply - is a core Fastify object provides access to the context of the request
-  //    */
-  //   async handler(request: UserRequest, reply) {
-  //     await userService.removeByIdAndUnassignConnectedTasks(
-  //       request.params.userId
-  //     );
-  //     reply.code(204).send();
-  //   },
-  // });
+  fastify.route({
+    method: 'DELETE',
+    url: '/:userId',
+    /**
+     * This handler delete user with passed id from database and respond with code 204
+     *
+     * @param request -  is a core Fastify object
+     * @param reply - is a core Fastify object provides access to the context of the request
+     */
+    async handler(request: UserRequest, reply) {
+      await userService.removeById(request.params.userId);
+      // await userService.removeByIdAndUnassignConnectedTasks(
+      //   request.params.userId
+      // );
+      reply.code(204).send();
+    },
+  });
 }
