@@ -31,11 +31,17 @@ For more information about OpenAPI/Swagger please visit https://swagger.io/.
 ## Running application in docker container
 
 ```
-docker-compose up
+npm run docker:start
 ```
 
 Make sure that you have Docker Engine and Docker Compose installed and running
 After that run the command above - two docker images will be created and REST service will be started in docker container
+
+For stop application:
+
+```
+npm run docker:stop
+```
 
 ## Testing
 
