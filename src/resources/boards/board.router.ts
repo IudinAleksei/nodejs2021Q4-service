@@ -79,8 +79,7 @@ export async function boardRoutes(fastify: FastifyInstance) {
      * @param reply - is a core Fastify object provides access to the context of the request
      */
     async handler(request: BoardRequest, reply) {
-      await boardService.removeById(request.params.boardId);
-      // await boardService.removeByIdWithConnectedTasks(request.params.boardId);
+      await boardService.removeByIdWithConnectedTasks(request.params.boardId);
       reply.code(204).send();
     },
   });

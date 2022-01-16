@@ -12,15 +12,14 @@ class UserService extends BaseService<User> {
    *
    * @param userId - The id of user for deletion
    */
-  // async removeByIdAndUnassignConnectedTasks(userId: string) {
-  //   const allTasks = await taskService.getAll();
-  //   const connectedTasks = allTasks.filter((task) => task.userId === userId);
-  //   connectedTasks.forEach(async (task) => {
-  //     await taskService.removeById(task.id);
-  //     taskService.addItem({ ...task, userId: null });
-  //   });
-  //   this.removeById(userId);
-  // }
+  async removeByIdAndUnassignConnectedTasks(userId: string) {
+    const allTasks = await taskService.getAll();
+    const connectedTasks = allTasks.filter((task) => task.userId === userId);
+    connectedTasks.forEach(async (task) => {
+      await taskService.updateItem({ ...task, userId: null });
+    });
+    await this.removeById(userId);
+  }
 }
 
 export const userService = new UserService(User);

@@ -12,12 +12,12 @@ class BoardService extends BaseService<Board> {
    *
    * @param boardId - The id of board for deletion
    */
-  // async removeByIdWithConnectedTasks(boardId: string) {
-  //   const allTasks = await taskService.getAll();
-  //   const connectedTasks = allTasks.filter((task) => task.boardId === boardId);
-  //   connectedTasks.forEach((task) => taskService.removeById(task.id));
-  //   this.removeById(boardId);
-  // }
+  async removeByIdWithConnectedTasks(boardId: string) {
+    const allTasks = await taskService.getAll();
+    const connectedTasks = allTasks.filter((task) => task.boardId === boardId);
+    connectedTasks.forEach(async (task) => taskService.removeById(task.id));
+    await this.removeById(boardId);
+  }
 }
 
 export const boardService = new BoardService(Board);
