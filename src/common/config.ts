@@ -3,6 +3,7 @@ import path, { dirname } from 'path';
 import pino from 'pino';
 import { ConnectionOptions } from 'typeorm';
 import { fileURLToPath } from 'url';
+import { CreateUserTable1642321903527 } from '../migrations/CreateUserTable';
 import { Board } from '../resources/boards/board.model';
 import { Task } from '../resources/tasks/task.model';
 import { User } from '../resources/users/user.model';
@@ -29,6 +30,8 @@ export const TYPEORM_CONNECTION_OPTIONS: ConnectionOptions = {
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
   entities: [User, Task, Board],
-  synchronize: true,
+  migrations: [CreateUserTable1642321903527],
+  migrationsRun: true,
+  synchronize: false,
   logging: false,
 };
