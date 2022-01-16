@@ -1,11 +1,11 @@
 /* eslint-disable class-methods-use-this */
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class CreateUserTable1642321903527 implements MigrationInterface {
+export class CreateBoardTable1642321903527 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'User',
+        name: 'Board',
         columns: [
           {
             name: 'id',
@@ -13,16 +13,12 @@ export class CreateUserTable1642321903527 implements MigrationInterface {
             isPrimary: true,
           },
           {
-            name: 'name',
+            name: 'title',
             type: 'varchar',
           },
           {
-            name: 'login',
-            type: 'varchar',
-          },
-          {
-            name: 'password',
-            type: 'varchar',
+            name: 'columns',
+            type: 'jsonb',
           },
         ],
       }),
