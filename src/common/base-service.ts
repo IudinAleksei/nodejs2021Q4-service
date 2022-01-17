@@ -1,4 +1,4 @@
-import { EntityTarget, getConnection, Repository } from 'typeorm';
+import { DeepPartial, EntityTarget, getConnection, Repository } from 'typeorm';
 import { HTTP_ERRORS_INFO } from './constants';
 import { CustomServerError } from './errors';
 
@@ -60,7 +60,7 @@ export class BaseService<T> {
    * @returns Passed item from database
    * @throws custom error {@link CustomServerError} if passed item not found in database after adding
    */
-  async addItem(item: T): Promise<T> | never {
+  async addItem(item: DeepPartial<T>): Promise<T> | never {
     const repo = await this.getRepo();
 
     const itemFromDB = await repo.save(repo.create(item));
@@ -89,7 +89,7 @@ export class BaseService<T> {
    * @throws custom error {@link CustomServerError} {@link HTTP_ERRORS_INFO.notFound} if passed item not found in database via {@link getById} method executing
    * @throws custom error {@link CustomServerError} {@link HTTP_ERRORS_INFO.db} if passed item not found in database via {@link addItem} after adding
    */
-  async updateItem(item: T): Promise<T> | never {
+  async updateItem(item: DeepPartial<T>): Promise<T> | never {
     const repo = await this.getRepo();
     return repo.save(repo.create(item));
   }

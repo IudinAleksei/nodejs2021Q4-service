@@ -1,41 +1,40 @@
-import { v4 as uuidv4 } from 'uuid';
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
 
 /**
  * @remarks this class describe Task model
  */
 
 @Entity({ name: 'Task' })
-export class Task {
-  @PrimaryColumn()
-  id: string;
+export class Task extends BaseEntity {
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
 
   @Column()
-  title: string;
+  title!: string;
 
   @Column()
-  order: number;
+  order!: number;
 
   @Column()
-  description: string;
+  description!: string;
 
   @Column({
     type: String,
     nullable: true,
   })
-  userId: string | null;
+  userId!: string | null;
 
   @Column({
     type: String,
     nullable: true,
   })
-  boardId: string | null;
+  boardId!: string | null;
 
   @Column({
     type: String,
     nullable: true,
   })
-  columnId: string | null;
+  columnId!: string | null;
 
   /**
    * Create Task instance with passed id, title, order, description, userId, boardId and columnId
@@ -61,34 +60,6 @@ export class Task {
    * @param columnId - id of column to which the task is assigned
    * @defaultValue null
    */
-
-  constructor(
-    {
-      id = uuidv4(),
-      title = 'Task',
-      order = 0,
-      description = '',
-      userId = null,
-      boardId = null,
-      columnId = null,
-    }: Task = {
-      id: uuidv4(),
-      title: 'Task',
-      order: 0,
-      description: '',
-      userId: null,
-      boardId: null,
-      columnId: null,
-    }
-  ) {
-    this.id = id;
-    this.title = title;
-    this.order = order;
-    this.description = description;
-    this.userId = userId;
-    this.boardId = boardId;
-    this.columnId = columnId;
-  }
 
   /**
    * Static func for create response body with task properties

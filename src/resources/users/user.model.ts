@@ -1,5 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, Column, BaseEntity, PrimaryGeneratedColumn } from 'typeorm';
 import { IUser } from './user.types';
 
 /**
@@ -7,18 +6,18 @@ import { IUser } from './user.types';
  */
 
 @Entity({ name: 'User' })
-export class User implements IUser {
-  @PrimaryColumn()
-  id: string;
+export class User extends BaseEntity implements IUser {
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column()
-  login: string;
+  login!: string;
 
   @Column()
-  password: string;
+  password!: string;
 
   /**
    * Create User instance with passed id, name, login and password
@@ -35,20 +34,6 @@ export class User implements IUser {
    * @param password - user password
    * @defaultValue string 'P@55w0rd'
    */
-
-  constructor(
-    { id = uuidv4(), name = 'user', login = 'login', password = 'P@55w0rd' } = {
-      id: uuidv4(),
-      name: 'user',
-      login: 'login',
-      password: 'P@55w0rd',
-    }
-  ) {
-    this.id = id;
-    this.name = name;
-    this.login = login;
-    this.password = password;
-  }
 
   /**
    * Static func for create response body with some user properties, without password
