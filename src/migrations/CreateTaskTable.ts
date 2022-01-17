@@ -28,17 +28,17 @@ export class CreateTaskTable1642321903527 implements MigrationInterface {
           },
           {
             name: 'userId',
-            type: 'varchar',
+            type: 'uuid',
             isNullable: true,
           },
           {
             name: 'boardId',
-            type: 'varchar',
+            type: 'uuid',
             isNullable: true,
           },
           {
             name: 'columnId',
-            type: 'varchar',
+            type: 'uuid',
             isNullable: true,
           },
         ],

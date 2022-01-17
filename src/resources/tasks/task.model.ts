@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  BaseEntity,
+  ManyToOne,
+} from 'typeorm';
+import { User } from '../users/user.model';
 
 /**
  * @remarks this class describe Task model
@@ -18,11 +25,8 @@ export class Task extends BaseEntity {
   @Column()
   description!: string;
 
-  @Column({
-    type: String,
-    nullable: true,
-  })
-  userId!: string | null;
+  @ManyToOne(() => User, (user) => user.tasks, { nullable: true })
+  user!: User | null;
 
   @Column({
     type: String,
@@ -68,7 +72,15 @@ export class Task extends BaseEntity {
    * @returns Return object for response body with id, title, order, description, userId, boardId and columnId
    */
   static toResponse(task: Task) {
-    const { id, title, order, description, userId, boardId, columnId } = task;
-    return { id, title, order, description, userId, boardId, columnId };
+    const { id, title, order, description, user, boardId, columnId } = task;
+    return {
+      id,
+      title,
+      order,
+      description,
+      userId: user?.id || null,
+      boardId,
+      columnId,
+    };
   }
 }

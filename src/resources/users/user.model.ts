@@ -1,4 +1,11 @@
-import { Entity, Column, BaseEntity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  BaseEntity,
+  PrimaryGeneratedColumn,
+  OneToMany,
+} from 'typeorm';
+import { Task } from '../tasks/task.model';
 import { IUser } from './user.types';
 
 /**
@@ -18,6 +25,9 @@ export class User extends BaseEntity implements IUser {
 
   @Column()
   password!: string;
+
+  @OneToMany(() => Task, (task) => task.user)
+  tasks!: Task[];
 
   /**
    * Create User instance with passed id, name, login and password

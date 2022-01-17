@@ -84,9 +84,7 @@ export async function userRoutes(fastify: FastifyInstance) {
      * @param reply - is a core Fastify object provides access to the context of the request
      */
     async handler(request: UserRequest, reply) {
-      await userService.removeByIdAndUnassignConnectedTasks(
-        request.params.userId
-      );
+      await userService.removeById(request.params.userId);
       reply.code(204).send();
     },
   });
