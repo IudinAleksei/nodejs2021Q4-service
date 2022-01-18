@@ -31,3 +31,9 @@ export const ADMIN_USER = Object.freeze({
   login: 'admin',
   password: 'admin',
 });
+
+export const UNAUTHORIZED_ACCESS_URL_LIST: readonly string[] = Object.freeze([
+  'login',
+  'doc',
+  '',
+]);
