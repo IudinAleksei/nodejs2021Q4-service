@@ -1,25 +1,46 @@
 import { onRequestHookHandler } from 'fastify';
 import { compare, hash } from 'bcrypt';
 import { getConnection } from 'typeorm';
-import { AuthData } from './auth.model';
-import { User } from '../../resources/users/user.model';
-import { ILoginData } from './auth.types';
+import jwt from 'jsonwebtoken';
 import {
+  AUTH_METHOD,
   HASH_SALT,
   HTTP_ERRORS_INFO,
   UNAUTHORIZED_ACCESS_URL_LIST,
 } from '../constants';
+import { AuthData } from './auth.model';
+import { User } from '../../resources/users/user.model';
+import { ILoginData } from './auth.types';
 import { CustomServerError } from '../errors';
+import { JWT_SECRET_KEY } from '../config';
 
-const validateToken = async (token: string): Promise<boolean> => {
-  return true;
+const validateToken = (token: string): boolean => {
+  try {
+    jwt.verify(token, JWT_SECRET_KEY);
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+const hasUnauthAccess = (url: string): boolean => {
+  const startPath = url.split('/')[1];
+  return UNAUTHORIZED_ACCESS_URL_LIST.includes(startPath);
+};
+
+const hasValidAuthHeader = (header?: string): boolean => {
+  if (!header) {
+    return false;
+  }
+  const [method, token] = header.split(' ');
+  const isMethodCorrect = method === AUTH_METHOD;
+  return isMethodCorrect && validateToken(token);
 };
 
 export const requestTokenValidator: onRequestHookHandler = (req, _, done) => {
-  const startRoute = req.url.split('/')[1];
   if (
-    req.headers.authorization === 'Bearer token' ||
-    UNAUTHORIZED_ACCESS_URL_LIST.includes(startRoute)
+    hasUnauthAccess(req.url) ||
+    hasValidAuthHeader(req.headers.authorization)
   ) {
     done();
     return;
@@ -50,7 +71,11 @@ const saveAuthData = async (user: User, token: string): Promise<AuthData> => {
 };
 
 const createToken = async (user: User): Promise<string> => {
-  return user.id;
+  const payload = {
+    userId: user.id,
+    login: user.login,
+  };
+  return jwt.sign(payload, JWT_SECRET_KEY);
 };
 
 export const authorize = async (

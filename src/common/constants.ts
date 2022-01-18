@@ -2,6 +2,8 @@ import { ICustomErrorInfo } from './common.types';
 
 export const USED_UUID_VERSION = 4;
 
+export const AUTH_METHOD = 'Bearer';
+
 export const HASH_SALT = 10;
 
 export const HTTP_ERRORS_INFO: Record<string, ICustomErrorInfo> = Object.freeze(

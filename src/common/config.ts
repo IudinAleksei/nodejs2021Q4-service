@@ -23,7 +23,7 @@ export const PORT = process.env.PORT || 3000;
 export const LOG_LEVEL: pino.LevelWithSilent =
   (process.env.LOG_LEVEL as pino.LevelWithSilent) || 'debug';
 export const { NODE_ENV } = process.env;
-export const { JWT_SECRET_KEY } = process.env;
+export const { JWT_SECRET_KEY = 'secret' } = process.env;
 export const AUTH_MODE = process.env.AUTH_MODE === 'true';
 const PGPORT = parseInt(process.env.PGPORT || '3001', 10);
 
