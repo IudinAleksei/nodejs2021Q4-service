@@ -17,7 +17,7 @@ export async function authRoutes(fastify: FastifyInstance) {
      */
     async handler(request, reply) {
       if (request.body) {
-        reply.code(201).header('Authorization', 'Bearer <jwt>').send();
+        reply.code(201).send({ token: 'token' });
       }
       reply.code(403).send();
     },
