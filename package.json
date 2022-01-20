@@ -10,7 +10,8 @@
   "description": "REST service starter for RS School",
   "exports": "./dist/index.js",
   "scripts": {
-    "start": "nodemon --watch ./**/*.ts --exec node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
+    "build": "tsc && node --experimental-specifier-resolution=node dist/index.js",
+    "start": "nodemon --legacy-watch --exitcrash --watch src --ext ts --exec npm run build",
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace"
@@ -60,6 +61,10 @@
   "devDependencies": {
     "@tsconfig/node16": "1.0.2",
     "@types/node": "16.11.11",
+    "nodemon": "2.0.15",
+    "typescript": "4.5.2"
+  },
+  "optionalDependencies": {
     "@typescript-eslint/eslint-plugin": "5.5.0",
     "@typescript-eslint/parser": "5.5.0",
     "chai": "4.3.4",
@@ -76,10 +81,7 @@
     "husky": "4.3.8",
     "jest": "27.3.1",
     "lint-staged": "12.0.3",
-    "nodemon": "2.0.15",
     "prettier": "2.4.1",
-    "supertest": "6.1.6",
-    "ts-node": "10.4.0",
-    "typescript": "4.5.2"
+    "supertest": "6.1.6"
   }
 }
