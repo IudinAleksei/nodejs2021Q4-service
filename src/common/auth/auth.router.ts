@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify';
 import { ILoginData } from './auth.types';
-import { authorize } from './auth.service';
+import { authorize } from './auth.controller';
 
 /**
  * @param fastify - an instance of the application {@link FastifyInstance} used to register routes
@@ -17,7 +17,7 @@ export async function authRoutes(fastify: FastifyInstance) {
      */
     async handler(request, reply) {
       const token = await authorize(request.body as ILoginData);
-      reply.code(201).send({ token });
+      reply.send({ token });
     },
   });
 }

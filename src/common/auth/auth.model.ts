@@ -15,6 +15,6 @@ export class AuthData extends BaseEntity {
   @Column()
   token!: string;
 
-  @OneToOne(() => User, (user) => user)
+  @OneToOne(() => User, (user) => user, { createForeignKeyConstraints: false })
   user!: User;
 }

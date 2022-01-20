@@ -7,7 +7,7 @@ import { boardRoutes } from './resources/boards/board.router';
 import { taskRoutes } from './resources/tasks/task.router';
 import { logger, requestBodyLogger } from './common/logger';
 import { authRoutes } from './common/auth/auth.router';
-import { requestTokenValidator } from './common/auth/auth.service';
+import { requestTokenValidator } from './common/auth/auth.controller';
 
 /**
  * @remarks This method create fastify application instance {@link FastifyInstance}
