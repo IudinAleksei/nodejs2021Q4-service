@@ -6,7 +6,6 @@ import {
   HASH_SALT,
   UNAUTHORIZED_ACCESS_URL_LIST,
 } from '../constants';
-import { AuthData } from './auth.model';
 import { User } from '../../resources/users/user.model';
 import { JWT_SECRET_KEY } from '../config';
 
@@ -33,12 +32,6 @@ export const hasValidAuthHeader = (header?: string): boolean => {
   return isMethodCorrect && validateToken(token);
 };
 
-const hasTokenInDB = async (token: string): Promise<boolean> => {
-  const authRepo = getConnection().getRepository(AuthData);
-  const authData = await authRepo.findOne({ token });
-  return Boolean(authData);
-};
-
 export const getPasswordHash = async (password: string): Promise<string> => {
   return hash(password, HASH_SALT);
 };
@@ -55,15 +48,6 @@ export const findUserByLogin = async (
 ): Promise<User | undefined> => {
   const userRepo = getConnection().getRepository(User);
   return userRepo.findOne({ login });
-};
-
-export const saveAuthData = async (
-  user: User,
-  token: string
-): Promise<AuthData> => {
-  const authRepo = getConnection().getRepository(AuthData);
-  const authData = authRepo.create({ ...user, token });
-  return authRepo.save(authData);
 };
 
 export const createToken = async (user: User): Promise<string> => {

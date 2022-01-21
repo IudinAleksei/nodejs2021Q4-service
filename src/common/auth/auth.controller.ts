@@ -8,7 +8,6 @@ import {
   hasUnauthAccess,
   hasValidAuthHeader,
   isPasswordValid,
-  saveAuthData,
 } from './auth.service';
 
 export const requestTokenValidator: onRequestHookHandler = (req, _, done) => {
@@ -27,9 +26,7 @@ export const authorize = async (
 ): Promise<string> | never => {
   const user = await findUserByLogin(loginData.login);
   if (user && (await isPasswordValid(loginData.password, user.password))) {
-    const token = await createToken(user);
-    const authData = await saveAuthData(user, token);
-    return authData.token;
+    return createToken(user);
   }
   throw new CustomServerError(HTTP_ERRORS_INFO.forbidden);
 };

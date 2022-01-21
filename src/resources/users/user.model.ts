@@ -6,7 +6,6 @@ import {
   OneToMany,
   OneToOne,
 } from 'typeorm';
-import { AuthData } from '../../common/auth/auth.model';
 import { Task } from '../tasks/task.model';
 import { IUser } from './user.types';
 
@@ -30,9 +29,6 @@ export class User extends BaseEntity implements IUser {
 
   @OneToMany(() => Task, (task) => task.user)
   tasks!: Task[];
-
-  @OneToOne(() => AuthData, (auth) => auth.user)
-  auth!: AuthData;
 
   /**
    * Create User instance with passed id, name, login and password
