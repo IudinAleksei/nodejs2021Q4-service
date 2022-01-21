@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY package*.json .
 
-RUN npm install --omit=optional
+RUN npm install --production
 
 RUN npm cache clean --force
 
 COPY . .
 
-CMD ["npm", "run" ,"start:watch"]
+CMD ["npm", "run" ,"start"]

@@ -5,3 +5,5 @@ test
 dist
 .env
 database
+Dockerfile
+docker-compose.yml

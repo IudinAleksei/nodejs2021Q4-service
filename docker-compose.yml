@@ -1,7 +1,7 @@
 version: '3'
 services:
   node:
-    image: nodejs2021q4-service-app
+    image: nest-app
     build: .
     networks:
       - backend
@@ -24,7 +24,7 @@ services:
     links:
       - postgres
   postgres:
-    image: nodejs2021q4-service-db
+    image: postgres-db
     build: ./database/
     networks:
       - backend
