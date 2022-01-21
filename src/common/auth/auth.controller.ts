@@ -1,4 +1,5 @@
 import { onRequestHookHandler } from 'fastify';
+import { performance } from 'perf_hooks';
 import { HTTP_ERRORS_INFO } from '../constants';
 import { ILoginData } from './auth.types';
 import { CustomServerError } from '../errors';
@@ -10,12 +11,12 @@ import {
   isPasswordValid,
 } from './auth.service';
 
-export const requestTokenValidator: onRequestHookHandler = (req, _, done) => {
+export const requestTokenValidator: onRequestHookHandler = async (req) => {
   if (
     hasUnauthAccess(req.url) ||
-    hasValidAuthHeader(req.headers.authorization)
+    hasValidAuthHeader(req.headers.authorization) ||
+    req.is404
   ) {
-    done();
     return;
   }
   throw new CustomServerError(HTTP_ERRORS_INFO.unauthorized);
