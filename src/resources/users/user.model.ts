@@ -4,7 +4,6 @@ import {
   BaseEntity,
   PrimaryGeneratedColumn,
   OneToMany,
-  OneToOne,
 } from 'typeorm';
 import { Task } from '../tasks/task.model';
 import { IUser } from './user.types';

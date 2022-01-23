@@ -1,5 +1,4 @@
 import { onRequestHookHandler } from 'fastify';
-import { performance } from 'perf_hooks';
 import { HTTP_ERRORS_INFO } from '../constants';
 import { ILoginData } from './auth.types';
 import { CustomServerError } from '../errors';
