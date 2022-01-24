@@ -1,16 +1,23 @@
+import { Exclude, Transform } from 'class-transformer';
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'User' })
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
-  id!: string;
+  id: string;
 
   @Column()
-  name!: string;
+  name: string;
 
   @Column()
-  login!: string;
+  login: string;
 
   @Column()
-  password!: string;
+  @Exclude({ toPlainOnly: true })
+  password: string;
+
+  constructor(partial: Partial<User>) {
+    super();
+    Object.assign(this, partial);
+  }
 }

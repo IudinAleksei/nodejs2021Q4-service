@@ -13,10 +13,7 @@ export class UserService {
   ) {}
 
   async create(createUserDto: CreateUserDto) {
-    const { id, name, login } = await this.usersRepository.save(
-      this.usersRepository.create(createUserDto),
-    );
-    return { id, name, login };
+    return this.usersRepository.save(createUserDto);
   }
 
   findAll(): Promise<User[]> {
@@ -28,9 +25,7 @@ export class UserService {
   }
 
   update(id: string, updateUserDto: UpdateUserDto) {
-    return this.usersRepository.save(
-      this.usersRepository.create(updateUserDto),
-    );
+    return this.usersRepository.save(updateUserDto);
   }
 
   async remove(id: string): Promise<void> {
