@@ -2,7 +2,7 @@ FROM node:16.13.1-alpine3.15
 
 WORKDIR /app
 
-COPY package*.json .
+COPY package*.json ./
 
 RUN npm install
 
@@ -10,4 +10,4 @@ RUN npm cache clean --force
 
 COPY . .
 
-CMD ["npm", "run" ,"start"]
+CMD ["npm", "run" ,"start:dev"]

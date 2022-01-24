@@ -1,19 +1,18 @@
 import { ConfigService } from '@nestjs/config';
-import { NestFactory } from '@nestjs/core';
-import {
-  FastifyAdapter,
-  NestFastifyApplication,
-} from '@nestjs/platform-fastify';
+import { AbstractHttpAdapter, NestFactory } from '@nestjs/core';
+import { ExpressAdapter } from '@nestjs/platform-express';
+import { FastifyAdapter } from '@nestjs/platform-fastify';
 import { exit } from 'process';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   try {
-    const app = await NestFactory.create<NestFastifyApplication>(
-      AppModule,
-      new FastifyAdapter(),
-    );
-    const configService = app.get(ConfigService);
+    const configService = new ConfigService();
+    const useFastify = configService.get('USE_FASTIFY');
+    const httpAdapter: AbstractHttpAdapter = useFastify
+      ? new FastifyAdapter()
+      : new ExpressAdapter();
+    const app = await NestFactory.create(AppModule, httpAdapter);
     const port = configService.get('PORT');
     await app.listen(port, '0.0.0.0');
 
@@ -32,5 +31,6 @@ process.on('unhandledRejection', (reason) => {
 
 process.on('uncaughtException', (error) => {
   // logger.fatal(error);
+
   exit(1);
 });
