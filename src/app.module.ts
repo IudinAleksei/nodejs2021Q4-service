@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { TaskModule } from './task/task.module';
 import { ColumnModule } from './column/column.module';
 import { BoardModule } from './board/board.module';
+import { PrismaService } from './prisma.service';
 
 @Module({
   imports: [
@@ -17,6 +18,6 @@ import { BoardModule } from './board/board.module';
     BoardModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, PrismaService],
 })
 export class AppModule {}
