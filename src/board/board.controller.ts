@@ -3,15 +3,20 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
   ParseUUIDPipe,
+  UseGuards,
+  Put,
+  HttpStatus,
+  HttpCode,
 } from '@nestjs/common';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { BoardService } from './board.service';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { UpdateBoardDto } from './dto/update-board.dto';
 
+@UseGuards(JwtAuthGuard)
 @Controller('boards')
 export class BoardController {
   constructor(private readonly boardService: BoardService) {}
@@ -31,7 +36,7 @@ export class BoardController {
     return this.boardService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(
     @Param('id', ParseUUIDPipe) id: string,
     @Body() updateBoardDto: UpdateBoardDto,
@@ -40,6 +45,7 @@ export class BoardController {
   }
 
   @Delete(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id', ParseUUIDPipe) id: string) {
     return this.boardService.remove(+id);
   }
