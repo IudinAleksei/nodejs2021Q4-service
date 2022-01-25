@@ -1,3 +1,4 @@
+import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { AbstractHttpAdapter, NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
@@ -13,6 +14,7 @@ async function bootstrap() {
       ? new FastifyAdapter()
       : new ExpressAdapter();
     const app = await NestFactory.create(AppModule, httpAdapter);
+    app.useGlobalPipes(new ValidationPipe());
     const port = configService.get('PORT');
     await app.listen(port, '0.0.0.0');
 
