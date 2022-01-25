@@ -27,6 +27,10 @@ export class UserService {
     throw new NotFoundException();
   }
 
+  findByLogin(login: string): Promise<User | undefined> {
+    return this.usersRepository.findOne({ login });
+  }
+
   update(id: string, updateUserDto: UpdateUserDto) {
     return this.usersRepository.save(updateUserDto);
   }
