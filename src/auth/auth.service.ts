@@ -1,9 +1,9 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { compare, hash } from 'bcrypt';
-import { HASH_SALT } from 'src/constants';
+import { compare } from 'bcrypt';
 import { User } from 'src/user/entities/user.entity';
 import { UserService } from 'src/user/user.service';
+import { IJWTPayload } from './auth.types';
 import { CreateAuthDto } from './dto/create-auth.dto';
 
 @Injectable()
@@ -15,28 +15,14 @@ export class AuthService {
 
   async login(createAuthDto: CreateAuthDto) {
     const user = await this.userService.findByLogin(createAuthDto.login);
-    if (
-      user &&
-      (await this.isPasswordValid(user.password, createAuthDto.password))
-    ) {
-      return { token: this.createToken(user) };
+    if (user && (await compare(createAuthDto.password, user.password))) {
+      return { token: await this.createToken(user) };
     }
     throw new ForbiddenException();
   }
 
-  async getPasswordHash(password: string): Promise<string> {
-    return hash(password, HASH_SALT);
-  }
-
-  async isPasswordValid(
-    password: string,
-    passwordHash: string,
-  ): Promise<boolean> {
-    return compare(password, passwordHash);
-  }
-
   async createToken(user: User): Promise<string> {
-    const payload = {
+    const payload: IJWTPayload = {
       userId: user.id,
       login: user.login,
     };
