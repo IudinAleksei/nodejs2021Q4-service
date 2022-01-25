@@ -1,6 +1,6 @@
 import { hashSync } from 'bcrypt';
 import { Exclude, Transform } from 'class-transformer';
-import { HASH_SALT } from 'src/constants';
+import { HASH_SALT } from 'src/config/constants';
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'User' })
