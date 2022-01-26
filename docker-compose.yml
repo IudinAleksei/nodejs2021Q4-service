@@ -24,6 +24,7 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - PGHOST=postgres
       - PGPORT=${PGPORT}
+      # - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:${PGPORT}/${POSTGRES_DB}
     restart: always
     links:
       - postgres

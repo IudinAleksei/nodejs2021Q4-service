@@ -33,6 +33,5 @@ process.on('unhandledRejection', (reason) => {
 
 process.on('uncaughtException', (error) => {
   // logger.fatal(error);
-
   exit(1);
 });

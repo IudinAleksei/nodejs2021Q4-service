@@ -23,36 +23,36 @@ import { UpdateTaskDto } from './dto/update-task.dto';
 export class TaskController {
   constructor(private readonly taskService: TaskService) {}
 
-  @UseInterceptors(ClassSerializerInterceptor)
-  @Post()
-  create(@Body() createTaskDto: CreateTaskDto) {
-    return this.taskService.create(createTaskDto);
-  }
+  // @UseInterceptors(ClassSerializerInterceptor)
+  // @Post()
+  // create(@Body() createTaskDto: CreateTaskDto) {
+  //   return this.taskService.create(createTaskDto);
+  // }
 
-  @UseInterceptors(ClassSerializerInterceptor)
-  @Get()
-  findAll() {
-    return this.taskService.findAll();
-  }
+  // @UseInterceptors(ClassSerializerInterceptor)
+  // @Get()
+  // findAll() {
+  //   return this.taskService.findAll();
+  // }
 
-  @UseInterceptors(ClassSerializerInterceptor)
-  @Get(':id')
-  findOne(@Param('id', ParseUUIDPipe) id: string) {
-    return this.taskService.findOne(id);
-  }
+  // @UseInterceptors(ClassSerializerInterceptor)
+  // @Get(':id')
+  // findOne(@Param('id', ParseUUIDPipe) id: string) {
+  //   return this.taskService.findOne(id);
+  // }
 
-  @UseInterceptors(ClassSerializerInterceptor)
-  @Put(':id')
-  update(
-    @Param('id', ParseUUIDPipe) id: string,
-    @Body() updateTaskDto: UpdateTaskDto,
-  ) {
-    return this.taskService.update(id, updateTaskDto);
-  }
+  // @UseInterceptors(ClassSerializerInterceptor)
+  // @Put(':id')
+  // update(
+  //   @Param('id', ParseUUIDPipe) id: string,
+  //   @Body() updateTaskDto: UpdateTaskDto,
+  // ) {
+  //   return this.taskService.update(id, updateTaskDto);
+  // }
 
-  @Delete(':id')
-  @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('id', ParseUUIDPipe) id: string) {
-    return this.taskService.remove(id);
-  }
+  // @Delete(':id')
+  // @HttpCode(HttpStatus.NO_CONTENT)
+  // remove(@Param('id', ParseUUIDPipe) id: string) {
+  //   return this.taskService.remove(id);
+  // }
 }

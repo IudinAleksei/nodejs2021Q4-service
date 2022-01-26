@@ -33,17 +33,17 @@
     "@nestjs/passport": "^8.1.0",
     "@nestjs/platform-express": "^8.2.6",
     "@nestjs/platform-fastify": "^8.2.6",
-    "@nestjs/typeorm": "^8.0.3",
+    "@prisma/client": "^3.8.1",
     "bcrypt": "^5.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "passport": "^0.5.2",
     "passport-jwt": "^4.0.0",
     "pg": "^8.7.1",
+    "prisma": "^3.8.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0",
-    "typeorm": "^0.2.41"
+    "rxjs": "^7.2.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",

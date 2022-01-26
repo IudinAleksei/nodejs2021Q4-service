@@ -14,10 +14,10 @@ export class AuthService {
   ) {}
 
   async login(createAuthDto: CreateAuthDto) {
-    const user = await this.userService.findByLogin(createAuthDto.login);
-    if (user && (await compare(createAuthDto.password, user.password))) {
-      return { token: await this.createToken(user) };
-    }
+    // const user = await this.userService.findByLogin(createAuthDto.login);
+    // if (user && (await compare(createAuthDto.password, user.password))) {
+    //   return { token: await this.createToken(user) };
+    // }
     throw new ForbiddenException();
   }
 
