@@ -33,7 +33,7 @@ export class BoardController {
 
   @Get(':id')
   findOne(@Param('id', ParseUUIDPipe) id: string) {
-    return this.boardService.findOne(+id);
+    return this.boardService.findOne(id);
   }
 
   @Put(':id')
@@ -41,12 +41,12 @@ export class BoardController {
     @Param('id', ParseUUIDPipe) id: string,
     @Body() updateBoardDto: UpdateBoardDto,
   ) {
-    return this.boardService.update(+id, updateBoardDto);
+    return this.boardService.update(id, updateBoardDto);
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id', ParseUUIDPipe) id: string) {
-    return this.boardService.remove(+id);
+    return this.boardService.remove(id);
   }
 }
