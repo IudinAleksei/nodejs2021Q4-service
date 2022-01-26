@@ -18,11 +18,13 @@ export class TaskService {
   }
 
   findAll(): Promise<Task[]> {
-    return this.taskRepository.find();
+    return this.taskRepository.find({ relations: ['column', 'board', 'user'] });
   }
 
   async findOne(id: string): Promise<Task> | never {
-    const item = await this.taskRepository.findOne(id);
+    const item = await this.taskRepository.findOne(id, {
+      relations: ['column', 'board', 'user'],
+    });
     if (item) return item;
     throw new NotFoundException();
   }
@@ -31,8 +33,8 @@ export class TaskService {
     id: string,
     updateTaskDto: UpdateTaskDto,
   ): Promise<Task> | never {
-    await this.taskRepository.update(id, plainToInstance(Task, updateTaskDto));
-    return this.findOne(id);
+    await this.findOne(id);
+    return this.taskRepository.save(plainToInstance(Task, updateTaskDto));
   }
 
   async remove(id: string): Promise<void> | never {

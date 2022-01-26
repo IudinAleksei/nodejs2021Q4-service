@@ -10,6 +10,8 @@ import {
   Put,
   HttpCode,
   HttpStatus,
+  UseInterceptors,
+  ClassSerializerInterceptor,
 } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { TaskService } from './task.service';
@@ -21,21 +23,25 @@ import { UpdateTaskDto } from './dto/update-task.dto';
 export class TaskController {
   constructor(private readonly taskService: TaskService) {}
 
+  @UseInterceptors(ClassSerializerInterceptor)
   @Post()
   create(@Body() createTaskDto: CreateTaskDto) {
     return this.taskService.create(createTaskDto);
   }
 
+  @UseInterceptors(ClassSerializerInterceptor)
   @Get()
   findAll() {
     return this.taskService.findAll();
   }
 
+  @UseInterceptors(ClassSerializerInterceptor)
   @Get(':id')
   findOne(@Param('id', ParseUUIDPipe) id: string) {
     return this.taskService.findOne(id);
   }
 
+  @UseInterceptors(ClassSerializerInterceptor)
   @Put(':id')
   update(
     @Param('id', ParseUUIDPipe) id: string,

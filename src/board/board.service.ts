@@ -10,19 +10,21 @@ import { Board } from './entities/board.entity';
 export class BoardService {
   constructor(
     @InjectRepository(Board)
-    private taskRepository: Repository<Board>,
+    private boardRepository: Repository<Board>,
   ) {}
 
-  create(createTaskDto: CreateBoardDto): Promise<Board> {
-    return this.taskRepository.save(plainToInstance(Board, createTaskDto));
+  create(createBoardDto: CreateBoardDto): Promise<Board> {
+    return this.boardRepository.save(plainToInstance(Board, createBoardDto));
   }
 
   findAll(): Promise<Board[]> {
-    return this.taskRepository.find();
+    return this.boardRepository.find({ relations: ['columns'] });
   }
 
   async findOne(id: string): Promise<Board> | never {
-    const item = await this.taskRepository.findOne(id);
+    const item = await this.boardRepository.findOne(id, {
+      relations: ['columns'],
+    });
     if (item) return item;
     throw new NotFoundException();
   }
@@ -31,15 +33,12 @@ export class BoardService {
     id: string,
     updateBoardDto: UpdateBoardDto,
   ): Promise<Board> | never {
-    await this.taskRepository.update(
-      id,
-      plainToInstance(Board, updateBoardDto),
-    );
-    return this.findOne(id);
+    await this.findOne(id);
+    return this.boardRepository.save(plainToInstance(Board, updateBoardDto));
   }
 
   async remove(id: string): Promise<void> | never {
-    const report = await this.taskRepository.delete(id);
+    const report = await this.boardRepository.delete(id);
     if (!report.affected) throw new NotFoundException();
   }
 }

@@ -26,7 +26,7 @@ export class User extends BaseEntity {
   @Transform((pass) => hashSync(pass.value, HASH_SALT), { toClassOnly: true })
   password: string;
 
-  @OneToMany(() => Task, (task) => task.user)
+  @OneToMany(() => Task, (task) => task.user, { cascade: true, nullable: true })
   tasks: Task[];
 
   constructor(partial: Partial<User>) {

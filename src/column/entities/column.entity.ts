@@ -23,10 +23,16 @@ export class BoardColumn extends BaseEntity {
   @Column()
   order: number;
 
-  @ManyToOne(() => Board, (board) => board.columns)
+  @ManyToOne(() => Board, (board) => board.columns, {
+    onDelete: 'CASCADE',
+    nullable: true,
+  })
   board: Board;
 
-  @OneToMany(() => Task, (task) => task.column)
+  @OneToMany(() => Task, (task) => task.column, {
+    cascade: true,
+    nullable: true,
+  })
   tasks: Task[];
 
   constructor(partial: Partial<BoardColumn>) {

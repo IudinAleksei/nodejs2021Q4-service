@@ -1,3 +1,5 @@
+import { Expose, Transform } from 'class-transformer';
+import { Board } from 'src/board/entities/board.entity';
 import { BoardColumn } from 'src/column/entities/column.entity';
 import { User } from 'src/user/entities/user.entity';
 import {
@@ -22,10 +24,34 @@ export class Task extends BaseEntity {
   @Column()
   description: string;
 
-  @ManyToOne(() => BoardColumn, (column) => column.tasks)
+  @ManyToOne(() => Board, (board) => board.tasks, {
+    onDelete: 'CASCADE',
+    nullable: true,
+  })
+  @Expose({ name: 'boardId' })
+  @Transform((board) => board.value?.id || board.value, {
+    toPlainOnly: true,
+  })
+  board: Board;
+
+  @ManyToOne(() => BoardColumn, (column) => column.tasks, {
+    onDelete: 'CASCADE',
+    nullable: true,
+  })
+  @Expose({ name: 'columnId' })
+  @Transform((column) => column.value?.id || column.value, {
+    toPlainOnly: true,
+  })
   column: BoardColumn;
 
-  @ManyToOne(() => User, (user) => user.tasks)
+  @ManyToOne(() => User, (user) => user.tasks, {
+    onDelete: 'SET NULL',
+    nullable: true,
+  })
+  @Expose({ name: 'userId' })
+  @Transform((user) => user.value?.id || user.value, {
+    toPlainOnly: true,
+  })
   user: User;
 
   constructor(partial: Partial<Task>) {

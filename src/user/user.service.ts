@@ -38,8 +38,8 @@ export class UserService {
     id: string,
     updateUserDto: UpdateUserDto,
   ): Promise<User> | never {
-    await this.usersRepository.update(id, plainToInstance(User, updateUserDto));
-    return this.findOne(id);
+    await this.findOne(id);
+    return this.usersRepository.save(plainToInstance(User, updateUserDto));
   }
 
   async remove(id: string): Promise<void> | never {
