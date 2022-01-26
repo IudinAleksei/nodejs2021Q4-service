@@ -12,10 +12,12 @@ services:
     volumes:
       - ./logs:/app/logs
       - ./src:/app/src
+      - ./${STATIC_FILE_FOLDER}:/app/${STATIC_FILE_FOLDER}
     environment:
       - PORT=${PORT}
       - LOG_LEVEL=${LOG_LEVEL}
       - USE_FASTIFY=${USE_FASTIFY}
+      - STATIC_FILE_FOLDER=${STATIC_FILE_FOLDER}
       - JWT_SECRET_KEY=${JWT_SECRET_KEY}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
