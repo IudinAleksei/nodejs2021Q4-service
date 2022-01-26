@@ -22,4 +22,16 @@ export class CreateTaskDto {
   @IsNotEmpty()
   @IsString()
   description: string;
+
+  @IsOptional()
+  @IsUUID()
+  boardId: string;
+
+  @IsOptional()
+  @IsUUID()
+  columnId: string;
+
+  @IsOptional()
+  @IsUUID()
+  userId: string;
 }

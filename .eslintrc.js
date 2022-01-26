@@ -33,5 +33,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'error',
     'prettier/prettier': 'error',
     'tsdoc/syntax': 'warn',
+    'class-methods-use-this': 'off',
   },
 };
