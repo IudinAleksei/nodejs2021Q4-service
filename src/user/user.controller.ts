@@ -31,8 +31,8 @@ export class UserController {
   // @UseInterceptors(ClassSerializerInterceptor)
   @Get()
   findAll() {
-    return 'hello';
-    // return this.userService.findAll();
+    // return 'hello';
+    return this.userService.findAll();
   }
   // @UseInterceptors(ClassSerializerInterceptor)
   // @Get(':id')
