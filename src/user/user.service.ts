@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
 import { plainToInstance } from 'class-transformer';
-import { ADMIN_USER } from 'src/config/constants';
+import { ADMIN_USER, PrismaError } from 'src/config/constants';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -33,32 +34,56 @@ export class UserService {
     throw new NotFoundException();
   }
 
-  // async findByLogin(login: string): Promise<User | undefined> {
-  //   const temp = await this.prismaService.user.findMany();
-  //   return temp[0];
-  // }
+  async findByLogin(login: string): Promise<User | undefined> {
+    const item = await this.prismaService.user.findFirst({
+      where: {
+        login,
+      },
+    });
+    return item;
+  }
+
   async update(
     id: string,
     updateUserDto: UpdateUserDto,
   ): Promise<User> | never {
-    return plainToInstance(
-      User,
-      this.prismaService.user.update({
-        data: plainToInstance(User, updateUserDto),
-        where: {
-          id,
-        },
-      }),
-    );
+    try {
+      const item = await plainToInstance(
+        User,
+        this.prismaService.user.update({
+          where: {
+            id,
+          },
+          data: plainToInstance(User, updateUserDto),
+        }),
+      );
+      return plainToInstance(User, item);
+    } catch (error) {
+      if (
+        error instanceof PrismaClientKnownRequestError &&
+        error.code === PrismaError.RecordDoesNotExist
+      ) {
+        throw new NotFoundException();
+      }
+      throw error;
+    }
   }
 
   async remove(id: string): Promise<void> | never {
-    const item = await this.prismaService.user.delete({
-      where: {
-        id,
-      },
-    });
-    if (item) return;
-    throw new NotFoundException();
+    try {
+      await this.prismaService.user.delete({
+        where: {
+          id,
+        },
+      });
+    } catch (error) {
+      if (
+        error instanceof PrismaClientKnownRequestError &&
+        error.code === PrismaError.RecordDoesNotExist
+      ) {
+        throw new NotFoundException();
+      }
+      throw error;
+    }
   }
 }

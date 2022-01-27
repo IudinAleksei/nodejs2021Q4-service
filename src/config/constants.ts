@@ -15,3 +15,7 @@ export const UNAUTHORIZED_ACCESS_URL_LIST: readonly string[] = Object.freeze([
   'doc',
   '',
 ]);
+
+export const PrismaError = Object.freeze({
+  RecordDoesNotExist: 'P2025',
+});
