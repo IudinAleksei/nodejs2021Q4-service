@@ -22,8 +22,8 @@
     "docker:start": "docker compose up",
     "docker:build": "docker compose up --build",
     "docker:stop": "docker compose down --volumes",
-    "prepare": "husky install",
-    "start:migrate": "prisma migrate dev && npm run start:dev"
+    "prepare": "husky install && npx prisma generate",
+    "start:migrate": "prisma migrate dev --preview-feature && npm run start:dev"
   },
   "dependencies": {
     "@nestjs/common": "8.2.6",

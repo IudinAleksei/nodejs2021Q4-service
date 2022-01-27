@@ -11,8 +11,36 @@ datasource db {
 }
 
 model User {
-  id    Int      @id
+  id    String @db.Uuid @id @default(uuid())
   name  String
   login String
   password String
+  tasks Task[]
+}
+
+model Board {
+  id    String @db.Uuid @id @default(uuid())
+  title String
+  order Int             @default(1)
+  columns Column[]
+}
+
+model Column {
+  id    String @db.Uuid @id @default(uuid())
+  title String
+  order Int             @default(1)
+  tasks Task[]
+  board Board @relation(fields: [boardId], references: [id])
+  boardId String @db.Uuid
+}
+
+model Task {
+  id    String @db.Uuid @id @default(uuid())
+  title String
+  order Int             @default(1)
+  description String
+  user User @relation(fields: [userId], references: [id])
+  userId String @db.Uuid
+  column Column @relation(fields: [columnId], references: [id])
+  columnId String @db.Uuid
 }

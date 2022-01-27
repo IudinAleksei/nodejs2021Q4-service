@@ -10,30 +10,55 @@ import { User } from './entities/user.entity';
 export class UserService {
   constructor(private readonly prismaService: PrismaService) {}
 
-  // create(createUserDto: CreateUserDto) {
-  // return this.prismaService.user.save(plainToInstance(User, createUserDto));
-  // }
-  async findAll() {
-    return this.prismaService.user.findMany();
+  create(createUserDto: CreateUserDto) {
+    return plainToInstance(
+      User,
+      this.prismaService.user.create({
+        data: plainToInstance(User, createUserDto),
+      }),
+    );
   }
-  // async findOne(id: string): Promise<User> | never {
-  //   const item = await this.usersRepository.findOne(id);
-  //   if (item) return item;
-  //   throw new NotFoundException();
-  // }
+
+  async findAll() {
+    return plainToInstance(User, this.prismaService.user.findMany());
+  }
+
+  async findOne(id: string): Promise<User> | never {
+    const item = await this.prismaService.user.findUnique({
+      where: {
+        id,
+      },
+    });
+    if (item) return plainToInstance(User, item);
+    throw new NotFoundException();
+  }
+
   // async findByLogin(login: string): Promise<User | undefined> {
   //   const temp = await this.prismaService.user.findMany();
   //   return temp[0];
   // }
-  // async update(
-  //   id: string,
-  //   updateUserDto: UpdateUserDto,
-  // ): Promise<User> | never {
-  //   await this.findOne(id);
-  //   return this.usersRepository.save(plainToInstance(User, updateUserDto));
-  // }
-  // async remove(id: string): Promise<void> | never {
-  //   const report = await this.usersRepository.delete(id);
-  //   if (!report.affected) throw new NotFoundException();
-  // }
+  async update(
+    id: string,
+    updateUserDto: UpdateUserDto,
+  ): Promise<User> | never {
+    return plainToInstance(
+      User,
+      this.prismaService.user.update({
+        data: plainToInstance(User, updateUserDto),
+        where: {
+          id,
+        },
+      }),
+    );
+  }
+
+  async remove(id: string): Promise<void> | never {
+    const item = await this.prismaService.user.delete({
+      where: {
+        id,
+      },
+    });
+    if (item) return;
+    throw new NotFoundException();
+  }
 }

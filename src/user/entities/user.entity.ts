@@ -1,7 +1,6 @@
 import { hashSync } from 'bcrypt';
 import { Exclude, Transform } from 'class-transformer';
 import { HASH_SALT } from 'src/config/constants';
-import { Task } from 'src/task/entities/task.entity';
 
 export class User {
   id: string;
@@ -10,9 +9,9 @@ export class User {
 
   login: string;
 
+  @Exclude({ toPlainOnly: true })
+  @Transform((pass) => hashSync(pass.value, HASH_SALT), { toClassOnly: true })
   password: string;
-
-  // tasks: Task[];
 
   constructor(partial: Partial<User>) {
     Object.assign(this, partial);
