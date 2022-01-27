@@ -11,7 +11,7 @@ export class BoardColumn {
 
   order: number;
 
-  boardId: string;
+  boardId: string | null;
 
   tasks: Task[];
 

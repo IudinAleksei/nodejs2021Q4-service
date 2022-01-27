@@ -7,9 +7,9 @@ export class Task {
 
   description: string;
 
-  columnId: string;
+  columnId: string | null;
 
-  userId: string;
+  userId: string | null;
 
   constructor(partial: Partial<Task>) {
     Object.assign(this, partial);

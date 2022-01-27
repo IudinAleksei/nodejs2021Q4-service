@@ -22,7 +22,13 @@ export class BoardService {
           },
         },
         include: {
-          columns: true,
+          columns: {
+            select: {
+              id: true,
+              title: true,
+              order: true,
+            },
+          },
         },
       }),
     );
@@ -33,7 +39,13 @@ export class BoardService {
       Board,
       this.prismaService.board.findMany({
         include: {
-          columns: true,
+          columns: {
+            select: {
+              id: true,
+              title: true,
+              order: true,
+            },
+          },
         },
       }),
     );
@@ -45,7 +57,13 @@ export class BoardService {
         id,
       },
       include: {
-        columns: true,
+        columns: {
+          select: {
+            id: true,
+            title: true,
+            order: true,
+          },
+        },
       },
     });
     if (item) return plainToInstance(Board, item);
@@ -63,15 +81,7 @@ export class BoardService {
           where: {
             id,
           },
-          data: {
-            ...updateBoardDto,
-            columns: {
-              create: updateBoardDto.columns,
-            },
-          },
-          include: {
-            columns: true,
-          },
+          data: updateBoardDto,
         }),
       );
       return plainToInstance(Board, item);
@@ -91,9 +101,6 @@ export class BoardService {
       await this.prismaService.board.delete({
         where: {
           id,
-        },
-        include: {
-          columns: true,
         },
       });
     } catch (error) {
