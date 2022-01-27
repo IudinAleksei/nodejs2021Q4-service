@@ -8,10 +8,10 @@ RUN npm install
 
 RUN npm cache clean --force
 
-# RUN npx prisma generate
+RUN npx prisma generate
 
 # RUN npx prisma migrate dev --name user --preview-feature
 
 COPY ./ ./
 
-CMD ["npm", "run" ,"start:dev"]
+CMD ["npm", "run" ,"start:migrate"]

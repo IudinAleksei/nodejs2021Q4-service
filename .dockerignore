@@ -3,7 +3,7 @@ node_modules
 .github
 test
 dist
-.env
+*.env
 database
 Dockerfile
 docker-compose.yml

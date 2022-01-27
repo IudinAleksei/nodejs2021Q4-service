@@ -5,6 +5,7 @@ import { UserController } from './user.controller';
 import { User } from './entities/user.entity';
 
 @Module({
+  imports: [PrismaModule],
   controllers: [UserController],
   providers: [UserService],
   exports: [UserService],

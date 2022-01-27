@@ -12,7 +12,6 @@ import { PrismaModule } from './prisma/prisma.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    PrismaModule,
     UserModule,
     // TaskModule,
     // ColumnModule,

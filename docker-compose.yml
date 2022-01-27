@@ -24,7 +24,9 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - PGHOST=postgres
       - PGPORT=${PGPORT}
-      # - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:${PGPORT}/${POSTGRES_DB}
+      - DATABASE_URL=${DATABASE_URL}
+    env_file:
+      - docker.env
     restart: always
     links:
       - postgres
@@ -44,6 +46,8 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - PGPORT=${PGPORT}
       - PGDATA=${PGDATA}
+      env_file:
+      - docker.env
     restart: always
 networks:
   backend:
