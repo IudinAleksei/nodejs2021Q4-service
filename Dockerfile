@@ -8,7 +8,7 @@ RUN npm install
 
 RUN npm cache clean --force
 
-RUN npx prisma generate
+# RUN npx prisma generate
 
 COPY ./ ./
 

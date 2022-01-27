@@ -15,19 +15,37 @@ export class BoardService {
     return plainToInstance(
       Board,
       this.prismaService.board.create({
-        data: plainToInstance(Board, createBoardDto),
+        data: {
+          ...createBoardDto,
+          columns: {
+            create: createBoardDto.columns,
+          },
+        },
+        include: {
+          columns: true,
+        },
       }),
     );
   }
 
   async findAll() {
-    return plainToInstance(Board, this.prismaService.board.findMany());
+    return plainToInstance(
+      Board,
+      this.prismaService.board.findMany({
+        include: {
+          columns: true,
+        },
+      }),
+    );
   }
 
   async findOne(id: string): Promise<Board> | never {
     const item = await this.prismaService.board.findUnique({
       where: {
         id,
+      },
+      include: {
+        columns: true,
       },
     });
     if (item) return plainToInstance(Board, item);
@@ -45,7 +63,15 @@ export class BoardService {
           where: {
             id,
           },
-          data: plainToInstance(Board, updateBoardDto),
+          data: {
+            ...updateBoardDto,
+            columns: {
+              create: updateBoardDto.columns,
+            },
+          },
+          include: {
+            columns: true,
+          },
         }),
       );
       return plainToInstance(Board, item);
@@ -65,6 +91,9 @@ export class BoardService {
       await this.prismaService.board.delete({
         where: {
           id,
+        },
+        include: {
+          columns: true,
         },
       });
     } catch (error) {

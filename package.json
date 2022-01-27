@@ -23,7 +23,7 @@
     "docker:build": "docker compose up --build",
     "docker:stop": "docker compose down --volumes",
     "prepare": "husky install && npx prisma generate",
-    "start:migrate": "prisma migrate dev --preview-feature && npm run start:dev"
+    "start:migrate": "prisma migrate dev --preview-feature && prisma db seed && npm run start:dev"
   },
   "dependencies": {
     "@nestjs/common": "8.2.6",
@@ -101,5 +101,8 @@
     "src/**/*.ts": [
       "npm run lint"
     ]
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }
