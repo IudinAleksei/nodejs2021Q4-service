@@ -1,8 +1,3 @@
-import { Expose, Transform } from 'class-transformer';
-import { Board } from 'src/board/entities/board.entity';
-import { BoardColumn } from 'src/column/entities/column.entity';
-import { User } from 'src/user/entities/user.entity';
-
 export class Task {
   id: string;
 
@@ -12,11 +7,9 @@ export class Task {
 
   description: string;
 
-  board: Board;
+  columnId: string;
 
-  column: BoardColumn;
-
-  user: User;
+  userId: string;
 
   constructor(partial: Partial<Task>) {
     Object.assign(this, partial);

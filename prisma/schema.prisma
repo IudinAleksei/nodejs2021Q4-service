@@ -21,7 +21,6 @@ model User {
 model Board {
   id    String @db.Uuid @id @default(uuid())
   title String
-  order Int             @default(1)
   columns Column[]
 }
 

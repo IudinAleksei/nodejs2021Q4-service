@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
+import { PrismaModule } from 'src/prisma/prisma.module';
 import { BoardService } from './board.service';
 import { BoardController } from './board.controller';
-import { Board } from './entities/board.entity';
 
 @Module({
+  imports: [PrismaModule],
   controllers: [BoardController],
   providers: [BoardService],
 })

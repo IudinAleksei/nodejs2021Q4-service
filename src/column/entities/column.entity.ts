@@ -1,4 +1,3 @@
-import { Board } from 'src/board/entities/board.entity';
 import { Task } from 'src/task/entities/task.entity';
 
 /**
@@ -12,7 +11,7 @@ export class BoardColumn {
 
   order: number;
 
-  board: Board;
+  boardId: string;
 
   tasks: Task[];
 

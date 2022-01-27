@@ -1,39 +1,80 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
 import { plainToInstance } from 'class-transformer';
+import { PrismaError } from 'src/config/constants';
+import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
 import { Task } from './entities/task.entity';
 
 @Injectable()
 export class TaskService {
-  constructor() {}
+  constructor(private readonly prismaService: PrismaService) {}
 
-  // create(createTaskDto: CreateTaskDto): Promise<Task> {
-  //   return this.taskRepository.save(plainToInstance(Task, createTaskDto));
-  // }
+  create(createTaskDto: CreateTaskDto) {
+    return plainToInstance(
+      Task,
+      this.prismaService.task.create({
+        data: plainToInstance(Task, createTaskDto),
+      }),
+    );
+  }
 
-  // findAll(): Promise<Task[]> {
-  //   return this.taskRepository.find({ relations: ['column', 'board', 'user'] });
-  // }
+  async findAll() {
+    return plainToInstance(Task, this.prismaService.task.findMany());
+  }
 
-  // async findOne(id: string): Promise<Task> | never {
-  //   const item = await this.taskRepository.findOne(id, {
-  //     relations: ['column', 'board', 'user'],
-  //   });
-  //   if (item) return item;
-  //   throw new NotFoundException();
-  // }
+  async findOne(id: string): Promise<Task> | never {
+    const item = await this.prismaService.task.findUnique({
+      where: {
+        id,
+      },
+    });
+    if (item) return plainToInstance(Task, item);
+    throw new NotFoundException();
+  }
 
-  // async update(
-  //   id: string,
-  //   updateTaskDto: UpdateTaskDto,
-  // ): Promise<Task> | never {
-  //   await this.findOne(id);
-  //   return this.taskRepository.save(plainToInstance(Task, updateTaskDto));
-  // }
+  async update(
+    id: string,
+    updateTaskDto: UpdateTaskDto,
+  ): Promise<Task> | never {
+    try {
+      const item = await plainToInstance(
+        Task,
+        this.prismaService.task.update({
+          where: {
+            id,
+          },
+          data: plainToInstance(Task, updateTaskDto),
+        }),
+      );
+      return plainToInstance(Task, item);
+    } catch (error) {
+      if (
+        error instanceof PrismaClientKnownRequestError &&
+        error.code === PrismaError.RecordDoesNotExist
+      ) {
+        throw new NotFoundException();
+      }
+      throw error;
+    }
+  }
 
-  // async remove(id: string): Promise<void> | never {
-  //   const report = await this.taskRepository.delete(id);
-  //   if (!report.affected) throw new NotFoundException();
-  // }
+  async remove(id: string): Promise<void> | never {
+    try {
+      await this.prismaService.task.delete({
+        where: {
+          id,
+        },
+      });
+    } catch (error) {
+      if (
+        error instanceof PrismaClientKnownRequestError &&
+        error.code === PrismaError.RecordDoesNotExist
+      ) {
+        throw new NotFoundException();
+      }
+      throw error;
+    }
+  }
 }
