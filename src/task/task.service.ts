@@ -11,17 +11,47 @@ import { Task } from './entities/task.entity';
 export class TaskService {
   constructor(private readonly prismaService: PrismaService) {}
 
-  create(createTaskDto: CreateTaskDto) {
-    return plainToInstance(
-      Task,
-      this.prismaService.task.create({
-        data: plainToInstance(Task, createTaskDto),
-      }),
-    );
+  async create(createTaskDto: CreateTaskDto): Promise<Task> {
+    const { id, title, order, description, columnId, userId, boardId } =
+      createTaskDto;
+    const task = { id, title, order, description };
+
+    const item = await this.prismaService.task.create({
+      data: {
+        ...task,
+        column: {
+          // connectOrCreate: {
+          //   where: { id: columnId || undefined },
+          //   create: { id: columnId || undefined, title: 'cr', boardId },
+          // },
+        },
+        user: {
+          // connect: { id: undefined },
+        },
+      },
+      include: {
+        column: {
+          select: {
+            boardId: true,
+          },
+        },
+      },
+    });
+    return plainToInstance(Task, item);
   }
 
   async findAll() {
-    return plainToInstance(Task, this.prismaService.task.findMany());
+    const items = await this.prismaService.task.findMany({
+      include: {
+        column: {
+          select: {
+            boardId: true,
+          },
+        },
+      },
+    });
+
+    return plainToInstance(Task, items);
   }
 
   async findOne(id: string): Promise<Task> | never {
@@ -29,25 +59,39 @@ export class TaskService {
       where: {
         id,
       },
+      include: {
+        column: {
+          select: {
+            boardId: true,
+          },
+        },
+      },
     });
     if (item) return plainToInstance(Task, item);
     throw new NotFoundException();
   }
 
   async update(
-    id: string,
+    pathId: string,
     updateTaskDto: UpdateTaskDto,
   ): Promise<Task> | never {
     try {
-      const item = await plainToInstance(
-        Task,
-        this.prismaService.task.update({
-          where: {
-            id,
+      const { id, title, order, description, columnId, userId, boardId } =
+        updateTaskDto;
+      const task = { id, title, order, description, columnId, userId };
+      const item = await this.prismaService.task.update({
+        where: {
+          id: pathId,
+        },
+        data: task,
+        include: {
+          column: {
+            select: {
+              boardId: true,
+            },
           },
-          data: plainToInstance(Task, updateTaskDto),
-        }),
-      );
+        },
+      });
       return plainToInstance(Task, item);
     } catch (error) {
       if (

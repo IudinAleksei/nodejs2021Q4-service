@@ -29,7 +29,7 @@ model Column {
   title String
   order Int             @default(1)
   tasks Task[]
-  board Board? @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  board Board? @relation(fields: [boardId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   boardId String? @db.Uuid
 }
 
@@ -38,8 +38,8 @@ model Task {
   title String
   order Int             @default(1)
   description String
-  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull, onUpdate: Cascade)
   userId String? @db.Uuid
-  column Column? @relation(fields: [columnId], references: [id], onDelete: Cascade)
+  column Column? @relation(fields: [columnId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   columnId String? @db.Uuid
 }

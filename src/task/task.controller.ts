@@ -18,7 +18,7 @@ import { TaskService } from './task.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
 
-// @UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard)
 @Controller({ path: 'boards/:boardId/tasks' })
 @UseInterceptors(ClassSerializerInterceptor)
 export class TaskController {

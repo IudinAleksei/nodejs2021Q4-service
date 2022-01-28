@@ -81,7 +81,25 @@ export class BoardService {
           where: {
             id,
           },
-          data: updateBoardDto,
+          data: {
+            ...updateBoardDto,
+            columns: {
+              upsert: updateBoardDto.columns.map((column) => ({
+                where: { id: column.id },
+                update: column,
+                create: column,
+              })),
+            },
+          },
+          include: {
+            columns: {
+              select: {
+                id: true,
+                title: true,
+                order: true,
+              },
+            },
+          },
         }),
       );
       return plainToInstance(Board, item);
