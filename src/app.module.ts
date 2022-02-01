@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Logger, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './user/user.module';
 import { TaskModule } from './task/task.module';
@@ -17,5 +17,6 @@ import { FileModule } from './file/file.module';
     AuthModule,
     FileModule,
   ],
+  providers: [Logger],
 })
 export class AppModule {}
