@@ -9,22 +9,20 @@ import {
   HttpCode,
   HttpStatus,
   UseGuards,
-  UseInterceptors,
-  UploadedFile,
 } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { FormDataRequest } from 'nestjs-form-data';
 import { FileService } from './file.service';
-import { CreateFileDto } from './dto/create-file.dto';
 
-@UseGuards(JwtAuthGuard)
+// @UseGuards(JwtAuthGuard)
 @Controller('file')
 export class FileController {
   constructor(private readonly fileService: FileService) {}
 
-  // @UseInterceptors(FileInterceptor('file'))
   @Post()
-  create(@Body() createFileDto: CreateFileDto, @UploadedFile() file: unknown) {
-    return this.fileService.upload(file);
+  @FormDataRequest()
+  uploadFile(@Body() file: Express.Multer.File) {
+    this.fileService.save(file);
   }
 
   @Get(':filename')

@@ -1,15 +1,14 @@
 import { Injectable, NotFoundException, StreamableFile } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { createReadStream } from 'fs';
+import { createReadStream, write } from 'fs';
 import { unlink } from 'fs/promises';
 import { join } from 'path';
-import { CreateFileDto } from './dto/create-file.dto';
 
 @Injectable()
 export class FileService {
   constructor(private readonly configService: ConfigService) {}
 
-  upload(file: CreateFileDto) {
+  save(file: unknown) {
     return 'This action adds a new file';
   }
 
