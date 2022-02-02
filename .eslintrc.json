@@ -42,6 +42,7 @@
     "import/prefer-default-export": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "prettier/prettier": "error",
-    "tsdoc/syntax": "warn"
+    "tsdoc/syntax": "warn",
+    "import/no-cycle": "warn"
   }
 }

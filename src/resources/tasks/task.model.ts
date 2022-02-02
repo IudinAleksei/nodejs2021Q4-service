@@ -1,23 +1,44 @@
-import { v4 as uuidv4 } from 'uuid';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  BaseEntity,
+  ManyToOne,
+} from 'typeorm';
+import { User } from '../users/user.model';
 
 /**
  * @remarks this class describe Task model
  */
 
-export class Task {
-  id: string;
+@Entity({ name: 'Task' })
+export class Task extends BaseEntity {
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
 
-  title: string;
+  @Column()
+  title!: string;
 
-  order: number;
+  @Column()
+  order!: number;
 
-  description: string;
+  @Column()
+  description!: string;
 
-  userId: string | null;
+  @ManyToOne(() => User, (user) => user.tasks, { nullable: true })
+  user!: User | null;
 
-  boardId: string | null;
+  @Column({
+    type: String,
+    nullable: true,
+  })
+  boardId!: string | null;
 
-  columnId: string | null;
+  @Column({
+    type: String,
+    nullable: true,
+  })
+  columnId!: string | null;
 
   /**
    * Create Task instance with passed id, title, order, description, userId, boardId and columnId
@@ -44,24 +65,6 @@ export class Task {
    * @defaultValue null
    */
 
-  constructor({
-    id = uuidv4(),
-    title = 'Task',
-    order = 0,
-    description = '',
-    userId = null,
-    boardId = null,
-    columnId = null,
-  }: Task) {
-    this.id = id;
-    this.title = title;
-    this.order = order;
-    this.description = description;
-    this.userId = userId;
-    this.boardId = boardId;
-    this.columnId = columnId;
-  }
-
   /**
    * Static func for create response body with task properties
    *
@@ -69,7 +72,15 @@ export class Task {
    * @returns Return object for response body with id, title, order, description, userId, boardId and columnId
    */
   static toResponse(task: Task) {
-    const { id, title, order, description, userId, boardId, columnId } = task;
-    return { id, title, order, description, userId, boardId, columnId };
+    const { id, title, order, description, user, boardId, columnId } = task;
+    return {
+      id,
+      title,
+      order,
+      description,
+      userId: user?.id || null,
+      boardId,
+      columnId,
+    };
   }
 }

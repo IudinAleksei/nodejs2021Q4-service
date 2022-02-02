@@ -47,7 +47,7 @@ export async function boardRoutes(fastify: FastifyInstance) {
      * @param reply - is a core Fastify object provides access to the context of the request
      */
     async handler(request: BoardRequest, reply) {
-      const newBoard = new Board(request.body);
+      const newBoard = request.body;
       const createdBoard = await boardService.addItem(newBoard);
       reply.code(201).send(Board.toResponse(createdBoard));
     },
@@ -63,7 +63,7 @@ export async function boardRoutes(fastify: FastifyInstance) {
      * @param reply - is a core Fastify object provides access to the context of the request
      */
     async handler(request: BoardRequest, reply) {
-      const newBoard = new Board(request.body);
+      const newBoard = request.body;
       const updatedBoard = await boardService.updateItem(newBoard);
       reply.send(Board.toResponse(updatedBoard));
     },

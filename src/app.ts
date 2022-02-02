@@ -6,7 +6,6 @@ import { userRoutes } from './resources/users/user.router';
 import { boardRoutes } from './resources/boards/board.router';
 import { taskRoutes } from './resources/tasks/task.router';
 import { logger, requestBodyLogger } from './common/logger';
-import { CustomErrorHandler } from './common/errors';
 
 /**
  * @remarks This method create fastify application instance {@link FastifyInstance}
@@ -17,11 +16,6 @@ export const app: FastifyInstance = fastify({ logger });
  * @remarks This method add logger for request body
  */
 app.addHook('preHandler', requestBodyLogger);
-
-/**
- * @remarks This method override default {@link Fastify} error handler with custom handler
- */
-app.setErrorHandler(CustomErrorHandler);
 
 /**
  * @remarks This method register user routes

@@ -49,7 +49,7 @@ export async function userRoutes(fastify: FastifyInstance) {
      * @param reply - is a core Fastify object provides access to the context of the request
      */
     async handler(request: UserRequest, reply) {
-      const newUser = new User(request.body);
+      const newUser = request.body;
       const createdUser = await userService.addItem(newUser);
       reply.code(201).send(User.toResponse(createdUser));
     },
@@ -68,7 +68,7 @@ export async function userRoutes(fastify: FastifyInstance) {
       if (request.body.id !== request.params.userId) {
         throw new CustomServerError(HTTP_ERRORS_INFO.invalidId);
       }
-      const user = new User(request.body);
+      const user = request.body;
       const updatedUser = await userService.updateItem(user);
       reply.send(User.toResponse(updatedUser));
     },
@@ -84,9 +84,7 @@ export async function userRoutes(fastify: FastifyInstance) {
      * @param reply - is a core Fastify object provides access to the context of the request
      */
     async handler(request: UserRequest, reply) {
-      await userService.removeByIdAndUnassignConnectedTasks(
-        request.params.userId
-      );
+      await userService.removeById(request.params.userId);
       reply.code(204).send();
     },
   });

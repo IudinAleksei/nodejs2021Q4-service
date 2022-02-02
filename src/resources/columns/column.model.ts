@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 /**
  * @remarks this class describe Column model used in Board
  */
-export class Column {
+export class BoardColumn {
   id: string;
 
   title: string;
@@ -22,7 +22,7 @@ export class Column {
    * @param order - number that describe columns order
    * @defaultValue 0
    */
-  constructor({ id = uuidv4(), title = 'Column', order = 0 }) {
+  constructor({ id = uuidv4(), title = 'Column', order = 0 } = {}) {
     this.id = id;
     this.title = title;
     this.order = order;
@@ -34,7 +34,7 @@ export class Column {
    * @param column - Column instance to response
    * @returns Return object for response body with id, title and order
    */
-  static toResponse(column: Column) {
+  static toResponse(column: BoardColumn) {
     const { id, title, order } = column;
     return { id, title, order };
   }

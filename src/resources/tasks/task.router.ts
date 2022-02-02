@@ -47,10 +47,10 @@ export async function taskRoutes(fastify: FastifyInstance) {
      * @param reply - is a core Fastify object provides access to the context of the request
      */
     async handler(request: TaskRequest, reply) {
-      const newTask = new Task({
+      const newTask = {
         ...request.body,
         boardId: request.body.boardId || request.params.boardId,
-      });
+      };
       const createdTask = await taskService.addItem(newTask);
       reply.code(201).send(Task.toResponse(createdTask));
     },
@@ -66,10 +66,10 @@ export async function taskRoutes(fastify: FastifyInstance) {
      * @param reply - is a core Fastify object provides access to the context of the request
      */
     async handler(request: TaskRequest, reply) {
-      const task = new Task({
+      const task = {
         ...request.body,
         boardId: request.body.boardId || request.params.boardId,
-      });
+      };
       const updatedTask = await taskService.updateItem(task);
       reply.send(Task.toResponse(updatedTask));
     },

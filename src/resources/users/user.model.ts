@@ -1,17 +1,33 @@
-import { v4 as uuidv4 } from 'uuid';
+import {
+  Entity,
+  Column,
+  BaseEntity,
+  PrimaryGeneratedColumn,
+  OneToMany,
+} from 'typeorm';
+import { Task } from '../tasks/task.model';
 import { IUser } from './user.types';
 
 /**
  * @remarks this class describe User model
  */
-export class User implements IUser {
-  id: string;
 
-  name: string;
+@Entity({ name: 'User' })
+export class User extends BaseEntity implements IUser {
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
 
-  login: string;
+  @Column()
+  name!: string;
 
-  password: string;
+  @Column()
+  login!: string;
+
+  @Column()
+  password!: string;
+
+  @OneToMany(() => Task, (task) => task.user)
+  tasks!: Task[];
 
   /**
    * Create User instance with passed id, name, login and password
@@ -20,26 +36,14 @@ export class User implements IUser {
    * @defaultValue generated with v4 method of uuid
    *
    * @param name - name of the user
-   * @defaultValue string 'USER'
+   * @defaultValue string 'user'
    *
    * @param login - user login
-   * @defaultValue string 'user'
+   * @defaultValue string 'login'
    *
    * @param password - user password
    * @defaultValue string 'P@55w0rd'
    */
-
-  constructor({
-    id = uuidv4(),
-    name = 'USER',
-    login = 'user',
-    password = 'P@55w0rd',
-  }) {
-    this.id = id;
-    this.name = name;
-    this.login = login;
-    this.password = password;
-  }
 
   /**
    * Static func for create response body with some user properties, without password
