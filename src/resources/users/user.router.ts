@@ -1,4 +1,5 @@
 import { FastifyInstance } from 'fastify';
+import { getPasswordHash } from '../../common/auth/auth.service';
 import { CustomServerError } from '../../common/errors';
 import { HTTP_ERRORS_INFO } from '../../common/constants';
 import { User } from './user.model';
@@ -49,7 +50,10 @@ export async function userRoutes(fastify: FastifyInstance) {
      * @param reply - is a core Fastify object provides access to the context of the request
      */
     async handler(request: UserRequest, reply) {
-      const newUser = request.body;
+      const newUser = {
+        ...request.body,
+        password: await getPasswordHash(request.body.password),
+      };
       const createdUser = await userService.addItem(newUser);
       reply.code(201).send(User.toResponse(createdUser));
     },
