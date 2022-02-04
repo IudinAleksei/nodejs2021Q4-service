@@ -1,6 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
-import { plainToInstance } from 'class-transformer';
 import { PrismaError } from 'src/config/constants';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateTaskDto } from './dto/create-task.dto';
@@ -11,63 +10,36 @@ import { Task } from './entities/task.entity';
 export class TaskService {
   constructor(private readonly prismaService: PrismaService) {}
 
-  async create(createTaskDto: CreateTaskDto): Promise<Task> {
+  async create(createTaskDto: CreateTaskDto) {
     const { id, title, order, description, columnId, userId, boardId } =
       createTaskDto;
     const task = { id, title, order, description };
 
-    const item = await this.prismaService.task.create({
+    return this.prismaService.task.create({
       data: {
         ...task,
         column: {
-          // connectOrCreate: {
-          //   where: { id: columnId || undefined },
-          //   create: { id: columnId || undefined, title: 'cr', boardId },
-          // },
+          connect: columnId ? { id: columnId } : undefined,
+        },
+        board: {
+          connect: boardId ? { id: boardId } : undefined,
         },
         user: {
-          // connect: { id: undefined },
-        },
-      },
-      include: {
-        column: {
-          select: {
-            boardId: true,
-          },
+          connect: userId ? { id: userId } : undefined,
         },
       },
     });
-    return plainToInstance(Task, item);
   }
 
   async findAll() {
-    const items = await this.prismaService.task.findMany({
-      include: {
-        column: {
-          select: {
-            boardId: true,
-          },
-        },
-      },
-    });
-
-    return plainToInstance(Task, items);
+    return this.prismaService.task.findMany();
   }
 
   async findOne(id: string): Promise<Task> | never {
     const item = await this.prismaService.task.findUnique({
-      where: {
-        id,
-      },
-      include: {
-        column: {
-          select: {
-            boardId: true,
-          },
-        },
-      },
+      where: { id },
     });
-    if (item) return plainToInstance(Task, item);
+    if (item) return item;
     throw new NotFoundException();
   }
 
@@ -76,23 +48,10 @@ export class TaskService {
     updateTaskDto: UpdateTaskDto,
   ): Promise<Task> | never {
     try {
-      const { id, title, order, description, columnId, userId, boardId } =
-        updateTaskDto;
-      const task = { id, title, order, description, columnId, userId };
-      const item = await this.prismaService.task.update({
-        where: {
-          id: pathId,
-        },
-        data: task,
-        include: {
-          column: {
-            select: {
-              boardId: true,
-            },
-          },
-        },
+      return await this.prismaService.task.update({
+        where: { id: pathId },
+        data: updateTaskDto,
       });
-      return plainToInstance(Task, item);
     } catch (error) {
       if (
         error instanceof PrismaClientKnownRequestError &&
@@ -107,9 +66,7 @@ export class TaskService {
   async remove(id: string): Promise<void> | never {
     try {
       await this.prismaService.task.delete({
-        where: {
-          id,
-        },
+        where: { id },
       });
     } catch (error) {
       if (

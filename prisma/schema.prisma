@@ -22,6 +22,7 @@ model Board {
   id    String @db.Uuid @id @default(uuid())
   title String
   columns Column[]
+  tasks Task[]
 }
 
 model Column {
@@ -42,4 +43,6 @@ model Task {
   userId String? @db.Uuid
   column Column? @relation(fields: [columnId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   columnId String? @db.Uuid
+  board Board? @relation(fields: [boardId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  boardId String? @db.Uuid
 }
