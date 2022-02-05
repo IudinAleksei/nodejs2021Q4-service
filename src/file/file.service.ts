@@ -1,6 +1,11 @@
-import { Injectable, NotFoundException, StreamableFile } from '@nestjs/common';
+import {
+  ImATeapotException,
+  Injectable,
+  NotFoundException,
+  StreamableFile,
+} from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { createReadStream, write } from 'fs';
+import { createReadStream } from 'fs';
 import { unlink } from 'fs/promises';
 import { join } from 'path';
 
@@ -8,8 +13,12 @@ import { join } from 'path';
 export class FileService {
   constructor(private readonly configService: ConfigService) {}
 
-  save(file: unknown) {
-    return 'This action adds a new file';
+  save(files: Express.Multer.File[]) {
+    if (files.length) {
+      return 'The file was uploaded successfully';
+    }
+
+    throw new ImATeapotException();
   }
 
   findFile(filename: string): StreamableFile | never {

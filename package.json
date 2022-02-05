@@ -16,8 +16,8 @@
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
-    "docker:start": "docker compose up",
-    "docker:build": "docker compose up --build",
+    "docker:start": "docker compose --env-file ./docker.env up",
+    "docker:build": "docker compose --env-file ./docker.env up --build",
     "docker:stop": "docker compose down --volumes",
     "prepare": "husky install && npx prisma generate",
     "start:migrate": "prisma migrate dev --preview-feature && prisma db seed && npm run start:dev"
