@@ -3,12 +3,14 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { LoggerModule } from 'nestjs-pino';
 import { parse } from 'url';
 import { TransportMultiOptions } from 'pino';
+import { APP_INTERCEPTOR } from '@nestjs/core';
 import { UserModule } from './user/user.module';
 import { TaskModule } from './task/task.module';
 import { ColumnModule } from './column/column.module';
 import { BoardModule } from './board/board.module';
 import { AuthModule } from './auth/auth.module';
 import { FileModule } from './file/file.module';
+import { LoggerInterceptor } from './logger.interceptor';
 
 export const TRANSPORT_CONFIG: TransportMultiOptions = {
   targets: [
@@ -49,8 +51,8 @@ export const TRANSPORT_CONFIG: TransportMultiOptions = {
       useFactory: async (configService: ConfigService) => {
         return {
           pinoHttp: {
+            quietReqLogger: true,
             transport: TRANSPORT_CONFIG,
-            wrapSerializers: true,
             serializers: {
               res(reply) {
                 return {
@@ -75,6 +77,12 @@ export const TRANSPORT_CONFIG: TransportMultiOptions = {
     BoardModule,
     AuthModule,
     FileModule,
+  ],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: LoggerInterceptor,
+    },
   ],
 })
 export class AppModule {}
