@@ -9,9 +9,14 @@ import {
   HttpCode,
   HttpStatus,
   UseGuards,
+  UseInterceptors,
+  UploadedFile,
+  Inject,
 } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { FormDataRequest } from 'nestjs-form-data';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { diskStorage } from 'multer';
+import { FileFastifyInterceptor } from 'fastify-file-interceptor';
 import { FileService } from './file.service';
 
 // @UseGuards(JwtAuthGuard)
@@ -20,8 +25,22 @@ export class FileController {
   constructor(private readonly fileService: FileService) {}
 
   @Post()
-  @FormDataRequest()
-  uploadFile(@Body() file: Express.Multer.File) {
+  @UseInterceptors(
+    true
+      ? FileFastifyInterceptor('file', {
+          storage: diskStorage({
+            destination: 'static',
+            filename: (req, file, cb) => cb(null, file.originalname),
+          }),
+        })
+      : FileInterceptor('file', {
+          storage: diskStorage({
+            destination: 'static',
+            filename: (req, file, cb) => cb(null, file.originalname),
+          }),
+        }),
+  )
+  uploadFile(@UploadedFile() file: Express.Multer.File) {
     this.fileService.save(file);
   }
 
