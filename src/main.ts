@@ -1,11 +1,10 @@
-import { Logger, ValidationPipe } from '@nestjs/common';
+import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
 import { exit } from 'process';
-import * as winston from 'winston';
-import { WinstonModule } from 'nest-winston';
+import { Logger, LoggerErrorInterceptor } from 'nestjs-pino';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -18,32 +17,21 @@ async function bootstrap() {
       httpAdapter
         .getInstance()
         .addContentTypeParser('*', (request, payload, done) => {
-          done(null);
+          done(null, null);
         });
     } else {
       httpAdapter = new ExpressAdapter();
     }
-    const logger = WinstonModule.createLogger({
-      level: 'info',
-      format: winston.format.json(),
-      transports: [
-        new winston.transports.File({
-          dirname: 'logs',
-          filename: 'error.log',
-          level: 'error',
-        }),
-        new winston.transports.File({
-          dirname: 'logs',
-          filename: 'combined.log',
-        }),
-      ],
+    const app = await NestFactory.create(AppModule, httpAdapter, {
+      bufferLogs: true,
     });
-    const app = await NestFactory.create(AppModule, httpAdapter, { logger });
+    app.useLogger(app.get(Logger));
+    app.flushLogs();
     app.useGlobalPipes(new ValidationPipe());
+    app.useGlobalInterceptors(new LoggerErrorInterceptor());
     const port = configService.get('PORT');
     await app.listen(port, '0.0.0.0');
   } catch (err) {
-    Logger.error(err);
     exit(1);
   }
 }
