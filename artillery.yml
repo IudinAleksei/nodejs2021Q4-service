@@ -1,0 +1,52 @@
+config:
+  target: 'http://localhost:4000'
+  phases:
+    - duration: 60
+      arrivalRate: 3
+      name: Testing
+before:
+  flow:
+    - log: 'Get auth token'
+    - post:
+        url: '/login'
+        json:
+          login: 'admin'
+          password: 'admin'
+        capture:
+          - json: $.token
+            as: token
+
+scenarios:
+  - name: 'Users'
+    flow:
+      - get:
+          url: '/users'
+          headers:
+            authorization: 'Bearer {{ token }}'
+      - post:
+          url: '/users'
+          headers:
+            authorization: 'Bearer {{ token }}'
+          json:
+            login: 'test'
+            name: 'Test'
+            password: '1234'
+          capture:
+            json: '$id'
+            as: 'id'
+      - get:
+          url: '/users/{{ id }}'
+          headers:
+            authorization: 'Bearer {{ token }}'
+      - put:
+          url: '/users/{{ id }}'
+          headers:
+            authorization: 'Bearer {{ token }}'
+          json:
+            login: 'test'
+            name: 'Test_updated'
+            password: '12345'
+      - delete:
+          url: '/users/{{ id }}'
+          headers:
+            authorization: 'Bearer {{ token }}'
