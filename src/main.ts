@@ -18,7 +18,9 @@ async function bootstrap() {
     const httpAdapter = useFastify
       ? new FastifyAdapter()
       : new ExpressAdapter();
-    const app = await NestFactory.create(AppModule, httpAdapter);
+    const app = await NestFactory.create(AppModule, httpAdapter, {
+      bufferLogs: true,
+    });
     if (useFastify) {
       await (app as NestFastifyApplication).register(contentParser);
     }

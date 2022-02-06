@@ -19,7 +19,8 @@
     "docker:build": "docker compose --env-file ./docker.env up --build",
     "docker:stop": "docker compose down --volumes",
     "prepare": "npx prisma generate",
-    "start:migrate": "prisma migrate dev --preview-feature && prisma db seed && nest start"
+    "start:migrate": "prisma migrate dev --preview-feature && prisma db seed && nest start",
+    "artillery:report": "npx artillery run --output users.json artillery.yml && npx artillery report users.json"
   },
   "dependencies": {
     "@nestjs/common": "8.2.6",
