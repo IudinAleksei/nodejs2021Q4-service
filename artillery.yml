@@ -3,8 +3,9 @@ config:
   http:
     timeout: 10
   phases:
-    - duration: 10
-      arrivalRate: 3
+    - duration: 20
+      arrivalRate: 15
+      rampTo: 50
       name: Testing
 before:
   flow:
@@ -21,36 +22,34 @@ before:
 scenarios:
   - name: 'Users'
     flow:
-      - loop:
-          - get:
-              url: '/users'
-              headers:
-                authorization: 'Bearer {{ token }}'
-          - post:
-              url: '/users'
-              headers:
-                authorization: 'Bearer {{ token }}'
-              json:
-                login: 'test'
-                name: 'Test'
-                password: '1234'
-              capture:
-                json: '$.id'
-                as: 'id'
-          - get:
-              url: '/users/{{ id }}'
-              headers:
-                authorization: 'Bearer {{ token }}'
-          - put:
-              url: '/users/{{ id }}'
-              headers:
-                authorization: 'Bearer {{ token }}'
-              json:
-                login: 'test'
-                name: 'Test_updated'
-                password: '12345'
-          - delete:
-              url: '/users/{{ id }}'
-              headers:
-                authorization: 'Bearer {{ token }}'
-        count: 2
+      - get:
+          url: '/users'
+          headers:
+            authorization: 'Bearer {{ token }}'
+      - post:
+          url: '/users'
+          headers:
+            authorization: 'Bearer {{ token }}'
+          json:
+            login: 'test'
+            name: 'Test'
+            password: '1234'
+          capture:
+            json: '$.id'
+            as: 'id'
+      - get:
+          url: '/users/{{ id }}'
+          headers:
+            authorization: 'Bearer {{ token }}'
+      - put:
+          url: '/users/{{ id }}'
+          headers:
+            authorization: 'Bearer {{ token }}'
+          json:
+            login: 'test'
+            name: 'Test_updated'
+            password: '12345'
+      - delete:
+          url: '/users/{{ id }}'
+          headers:
+            authorization: 'Bearer {{ token }}'

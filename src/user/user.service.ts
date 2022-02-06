@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
-import { plainToInstance } from 'class-transformer';
-import { PrismaError } from 'src/config/constants';
+import { hash } from 'bcrypt';
+import { HASH_SALT, PrismaError } from 'src/config/constants';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -11,53 +11,69 @@ import { User } from './entities/user.entity';
 export class UserService {
   constructor(private readonly prismaService: PrismaService) {}
 
-  create(createUserDto: CreateUserDto) {
-    return plainToInstance(
-      User,
-      this.prismaService.user.create({
-        data: plainToInstance(User, createUserDto),
-      }),
-    );
+  private async hashPass(password: string): Promise<string> {
+    return hash(password, HASH_SALT);
+  }
+
+  async create(createUserDto: CreateUserDto) {
+    return this.prismaService.user.create({
+      data: {
+        ...createUserDto,
+        password: await this.hashPass(createUserDto.password),
+      },
+      select: {
+        login: true,
+        name: true,
+        id: true,
+      },
+    });
   }
 
   async findAll() {
-    return plainToInstance(User, this.prismaService.user.findMany());
-  }
-
-  async findOne(id: string): Promise<User> | never {
-    const item = await this.prismaService.user.findUnique({
-      where: {
-        id,
+    return this.prismaService.user.findMany({
+      select: {
+        login: true,
+        name: true,
+        id: true,
       },
     });
-    if (item) return plainToInstance(User, item);
+  }
+
+  async findOne(id: string) {
+    const item = await this.prismaService.user.findUnique({
+      where: { id },
+      select: {
+        login: true,
+        name: true,
+        id: true,
+      },
+    });
+    if (item) return item;
     throw new NotFoundException();
   }
 
   async findByLogin(login: string): Promise<User | undefined> {
     const item = await this.prismaService.user.findFirst({
-      where: {
-        login,
-      },
+      where: { login },
     });
     return item;
   }
 
-  async update(
-    id: string,
-    updateUserDto: UpdateUserDto,
-  ): Promise<User> | never {
+  async update(id: string, updateUserDto: UpdateUserDto) {
     try {
-      const item = await plainToInstance(
-        User,
-        this.prismaService.user.update({
-          where: {
-            id,
-          },
-          data: plainToInstance(User, updateUserDto),
-        }),
-      );
-      return plainToInstance(User, item);
+      const item = await this.prismaService.user.update({
+        where: { id },
+        data: {
+          ...updateUserDto,
+          password: await this.hashPass(updateUserDto.password),
+        },
+        select: {
+          login: true,
+          name: true,
+          id: true,
+        },
+      });
+      return item;
     } catch (error) {
       if (
         error instanceof PrismaClientKnownRequestError &&
@@ -72,9 +88,7 @@ export class UserService {
   async remove(id: string): Promise<void> | never {
     try {
       await this.prismaService.user.delete({
-        where: {
-          id,
-        },
+        where: { id },
       });
     } catch (error) {
       if (
