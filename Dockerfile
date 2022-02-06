@@ -2,12 +2,14 @@ FROM node:16.13.1-alpine3.15
 
 WORKDIR /app
 
-COPY package*.json .
+COPY ./package*.json ./prisma/schema.prisma ./
 
-RUN npm install --omit=optional
+RUN npm install
 
 RUN npm cache clean --force
 
-COPY . .
+# RUN npx prisma generate
 
-CMD ["npm", "run" ,"start:watch"]
+COPY ./ ./
+
+CMD ["npm", "run" ,"start:migrate"]
