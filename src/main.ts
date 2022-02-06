@@ -26,6 +26,7 @@ async function bootstrap() {
     app.flushLogs();
     app.useGlobalPipes(new ValidationPipe());
     app.useGlobalInterceptors(new LoggerErrorInterceptor());
+    app.enableShutdownHooks();
     const port = configService.get('PORT');
     await app.listen(port, '0.0.0.0');
   } catch (err) {
@@ -43,5 +44,5 @@ process.on('unhandledRejection', (reason) => {
 
 process.on('uncaughtException', (error) => {
   Logger.error(error);
-  process.exit(1);
+  exit(1);
 });
